@@ -1929,6 +1929,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["myname"],
   data: function data() {
@@ -37549,31 +37565,78 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-md-8" }, [
-        _c("div", { staticClass: "card" }, [
-          _c("div", { staticClass: "card-header" }, [
-            _vm._v("Example Component")
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
-            _c(
-              "ul",
-              _vm._l(_vm.myname, function(name) {
-                return name.release_maker
-                  ? _c("li", [_vm._v(_vm._s(name.release_maker))])
-                  : _vm._e()
-              }),
-              0
-            )
-          ])
-        ])
-      ])
-    ])
+  return _c("div", [
+    _c("h3", [_vm._v("ゲーム種別")]),
+    _vm._v(" "),
+    _c("input", { attrs: { type: "radio", name: "type", value: "ALL" } }),
+    _vm._v("全て\n    "),
+    _c("input", { attrs: { type: "radio", name: "type", value: "package" } }),
+    _vm._v("パッケージ販売\n    "),
+    _c("input", { attrs: { type: "radio", name: "type", value: "download" } }),
+    _vm._v("ダウンロード専売\n\n    "),
+    _c("h3", [_vm._v("販売メーカー(販売本数が多いメーカーのみ)")]),
+    _vm._v(" "),
+    _vm._m(0),
+    _vm._v(" "),
+    _c("h3", [_vm._v("年齢制限")]),
+    _vm._v(" "),
+    _c("input", { attrs: { type: "radio", name: "age-limit", value: "ALL" } }),
+    _vm._v("年齢制限なし\n    "),
+    _c("input", { attrs: { type: "radio", name: "age-limit", value: "A3+" } }),
+    _vm._v("全年齢対象(CERO:A,IARC:3+)\n    "),
+    _c("input", { attrs: { type: "radio", name: "age-limit", value: "7+" } }),
+    _vm._v("7歳まで(IARC:7+)\n    "),
+    _c("input", { attrs: { type: "radio", name: "age-limit", value: "B12+" } }),
+    _vm._v("12歳まで(CERO:B,IARC:12+)"),
+    _c("br"),
+    _vm._v(" "),
+    _c("input", { attrs: { type: "radio", name: "age-limit", value: "C+" } }),
+    _vm._v("15歳まで(CERO:C)\n    "),
+    _c("input", { attrs: { type: "radio", name: "age-limit", value: "16+" } }),
+    _vm._v("16歳まで(IARC:16+)\n    "),
+    _c("input", { attrs: { type: "radio", name: "age-limit", value: "D" } }),
+    _vm._v("17歳まで(CERO:D)\n    "),
+    _c("input", { attrs: { type: "radio", name: "age-limit", value: "Z18+" } }),
+    _vm._v("18歳以上(CERO:Z,IARC:18+)\n    \n    "),
+    _c(
+      "ul",
+      _vm._l(_vm.myname, function(name) {
+        return name.release_maker
+          ? _c("li", [_vm._v(_vm._s(name.release_maker))])
+          : _vm._e()
+      }),
+      0
+    )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("select", { attrs: { name: "publisher" } }, [
+      _c("option", { attrs: { value: "" } }, [_vm._v("1")]),
+      _vm._v(" "),
+      _c("option", { attrs: { value: "" } }, [_vm._v("1")]),
+      _vm._v(" "),
+      _c("option", { attrs: { value: "" } }, [_vm._v("1")]),
+      _vm._v(" "),
+      _c("option", { attrs: { value: "" } }, [_vm._v("1")]),
+      _vm._v(" "),
+      _c("option", { attrs: { value: "" } }, [_vm._v("1")]),
+      _vm._v(" "),
+      _c("option", { attrs: { value: "" } }, [_vm._v("1")]),
+      _vm._v(" "),
+      _c("option", { attrs: { value: "" } }, [_vm._v("1")]),
+      _vm._v(" "),
+      _c("option", { attrs: { value: "" } }, [_vm._v("1")]),
+      _vm._v(" "),
+      _c("option", { attrs: { value: "" } }, [_vm._v("1")]),
+      _vm._v(" "),
+      _c("option", { attrs: { value: "" } }, [_vm._v("1")])
+    ])
+  }
+]
 render._withStripped = true
 
 
