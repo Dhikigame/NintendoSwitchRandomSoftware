@@ -8,7 +8,7 @@
                         <ul>
                             <!-- <li v-for="i in list">{{ i }}</li> -->
                             <li v-for="name in myname">{{ name }}</li>
-                            <!-- <li>{{ myname }}</li> -->
+                            <li>{{ myname }}</li>
                         </ul>
                     </div>
                 </div>

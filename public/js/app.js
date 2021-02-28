@@ -37558,10 +37558,14 @@ var render = function() {
           _c("div", { staticClass: "card-body" }, [
             _c(
               "ul",
-              _vm._l(_vm.myname, function(name) {
-                return _c("li", [_vm._v(_vm._s(name))])
-              }),
-              0
+              [
+                _vm._l(_vm.myname, function(name) {
+                  return _c("li", [_vm._v(_vm._s(name))])
+                }),
+                _vm._v(" "),
+                _c("li", [_vm._v(_vm._s(_vm.myname))])
+              ],
+              2
             )
           ])
         ])
