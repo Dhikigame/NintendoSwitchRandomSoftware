@@ -7,8 +7,10 @@
                     <div class="card-body">
                         <ul>
                             <!-- <li v-for="i in list">{{ i }}</li> -->
-                            <li v-for="name in myname">{{ name }}</li>
-                            <li>{{ myname }}</li>
+                            <!-- <li v-for="name in myname" v-if="myname.release_maker">{{ name }}</li> -->
+                            <!-- <li v-if="myname.release_maker">{{ myname.release_maker }}</li> -->
+                            <li v-for="name in myname" v-if="name.release_maker">{{ name.release_maker }}</li>
+                            <!-- <li>{{ myname }}</li> -->
                         </ul>
                     </div>
                 </div>
