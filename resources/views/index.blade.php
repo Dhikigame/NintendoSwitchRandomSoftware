@@ -44,7 +44,7 @@ $release_maker = $releasemaker_gamecount[0]->release_maker;
 </div>
 
 <div id="app">
-    <example-component v-bind:myname="{{ json_encode($releasemaker_gamecount) }}"></example-component>
+    <example-component v-bind:myname="{{ json_encode($releasemaker_gamecount[0]) }}"></example-component>
 </div>
 
 <script src="{{ mix('js/app.js') }}"></script> 
