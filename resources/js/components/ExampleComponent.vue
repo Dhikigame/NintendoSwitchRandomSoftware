@@ -1,7 +1,7 @@
 <template>
 <div>
     <h3>ゲーム種別</h3>
-    <input type="radio" name="type" value="ALL">全て
+    <input type="radio" name="type" value="ALL" checked>全て
     <input type="radio" name="type" value="package">パッケージ販売
     <input type="radio" name="type" value="download">ダウンロード専売
 
@@ -20,7 +20,7 @@
     </select>
 
     <h3>年齢制限</h3>
-    <input type="radio" name="age-limit" value="ALL">年齢制限なし
+    <input type="radio" name="age-limit" value="ALL" checked>年齢制限なし
     <input type="radio" name="age-limit" value="A3+">全年齢対象(CERO:A,IARC:3+)
     <input type="radio" name="age-limit" value="7+">7歳まで(IARC:7+)
     <input type="radio" name="age-limit" value="B12+">12歳まで(CERO:B,IARC:12+)<br>

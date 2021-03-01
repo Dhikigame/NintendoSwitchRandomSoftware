@@ -37568,7 +37568,9 @@ var render = function() {
   return _c("div", [
     _c("h3", [_vm._v("ゲーム種別")]),
     _vm._v(" "),
-    _c("input", { attrs: { type: "radio", name: "type", value: "ALL" } }),
+    _c("input", {
+      attrs: { type: "radio", name: "type", value: "ALL", checked: "" }
+    }),
     _vm._v("全て\n    "),
     _c("input", { attrs: { type: "radio", name: "type", value: "package" } }),
     _vm._v("パッケージ販売\n    "),
@@ -37580,7 +37582,9 @@ var render = function() {
     _vm._v(" "),
     _c("h3", [_vm._v("年齢制限")]),
     _vm._v(" "),
-    _c("input", { attrs: { type: "radio", name: "age-limit", value: "ALL" } }),
+    _c("input", {
+      attrs: { type: "radio", name: "age-limit", value: "ALL", checked: "" }
+    }),
     _vm._v("年齢制限なし\n    "),
     _c("input", { attrs: { type: "radio", name: "age-limit", value: "A3+" } }),
     _vm._v("全年齢対象(CERO:A,IARC:3+)\n    "),
