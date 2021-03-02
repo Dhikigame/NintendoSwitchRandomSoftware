@@ -47,15 +47,15 @@ class SwitchRandomController extends Controller
 
         // SwitchRandomモデルのインスタンス化
         $md = new SwitchRandom();
-        $releasemaker_gamecount = $md->ReleasemakerGamecountgetData();
-        $allgamecount = $md->AllGamecount($releasemaker_gamecount);
-        $gamecount_cero_A_3 = $md->Gamecount_Cero_A_3($releasemaker_gamecount);
-        $gamecount_cero_7 = $md->Gamecount_Cero_7($releasemaker_gamecount);
-        $gamecount_cero_B_12 = $md->Gamecount_Cero_B_12($releasemaker_gamecount);
-        $gamecount_cero_C = $md->Gamecount_Cero_C($releasemaker_gamecount);
-        $gamecount_cero_16 = $md->Gamecount_Cero_16($releasemaker_gamecount);
-        $gamecount_cero_D = $md->Gamecount_Cero_D($releasemaker_gamecount);
-        $gamecount_cero_Z = $md->Gamecount_Cero_Z($releasemaker_gamecount);
+        $releasemaker_gamecount = json_encode($md->ReleasemakerGamecountgetData());
+        $allgamecount = json_encode($md->AllGamecount($releasemaker_gamecount));
+        $gamecount_cero_A_3 = json_encode($md->Gamecount_Cero_A_3($releasemaker_gamecount));
+        $gamecount_cero_7 = json_encode($md->Gamecount_Cero_7($releasemaker_gamecount));
+        $gamecount_cero_B_12 = json_encode($md->Gamecount_Cero_B_12($releasemaker_gamecount));
+        $gamecount_cero_C = json_encode($md->Gamecount_Cero_C($releasemaker_gamecount));
+        $gamecount_cero_16 = json_encode($md->Gamecount_Cero_16($releasemaker_gamecount));
+        $gamecount_cero_D = json_encode($md->Gamecount_Cero_D($releasemaker_gamecount));
+        $gamecount_cero_Z = json_encode($md->Gamecount_Cero_Z($releasemaker_gamecount));
 
         // return view('index', compact('test'));
         return view('index')->with([
