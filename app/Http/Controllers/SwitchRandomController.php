@@ -48,26 +48,29 @@ class SwitchRandomController extends Controller
         // SwitchRandomモデルのインスタンス化
         $md = new SwitchRandom();
         $releasemaker_gamecount = json_encode($md->ReleasemakerGamecountgetData());
-        $allgamecount = json_encode($md->AllGamecount($releasemaker_gamecount));
-        $gamecount_cero_A_3 = json_encode($md->Gamecount_Cero_A_3($releasemaker_gamecount));
-        $gamecount_cero_7 = json_encode($md->Gamecount_Cero_7($releasemaker_gamecount));
-        $gamecount_cero_B_12 = json_encode($md->Gamecount_Cero_B_12($releasemaker_gamecount));
-        $gamecount_cero_C = json_encode($md->Gamecount_Cero_C($releasemaker_gamecount));
-        $gamecount_cero_16 = json_encode($md->Gamecount_Cero_16($releasemaker_gamecount));
-        $gamecount_cero_D = json_encode($md->Gamecount_Cero_D($releasemaker_gamecount));
-        $gamecount_cero_Z = json_encode($md->Gamecount_Cero_Z($releasemaker_gamecount));
+
+        $gamecount[0] = $md->AllGamecount($releasemaker_gamecount);
+        $gamecount[1] = $md->Gamecount_Cero_A_3($releasemaker_gamecount);
+        $gamecount[2] = $md->Gamecount_Cero_7($releasemaker_gamecount);
+        $gamecount[3] = $md->Gamecount_Cero_B_12($releasemaker_gamecount);
+        $gamecount[4] = $md->Gamecount_Cero_C($releasemaker_gamecount);
+        $gamecount[5] = $md->Gamecount_Cero_16($releasemaker_gamecount);
+        $gamecount[6] = $md->Gamecount_Cero_D($releasemaker_gamecount);
+        $gamecount[7] = $md->Gamecount_Cero_Z($releasemaker_gamecount);
+        $gamecount = json_encode($gamecount);
 
         // return view('index', compact('test'));
         return view('index')->with([
             'releasemaker_gamecount' => $releasemaker_gamecount,
-            'allgamecount' => $allgamecount,
-            'gamecount_cero_A_3' => $gamecount_cero_A_3,
-            'gamecount_cero_7' => $gamecount_cero_7,
-            'gamecount_cero_B_12' => $gamecount_cero_B_12,
-            'gamecount_cero_C' => $gamecount_cero_C,
-            'gamecount_cero_16' => $gamecount_cero_16,
-            'gamecount_cero_D' => $gamecount_cero_D,
-            'gamecount_cero_Z' => $gamecount_cero_Z,
+            'gamecount' => $gamecount,
+            // 'allgamecount' => $allgamecount,
+            // 'gamecount_cero_A_3' => $gamecount_cero_A_3,
+            // 'gamecount_cero_7' => $gamecount_cero_7,
+            // 'gamecount_cero_B_12' => $gamecount_cero_B_12,
+            // 'gamecount_cero_C' => $gamecount_cero_C,
+            // 'gamecount_cero_16' => $gamecount_cero_16,
+            // 'gamecount_cero_D' => $gamecount_cero_D,
+            // 'gamecount_cero_Z' => $gamecount_cero_Z,
         ]);
     }
 }

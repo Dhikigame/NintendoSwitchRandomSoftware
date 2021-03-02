@@ -13,7 +13,10 @@
 
 
 <div id="app">
-    <example-component v-bind:myname="{{ $releasemaker_gamecount }}"></example-component>
+    <example-component 
+    v-bind:gamecount="{{ $gamecount }}"
+    >
+    </example-component>
 </div>
 
 <script src="{{ mix('js/app.js') }}"></script> 
