@@ -57,6 +57,16 @@ class SwitchRandomController extends Controller
         $gamecount[5] = $md->Gamecount_Cero_16($releasemaker_gamecount);
         $gamecount[6] = $md->Gamecount_Cero_D($releasemaker_gamecount);
         $gamecount[7] = $md->Gamecount_Cero_Z($releasemaker_gamecount);
+
+        $gamecount[8] = $md->DownloadAllGamecount($releasemaker_gamecount);
+        $gamecount[9] = $md->DownloadGamecount_Cero_A_3($releasemaker_gamecount);
+        $gamecount[10] = $md->DownloadGamecount_Cero_7($releasemaker_gamecount);
+        $gamecount[11] = $md->DownloadGamecount_Cero_B_12($releasemaker_gamecount);
+        $gamecount[12] = $md->DownloadGamecount_Cero_C($releasemaker_gamecount);
+        $gamecount[13] = $md->DownloadGamecount_Cero_16($releasemaker_gamecount);
+        $gamecount[14] = $md->DownloadGamecount_Cero_D($releasemaker_gamecount);
+        $gamecount[15] = $md->DownloadGamecount_Cero_Z($releasemaker_gamecount);
+
         $gamecount = json_encode($gamecount);
 
         // return view('index', compact('test'));

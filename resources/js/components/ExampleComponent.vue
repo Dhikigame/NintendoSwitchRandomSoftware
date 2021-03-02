@@ -38,6 +38,15 @@
         <li>{{ gamecount_cero_16 }}</li>
         <li>{{ gamecount_cero_D }}</li>
         <li>{{ gamecount_cero_Z }}</li>
+
+        <li>{{ downloadallgamecount }}</li>
+        <li>{{ downloadgamecount_cero_A_3 }}</li>
+        <li>{{ downloadgamecount_cero_7 }}</li>
+        <li>{{ downloadgamecount_cero_B_12 }}</li>
+        <li>{{ downloadgamecount_cero_C }}</li>
+        <li>{{ downloadgamecount_cero_16 }}</li>
+        <li>{{ downloadgamecount_cero_D }}</li>
+        <li>{{ downloadgamecount_cero_Z }}</li>
     </ul>
 </div>
 </template>
@@ -55,7 +64,16 @@
                 gamecount_cero_C: this.gamecount[4],
                 gamecount_cero_16: this.gamecount[5],
                 gamecount_cero_D: this.gamecount[6],
-                gamecount_cero_Z: this.gamecount[7]
+                gamecount_cero_Z: this.gamecount[7],
+                
+                downloadallgamecount: this.gamecount[8],
+                downloadgamecount_cero_A_3: this.gamecount[9],
+                downloadgamecount_cero_7: this.gamecount[10],
+                downloadgamecount_cero_B_12: this.gamecount[11],
+                downloadgamecount_cero_C: this.gamecount[12],
+                downloadgamecount_cero_16: this.gamecount[13],
+                downloadgamecount_cero_D: this.gamecount[14],
+                downloadgamecount_cero_Z: this.gamecount[15],    
             }
         },
         // mounted() {

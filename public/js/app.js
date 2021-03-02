@@ -1952,6 +1952,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["gamecount"],
   // props:["gamecount_cero_A_3"],
@@ -1964,7 +1973,15 @@ __webpack_require__.r(__webpack_exports__);
       gamecount_cero_C: this.gamecount[4],
       gamecount_cero_16: this.gamecount[5],
       gamecount_cero_D: this.gamecount[6],
-      gamecount_cero_Z: this.gamecount[7]
+      gamecount_cero_Z: this.gamecount[7],
+      downloadallgamecount: this.gamecount[8],
+      downloadgamecount_cero_A_3: this.gamecount[9],
+      downloadgamecount_cero_7: this.gamecount[10],
+      downloadgamecount_cero_B_12: this.gamecount[11],
+      downloadgamecount_cero_C: this.gamecount[12],
+      downloadgamecount_cero_16: this.gamecount[13],
+      downloadgamecount_cero_D: this.gamecount[14],
+      downloadgamecount_cero_Z: this.gamecount[15]
     };
   } // mounted() {
   //     console.log(this.count)
@@ -37630,7 +37647,23 @@ var render = function() {
       _vm._v(" "),
       _c("li", [_vm._v(_vm._s(_vm.gamecount_cero_D))]),
       _vm._v(" "),
-      _c("li", [_vm._v(_vm._s(_vm.gamecount_cero_Z))])
+      _c("li", [_vm._v(_vm._s(_vm.gamecount_cero_Z))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.downloadallgamecount))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.downloadgamecount_cero_A_3))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.downloadgamecount_cero_7))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.downloadgamecount_cero_B_12))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.downloadgamecount_cero_C))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.downloadgamecount_cero_16))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.downloadgamecount_cero_D))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.downloadgamecount_cero_Z))])
     ])
   ])
 }
