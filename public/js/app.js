@@ -1904,9 +1904,114 @@ module.exports = {
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js& ***!
   \***************************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/daiki/Documents/Laravel/switch_random/resources/js/components/ExampleComponent.vue: Unexpected token (74:0)\n\n\u001b[0m \u001b[90m 72 |\u001b[39m     \u001b[36mexport\u001b[39m \u001b[36mdefault\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 73 |\u001b[39m         props\u001b[33m:\u001b[39m[\u001b[32m\"gamecount\"\u001b[39m]\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 74 |\u001b[39m \u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 75 |\u001b[39m         \u001b[90m// props:[\"gamecount_cero_A_3\"],\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 76 |\u001b[39m         data(){\u001b[0m\n\u001b[0m \u001b[90m 77 |\u001b[39m             \u001b[36mreturn\u001b[39m {\u001b[0m\n    at Parser._raise (/Users/daiki/Documents/Laravel/switch_random/node_modules/@babel/parser/lib/index.js:776:17)\n    at Parser.raiseWithData (/Users/daiki/Documents/Laravel/switch_random/node_modules/@babel/parser/lib/index.js:769:17)\n    at Parser.raise (/Users/daiki/Documents/Laravel/switch_random/node_modules/@babel/parser/lib/index.js:737:17)\n    at Parser.unexpected (/Users/daiki/Documents/Laravel/switch_random/node_modules/@babel/parser/lib/index.js:9253:16)\n    at Parser.parseIdentifierName (/Users/daiki/Documents/Laravel/switch_random/node_modules/@babel/parser/lib/index.js:11512:18)\n    at Parser.parseIdentifier (/Users/daiki/Documents/Laravel/switch_random/node_modules/@babel/parser/lib/index.js:11485:23)\n    at Parser.parseMaybePrivateName (/Users/daiki/Documents/Laravel/switch_random/node_modules/@babel/parser/lib/index.js:10813:19)\n    at Parser.parsePropertyName (/Users/daiki/Documents/Laravel/switch_random/node_modules/@babel/parser/lib/index.js:11298:155)\n    at Parser.parsePropertyDefinition (/Users/daiki/Documents/Laravel/switch_random/node_modules/@babel/parser/lib/index.js:11184:22)\n    at Parser.parseObjectLike (/Users/daiki/Documents/Laravel/switch_random/node_modules/@babel/parser/lib/index.js:11099:25)\n    at Parser.parseExprAtom (/Users/daiki/Documents/Laravel/switch_random/node_modules/@babel/parser/lib/index.js:10659:23)\n    at Parser.parseExprSubscripts (/Users/daiki/Documents/Laravel/switch_random/node_modules/@babel/parser/lib/index.js:10318:23)\n    at Parser.parseUpdate (/Users/daiki/Documents/Laravel/switch_random/node_modules/@babel/parser/lib/index.js:10298:21)\n    at Parser.parseMaybeUnary (/Users/daiki/Documents/Laravel/switch_random/node_modules/@babel/parser/lib/index.js:10276:23)\n    at Parser.parseExprOps (/Users/daiki/Documents/Laravel/switch_random/node_modules/@babel/parser/lib/index.js:10141:23)\n    at Parser.parseMaybeConditional (/Users/daiki/Documents/Laravel/switch_random/node_modules/@babel/parser/lib/index.js:10115:23)\n    at Parser.parseMaybeAssign (/Users/daiki/Documents/Laravel/switch_random/node_modules/@babel/parser/lib/index.js:10078:21)\n    at /Users/daiki/Documents/Laravel/switch_random/node_modules/@babel/parser/lib/index.js:10045:39\n    at Parser.allowInAnd (/Users/daiki/Documents/Laravel/switch_random/node_modules/@babel/parser/lib/index.js:11711:16)\n    at Parser.parseMaybeAssignAllowIn (/Users/daiki/Documents/Laravel/switch_random/node_modules/@babel/parser/lib/index.js:10045:17)\n    at Parser.parseExportDefaultExpression (/Users/daiki/Documents/Laravel/switch_random/node_modules/@babel/parser/lib/index.js:13053:24)\n    at Parser.parseExport (/Users/daiki/Documents/Laravel/switch_random/node_modules/@babel/parser/lib/index.js:12963:31)\n    at Parser.parseStatementContent (/Users/daiki/Documents/Laravel/switch_random/node_modules/@babel/parser/lib/index.js:11952:27)\n    at Parser.parseStatement (/Users/daiki/Documents/Laravel/switch_random/node_modules/@babel/parser/lib/index.js:11846:17)\n    at Parser.parseBlockOrModuleBlockBody (/Users/daiki/Documents/Laravel/switch_random/node_modules/@babel/parser/lib/index.js:12428:25)\n    at Parser.parseBlockBody (/Users/daiki/Documents/Laravel/switch_random/node_modules/@babel/parser/lib/index.js:12419:10)\n    at Parser.parseTopLevel (/Users/daiki/Documents/Laravel/switch_random/node_modules/@babel/parser/lib/index.js:11777:10)\n    at Parser.parse (/Users/daiki/Documents/Laravel/switch_random/node_modules/@babel/parser/lib/index.js:13583:10)\n    at parse (/Users/daiki/Documents/Laravel/switch_random/node_modules/@babel/parser/lib/index.js:13636:38)\n    at parser (/Users/daiki/Documents/Laravel/switch_random/node_modules/@babel/core/lib/parser/index.js:54:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (/Users/daiki/Documents/Laravel/switch_random/node_modules/@babel/core/lib/transformation/normalize-file.js:99:38)\n    at normalizeFile.next (<anonymous>)\n    at run (/Users/daiki/Documents/Laravel/switch_random/node_modules/@babel/core/lib/transformation/index.js:31:50)\n    at run.next (<anonymous>)\n    at Function.transform (/Users/daiki/Documents/Laravel/switch_random/node_modules/@babel/core/lib/transform.js:27:41)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["gamecount"],
+  data: function data() {
+    return {
+      inputgamecount: this.gamecount[0],
+      allgamecount: this.gamecount[0],
+      gamecount_cero_A_3: this.gamecount[1],
+      gamecount_cero_7: this.gamecount[2],
+      gamecount_cero_B_12: this.gamecount[3],
+      gamecount_cero_C: this.gamecount[4],
+      gamecount_cero_16: this.gamecount[5],
+      gamecount_cero_D: this.gamecount[6],
+      gamecount_cero_Z: this.gamecount[7],
+      downloadallgamecount: this.gamecount[8],
+      downloadgamecount_cero_A_3: this.gamecount[9],
+      downloadgamecount_cero_7: this.gamecount[10],
+      downloadgamecount_cero_B_12: this.gamecount[11],
+      downloadgamecount_cero_C: this.gamecount[12],
+      downloadgamecount_cero_16: this.gamecount[13],
+      downloadgamecount_cero_D: this.gamecount[14],
+      downloadgamecount_cero_Z: this.gamecount[15],
+      packageallgamecount: this.gamecount[16],
+      packagegamecount_cero_A_3: this.gamecount[17],
+      packagegamecount_cero_7: this.gamecount[18],
+      packagegamecount_cero_B_12: this.gamecount[19],
+      packagegamecount_cero_C: this.gamecount[20],
+      packagegamecount_cero_16: this.gamecount[21],
+      packagegamecount_cero_D: this.gamecount[22],
+      packagegamecount_cero_Z: this.gamecount[23]
+    };
+  },
+  methods: {
+    cero_A_3_click: function cero_A_3_click() {
+      this.inputgamecount = this.gamecount[1];
+    }
+  } // mounted() {
+  //     console.log(this.count)
+  // }
+
+});
 
 /***/ }),
 
@@ -37555,9 +37660,8 @@ var render = function() {
     _c("input", { attrs: { type: "radio", name: "age-limit", value: "Z18+" } }),
     _vm._v("18歳以上(CERO:Z,IARC:18+)\n    \n    "),
     _c("ul", [
-      _vm._v("\n<<<<<<< HEAD\n=======\n        "),
       _c("li", [_vm._v(_vm._s(_vm.inputgamecount))]),
-      _vm._v("\n\n>>>>>>> model-fix\n        "),
+      _vm._v(" "),
       _c("li", [_vm._v(_vm._s(_vm.allgamecount))]),
       _vm._v(" "),
       _c("li", [_vm._v(_vm._s(_vm.gamecount_cero_A_3))]),
@@ -37573,7 +37677,7 @@ var render = function() {
       _c("li", [_vm._v(_vm._s(_vm.gamecount_cero_D))]),
       _vm._v(" "),
       _c("li", [_vm._v(_vm._s(_vm.gamecount_cero_Z))]),
-      _vm._v("\n<<<<<<< HEAD\n=======\n\n        "),
+      _vm._v(" "),
       _c("li", [_vm._v(_vm._s(_vm.downloadallgamecount))]),
       _vm._v(" "),
       _c("li", [_vm._v(_vm._s(_vm.downloadgamecount_cero_A_3))]),
@@ -37604,8 +37708,7 @@ var render = function() {
       _vm._v(" "),
       _c("li", [_vm._v(_vm._s(_vm.packagegamecount_cero_D))]),
       _vm._v(" "),
-      _c("li", [_vm._v(_vm._s(_vm.packagegamecount_cero_Z))]),
-      _vm._v("\n>>>>>>> model-fix\n    ")
+      _c("li", [_vm._v(_vm._s(_vm.packagegamecount_cero_Z))])
     ])
   ])
 }

@@ -30,11 +30,8 @@
     <input type="radio" name="age-limit" value="Z18+">18歳以上(CERO:Z,IARC:18+)
     
     <ul>
-<<<<<<< HEAD
-=======
         <li>{{ inputgamecount }}</li>
 
->>>>>>> model-fix
         <li>{{ allgamecount }}</li>
         <li>{{ gamecount_cero_A_3 }}</li>
         <li>{{ gamecount_cero_7 }}</li>
@@ -43,8 +40,6 @@
         <li>{{ gamecount_cero_16 }}</li>
         <li>{{ gamecount_cero_D }}</li>
         <li>{{ gamecount_cero_Z }}</li>
-<<<<<<< HEAD
-=======
 
         <li>{{ downloadallgamecount }}</li>
         <li>{{ downloadgamecount_cero_A_3 }}</li>
@@ -63,7 +58,6 @@
         <li>{{ packagegamecount_cero_16 }}</li>
         <li>{{ packagegamecount_cero_D }}</li>
         <li>{{ packagegamecount_cero_Z }}</li>
->>>>>>> model-fix
     </ul>
 </div>
 </template>
@@ -71,16 +65,10 @@
 <script>
     export default {
         props:["gamecount"],
-<<<<<<< HEAD
-        // props:["gamecount_cero_A_3"],
-        data(){
-            return {
-=======
         data(){
             return {
                 inputgamecount: this.gamecount[0],
 
->>>>>>> model-fix
                 allgamecount: this.gamecount[0],
                 gamecount_cero_A_3: this.gamecount[1],
                 gamecount_cero_7: this.gamecount[2],
@@ -88,11 +76,6 @@
                 gamecount_cero_C: this.gamecount[4],
                 gamecount_cero_16: this.gamecount[5],
                 gamecount_cero_D: this.gamecount[6],
-<<<<<<< HEAD
-                gamecount_cero_Z: this.gamecount[7]
-            }
-        },
-=======
                 gamecount_cero_Z: this.gamecount[7],
 
                 downloadallgamecount: this.gamecount[8],
@@ -119,7 +102,6 @@
                 this.inputgamecount = this.gamecount[1];
             }
         }
->>>>>>> model-fix
         // mounted() {
         //     console.log(this.count)
         // }
