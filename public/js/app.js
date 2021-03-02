@@ -1961,11 +1961,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["gamecount"],
-  // props:["gamecount_cero_A_3"],
   data: function data() {
     return {
+      inputgamecount: this.gamecount[0],
       allgamecount: this.gamecount[0],
       gamecount_cero_A_3: this.gamecount[1],
       gamecount_cero_7: this.gamecount[2],
@@ -1981,8 +1992,21 @@ __webpack_require__.r(__webpack_exports__);
       downloadgamecount_cero_C: this.gamecount[12],
       downloadgamecount_cero_16: this.gamecount[13],
       downloadgamecount_cero_D: this.gamecount[14],
-      downloadgamecount_cero_Z: this.gamecount[15]
+      downloadgamecount_cero_Z: this.gamecount[15],
+      packageallgamecount: this.gamecount[16],
+      packagegamecount_cero_A_3: this.gamecount[17],
+      packagegamecount_cero_7: this.gamecount[18],
+      packagegamecount_cero_B_12: this.gamecount[19],
+      packagegamecount_cero_C: this.gamecount[20],
+      packagegamecount_cero_16: this.gamecount[21],
+      packagegamecount_cero_D: this.gamecount[22],
+      packagegamecount_cero_Z: this.gamecount[23]
     };
+  },
+  methods: {
+    cero_A_3_click: function cero_A_3_click() {
+      this.inputgamecount = this.gamecount[1];
+    }
   } // mounted() {
   //     console.log(this.count)
   // }
@@ -37616,7 +37640,10 @@ var render = function() {
       attrs: { type: "radio", name: "age-limit", value: "ALL", checked: "" }
     }),
     _vm._v("年齢制限なし\n    "),
-    _c("input", { attrs: { type: "radio", name: "age-limit", value: "A3+" } }),
+    _c("input", {
+      attrs: { type: "radio", name: "age-limit", value: "A3+" },
+      on: { click: _vm.cero_A_3_click }
+    }),
     _vm._v("全年齢対象(CERO:A,IARC:3+)\n    "),
     _c("input", { attrs: { type: "radio", name: "age-limit", value: "7+" } }),
     _vm._v("7歳まで(IARC:7+)\n    "),
@@ -37633,6 +37660,8 @@ var render = function() {
     _c("input", { attrs: { type: "radio", name: "age-limit", value: "Z18+" } }),
     _vm._v("18歳以上(CERO:Z,IARC:18+)\n    \n    "),
     _c("ul", [
+      _c("li", [_vm._v(_vm._s(_vm.inputgamecount))]),
+      _vm._v(" "),
       _c("li", [_vm._v(_vm._s(_vm.allgamecount))]),
       _vm._v(" "),
       _c("li", [_vm._v(_vm._s(_vm.gamecount_cero_A_3))]),
@@ -37663,7 +37692,23 @@ var render = function() {
       _vm._v(" "),
       _c("li", [_vm._v(_vm._s(_vm.downloadgamecount_cero_D))]),
       _vm._v(" "),
-      _c("li", [_vm._v(_vm._s(_vm.downloadgamecount_cero_Z))])
+      _c("li", [_vm._v(_vm._s(_vm.downloadgamecount_cero_Z))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.packageallgamecount))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.packagegamecount_cero_A_3))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.packagegamecount_cero_7))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.packagegamecount_cero_B_12))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.packagegamecount_cero_C))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.packagegamecount_cero_16))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.packagegamecount_cero_D))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.packagegamecount_cero_Z))])
     ])
   ])
 }

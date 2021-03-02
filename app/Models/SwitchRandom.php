@@ -21,7 +21,7 @@ class SwitchRandom extends Model {
 
         return $data;
     }
-    
+
     // 全てのゲームのカウント
     public function AllGamecount($type=null) {
         $query = $this->db();
@@ -118,6 +118,56 @@ class SwitchRandom extends Model {
     public function DownloadGamecount_Cero_Z($type=null) {
         $query = $this->db();
         $gamecount_cero_Z = $query->where('download_Z', "<>" , NULL)->sum('download_Z');
+
+        return $gamecount_cero_Z;
+    }
+
+    // パッケージのゲームのカウント
+    public function PackageAllGamecount($type=null) {
+        $query = $this->db();
+        $allgamecount = $query->where('type1_all', "<>" , NULL)->sum('type1_all');
+
+        return $allgamecount;
+    }
+    public function PackageGamecount_Cero_A_3($type=null) {
+        $query = $this->db();
+        $gamecount_cero_A_3 = $query->where('type1_A_3', "<>" , NULL)->sum('type1_A_3');
+
+        return $gamecount_cero_A_3;
+    }
+    public function PackageGamecount_Cero_7($type=null) {
+        $query = $this->db();
+        $gamecount_cero_7 = $query->where('type1_7', "<>" , NULL)->sum('type1_7');
+
+        return $gamecount_cero_7;
+    }
+    public function PackageGamecount_Cero_B_12($type=null) {
+        $query = $this->db();
+        $gamecount_cero_B_12 = $query->where('type1_B_12', "<>" , NULL)->sum('type1_B_12');
+
+        return $gamecount_cero_B_12;
+    }
+    public function PackageGamecount_Cero_C($type=null) {
+        $query = $this->db();
+        $gamecount_cero_C = $query->where('type1_C', "<>" , NULL)->sum('type1_C');
+
+        return $gamecount_cero_C;
+    }
+    public function PackageGamecount_Cero_16($type=null) {
+        $query = $this->db();
+        $gamecount_cero_16 = $query->where('type1_16', "<>" , NULL)->sum('type1_16');
+
+        return $gamecount_cero_16;
+    }
+    public function PackageGamecount_Cero_D($type=null) {
+        $query = $this->db();
+        $gamecount_cero_D = $query->where('type1_D', "<>" , NULL)->sum('type1_D');
+
+        return $gamecount_cero_D;
+    }
+    public function PackageGamecount_Cero_Z($type=null) {
+        $query = $this->db();
+        $gamecount_cero_Z = $query->where('type1_Z', "<>" , NULL)->sum('type1_Z');
 
         return $gamecount_cero_Z;
     }
