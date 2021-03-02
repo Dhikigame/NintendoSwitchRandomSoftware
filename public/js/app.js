@@ -1945,18 +1945,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["myname"],
+  props: ["gamecount"],
+  // props:["gamecount_cero_A_3"],
   data: function data() {
     return {
-      list: [1, 2, 4]
+      allgamecount: this.gamecount[0],
+      gamecount_cero_A_3: this.gamecount[1],
+      gamecount_cero_7: this.gamecount[2],
+      gamecount_cero_B_12: this.gamecount[3],
+      gamecount_cero_C: this.gamecount[4],
+      gamecount_cero_16: this.gamecount[5],
+      gamecount_cero_D: this.gamecount[6],
+      gamecount_cero_Z: this.gamecount[7]
     };
-  },
-  // props:["test"],
-  mounted: function mounted() {
-    console.log(this.myname); // console.log("Component mounted.")
-    // axios.get('/switch_software_releasemaker_gamecount').then(response => this.switch_software_releasemaker_gamecount = response.data)
-  }
+  } // mounted() {
+  //     console.log(this.count)
+  // }
+
 });
 
 /***/ }),
@@ -37602,15 +37615,23 @@ var render = function() {
     _vm._v("17歳まで(CERO:D)\n    "),
     _c("input", { attrs: { type: "radio", name: "age-limit", value: "Z18+" } }),
     _vm._v("18歳以上(CERO:Z,IARC:18+)\n    \n    "),
-    _c(
-      "ul",
-      _vm._l(_vm.myname, function(name) {
-        return name.release_maker
-          ? _c("li", [_vm._v(_vm._s(name.release_maker))])
-          : _vm._e()
-      }),
-      0
-    )
+    _c("ul", [
+      _c("li", [_vm._v(_vm._s(_vm.allgamecount))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.gamecount_cero_A_3))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.gamecount_cero_7))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.gamecount_cero_B_12))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.gamecount_cero_C))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.gamecount_cero_16))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.gamecount_cero_D))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.gamecount_cero_Z))])
+    ])
   ])
 }
 var staticRenderFns = [
