@@ -48,6 +48,7 @@ class SwitchRandomController extends Controller
         // SwitchRandomモデルのインスタンス化
         $md = new SwitchRandom();
         $releasemaker_gamecount = json_encode($md->ReleasemakerGamecountgetData());
+<<<<<<< HEAD
         // $allgamecount = json_encode($md->AllGamecount($releasemaker_gamecount));
         // $gamecount_cero_A_3 = json_encode($md->Gamecount_Cero_A_3($releasemaker_gamecount));
         // $gamecount_cero_7 = json_encode($md->Gamecount_Cero_7($releasemaker_gamecount));
@@ -56,6 +57,9 @@ class SwitchRandomController extends Controller
         // $gamecount_cero_16 = json_encode($md->Gamecount_Cero_16($releasemaker_gamecount));
         // $gamecount_cero_D = json_encode($md->Gamecount_Cero_D($releasemaker_gamecount));
         // $gamecount_cero_Z = json_encode($md->Gamecount_Cero_Z($releasemaker_gamecount));
+=======
+
+>>>>>>> model-fix
         $gamecount[0] = $md->AllGamecount($releasemaker_gamecount);
         $gamecount[1] = $md->Gamecount_Cero_A_3($releasemaker_gamecount);
         $gamecount[2] = $md->Gamecount_Cero_7($releasemaker_gamecount);
@@ -64,6 +68,28 @@ class SwitchRandomController extends Controller
         $gamecount[5] = $md->Gamecount_Cero_16($releasemaker_gamecount);
         $gamecount[6] = $md->Gamecount_Cero_D($releasemaker_gamecount);
         $gamecount[7] = $md->Gamecount_Cero_Z($releasemaker_gamecount);
+<<<<<<< HEAD
+=======
+
+        $gamecount[8] = $md->DownloadAllGamecount($releasemaker_gamecount);
+        $gamecount[9] = $md->DownloadGamecount_Cero_A_3($releasemaker_gamecount);
+        $gamecount[10] = $md->DownloadGamecount_Cero_7($releasemaker_gamecount);
+        $gamecount[11] = $md->DownloadGamecount_Cero_B_12($releasemaker_gamecount);
+        $gamecount[12] = $md->DownloadGamecount_Cero_C($releasemaker_gamecount);
+        $gamecount[13] = $md->DownloadGamecount_Cero_16($releasemaker_gamecount);
+        $gamecount[14] = $md->DownloadGamecount_Cero_D($releasemaker_gamecount);
+        $gamecount[15] = $md->DownloadGamecount_Cero_Z($releasemaker_gamecount);
+
+        $gamecount[16] = $md->PackageAllGamecount($releasemaker_gamecount);
+        $gamecount[17] = $md->PackageGamecount_Cero_A_3($releasemaker_gamecount);
+        $gamecount[18] = $md->PackageGamecount_Cero_7($releasemaker_gamecount);
+        $gamecount[19] = $md->PackageGamecount_Cero_B_12($releasemaker_gamecount);
+        $gamecount[20] = $md->PackageGamecount_Cero_C($releasemaker_gamecount);
+        $gamecount[21] = $md->PackageGamecount_Cero_16($releasemaker_gamecount);
+        $gamecount[22] = $md->PackageGamecount_Cero_D($releasemaker_gamecount);
+        $gamecount[23] = $md->PackageGamecount_Cero_Z($releasemaker_gamecount);
+
+>>>>>>> model-fix
         $gamecount = json_encode($gamecount);
 
         // return view('index', compact('test'));
