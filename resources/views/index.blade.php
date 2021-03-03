@@ -5,6 +5,11 @@
 
 
 @section('content')
+<?php 
+// var_dump($releasemaker_gamecount[0]->release_maker);
+// $release_maker = $releasemaker_gamecount[0]->release_maker;
+// echo json_encode($releasemaker_gamecount[0]);
+?>
 
 
 <div id="app">
