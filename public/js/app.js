@@ -2004,8 +2004,230 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    all_click: function all_click() {
+      this.inputgamecount = this.gamecount[0];
+
+      if (cero_all_click == true) {
+        this.inputgamecount = this.gamecount[0];
+      }
+
+      if (cero_A_3_click == true) {
+        this.inputgamecount = this.gamecount[1];
+      }
+
+      if (cero_7_click == true) {
+        this.inputgamecount = this.gamecount[2];
+      }
+
+      if (cero_B_12_click == true) {
+        this.inputgamecount = this.gamecount[3];
+      }
+
+      if (cero_C_click == true) {
+        this.inputgamecount = this.gamecount[4];
+      }
+
+      if (cero_16_click == true) {
+        this.inputgamecount = this.gamecount[5];
+      }
+
+      if (cero_D_click == true) {
+        this.inputgamecount = this.gamecount[6];
+      }
+
+      if (cero_Z_click == true) {
+        this.inputgamecount = this.gamecount[7];
+      }
+    },
+    download_click: function download_click() {
+      this.inputgamecount = this.gamecount[8];
+
+      if (cero_all_click == true) {
+        this.inputgamecount = this.gamecount[8];
+      }
+
+      if (cero_A_3_click == true) {
+        this.inputgamecount = this.gamecount[9];
+      }
+
+      if (cero_7_click == true) {
+        this.inputgamecount = this.gamecount[10];
+      }
+
+      if (cero_B_12_click == true) {
+        this.inputgamecount = this.gamecount[11];
+      }
+
+      if (cero_C_click == true) {
+        this.inputgamecount = this.gamecount[12];
+      }
+
+      if (cero_16_click == true) {
+        this.inputgamecount = this.gamecount[13];
+      }
+
+      if (cero_D_click == true) {
+        this.inputgamecount = this.gamecount[14];
+      }
+
+      if (cero_Z_click == true) {
+        this.inputgamecount = this.gamecount[15];
+      }
+    },
+    package_click: function package_click() {
+      this.inputgamecount = this.gamecount[16];
+
+      if (cero_all_click == true) {
+        this.inputgamecount = this.gamecount[16];
+      }
+
+      if (cero_A_3_click == true) {
+        this.inputgamecount = this.gamecount[17];
+      }
+
+      if (cero_7_click == true) {
+        this.inputgamecount = this.gamecount[18];
+      }
+
+      if (cero_B_12_click == true) {
+        this.inputgamecount = this.gamecount[19];
+      }
+
+      if (cero_C_click == true) {
+        this.inputgamecount = this.gamecount[20];
+      }
+
+      if (cero_16_click == true) {
+        this.inputgamecount = this.gamecount[21];
+      }
+
+      if (cero_D_click == true) {
+        this.inputgamecount = this.gamecount[22];
+      }
+
+      if (cero_Z_click == true) {
+        this.inputgamecount = this.gamecount[23];
+      }
+    },
+    cero_all_click: function cero_all_click() {
+      this.inputgamecount = this.gamecount[0];
+
+      if (all_click == true) {
+        this.inputgamecount = this.gamecount[0];
+      }
+
+      if (download_click == true) {
+        this.inputgamecount = this.gamecount[8];
+      }
+
+      if (package_click == true) {
+        this.inputgamecount = this.gamecount[16];
+      }
+    },
     cero_A_3_click: function cero_A_3_click() {
       this.inputgamecount = this.gamecount[1];
+
+      if (all_click == true) {
+        this.inputgamecount = this.gamecount[1];
+      }
+
+      if (download_click == true) {
+        this.inputgamecount = this.gamecount[9];
+      }
+
+      if (package_click == true) {
+        this.inputgamecount = this.gamecount[17];
+      }
+    },
+    cero_7_click: function cero_7_click() {
+      this.inputgamecount = this.gamecount[2];
+
+      if (all_click == true) {
+        this.inputgamecount = this.gamecount[2];
+      }
+
+      if (download_click == true) {
+        this.inputgamecount = this.gamecount[10];
+      }
+
+      if (package_click == true) {
+        this.inputgamecount = this.gamecount[18];
+      }
+    },
+    cero_B_12_click: function cero_B_12_click() {
+      this.inputgamecount = this.gamecount[3];
+
+      if (all_click == true) {
+        this.inputgamecount = this.gamecount[3];
+      }
+
+      if (download_click == true) {
+        this.inputgamecount = this.gamecount[11];
+      }
+
+      if (package_click == true) {
+        this.inputgamecount = this.gamecount[19];
+      }
+    },
+    cero_C_click: function cero_C_click() {
+      this.inputgamecount = this.gamecount[4];
+
+      if (all_click == true) {
+        this.inputgamecount = this.gamecount[4];
+      }
+
+      if (download_click == true) {
+        this.inputgamecount = this.gamecount[12];
+      }
+
+      if (package_click == true) {
+        this.inputgamecount = this.gamecount[20];
+      }
+    },
+    cero_16_click: function cero_16_click() {
+      this.inputgamecount = this.gamecount[5];
+
+      if (all_click == true) {
+        this.inputgamecount = this.gamecount[5];
+      }
+
+      if (download_click == true) {
+        this.inputgamecount = this.gamecount[13];
+      }
+
+      if (package_click == true) {
+        this.inputgamecount = this.gamecount[21];
+      }
+    },
+    cero_D_click: function cero_D_click() {
+      this.inputgamecount = this.gamecount[6];
+
+      if (all_click == true) {
+        this.inputgamecount = this.gamecount[6];
+      }
+
+      if (download_click == true) {
+        this.inputgamecount = this.gamecount[14];
+      }
+
+      if (package_click == true) {
+        this.inputgamecount = this.gamecount[22];
+      }
+    },
+    cero_Z_click: function cero_Z_click() {
+      this.inputgamecount = this.gamecount[7];
+
+      if (all_click == true) {
+        this.inputgamecount = this.gamecount[7];
+      }
+
+      if (download_click == true) {
+        this.inputgamecount = this.gamecount[15];
+      }
+
+      if (package_click == true) {
+        this.inputgamecount = this.gamecount[23];
+      }
     }
   } // mounted() {
   //     console.log(this.count)
@@ -37623,12 +37845,19 @@ var render = function() {
     _c("h3", [_vm._v("ゲーム種別")]),
     _vm._v(" "),
     _c("input", {
-      attrs: { type: "radio", name: "type", value: "ALL", checked: "" }
+      attrs: { type: "radio", name: "type", value: "ALL", checked: "" },
+      on: { click: _vm.all_click }
     }),
     _vm._v("全て\n    "),
-    _c("input", { attrs: { type: "radio", name: "type", value: "package" } }),
+    _c("input", {
+      attrs: { type: "radio", name: "type", value: "package" },
+      on: { click: _vm.package_click }
+    }),
     _vm._v("パッケージ販売\n    "),
-    _c("input", { attrs: { type: "radio", name: "type", value: "download" } }),
+    _c("input", {
+      attrs: { type: "radio", name: "type", value: "download" },
+      on: { click: _vm.download_click }
+    }),
     _vm._v("ダウンロード専売\n\n    "),
     _c("h3", [_vm._v("販売メーカー(販売本数が多いメーカーのみ)")]),
     _vm._v(" "),
@@ -37637,7 +37866,8 @@ var render = function() {
     _c("h3", [_vm._v("年齢制限")]),
     _vm._v(" "),
     _c("input", {
-      attrs: { type: "radio", name: "age-limit", value: "ALL", checked: "" }
+      attrs: { type: "radio", name: "age-limit", value: "ALL", checked: "" },
+      on: { click: _vm.cero_all_click }
     }),
     _vm._v("年齢制限なし\n    "),
     _c("input", {
@@ -37645,22 +37875,42 @@ var render = function() {
       on: { click: _vm.cero_A_3_click }
     }),
     _vm._v("全年齢対象(CERO:A,IARC:3+)\n    "),
-    _c("input", { attrs: { type: "radio", name: "age-limit", value: "7+" } }),
+    _c("input", {
+      attrs: { type: "radio", name: "age-limit", value: "7+" },
+      on: { click: _vm.cero_7_click }
+    }),
     _vm._v("7歳まで(IARC:7+)\n    "),
-    _c("input", { attrs: { type: "radio", name: "age-limit", value: "B12+" } }),
+    _c("input", {
+      attrs: { type: "radio", name: "age-limit", value: "B12+" },
+      on: { click: _vm.cero_B_12_click }
+    }),
     _vm._v("12歳まで(CERO:B,IARC:12+)"),
     _c("br"),
     _vm._v(" "),
-    _c("input", { attrs: { type: "radio", name: "age-limit", value: "C+" } }),
+    _c("input", {
+      attrs: { type: "radio", name: "age-limit", value: "C+" },
+      on: { click: _vm.cero_C_click }
+    }),
     _vm._v("15歳まで(CERO:C)\n    "),
-    _c("input", { attrs: { type: "radio", name: "age-limit", value: "16+" } }),
+    _c("input", {
+      attrs: { type: "radio", name: "age-limit", value: "16+" },
+      on: { click: _vm.cero_16_click }
+    }),
     _vm._v("16歳まで(IARC:16+)\n    "),
-    _c("input", { attrs: { type: "radio", name: "age-limit", value: "D" } }),
+    _c("input", {
+      attrs: { type: "radio", name: "age-limit", value: "D" },
+      on: { click: _vm.cero_D_click }
+    }),
     _vm._v("17歳まで(CERO:D)\n    "),
-    _c("input", { attrs: { type: "radio", name: "age-limit", value: "Z18+" } }),
+    _c("input", {
+      attrs: { type: "radio", name: "age-limit", value: "Z18+" },
+      on: { click: _vm.cero_Z_click }
+    }),
     _vm._v("18歳以上(CERO:Z,IARC:18+)\n    \n    "),
     _c("ul", [
       _c("li", [_vm._v(_vm._s(_vm.inputgamecount))]),
+      _vm._v(" "),
+      _c("li"),
       _vm._v(" "),
       _c("li", [_vm._v(_vm._s(_vm.allgamecount))]),
       _vm._v(" "),
@@ -37678,6 +37928,8 @@ var render = function() {
       _vm._v(" "),
       _c("li", [_vm._v(_vm._s(_vm.gamecount_cero_Z))]),
       _vm._v(" "),
+      _c("li"),
+      _vm._v(" "),
       _c("li", [_vm._v(_vm._s(_vm.downloadallgamecount))]),
       _vm._v(" "),
       _c("li", [_vm._v(_vm._s(_vm.downloadgamecount_cero_A_3))]),
@@ -37693,6 +37945,8 @@ var render = function() {
       _c("li", [_vm._v(_vm._s(_vm.downloadgamecount_cero_D))]),
       _vm._v(" "),
       _c("li", [_vm._v(_vm._s(_vm.downloadgamecount_cero_Z))]),
+      _vm._v(" "),
+      _c("li"),
       _vm._v(" "),
       _c("li", [_vm._v(_vm._s(_vm.packageallgamecount))]),
       _vm._v(" "),
