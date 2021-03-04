@@ -31,33 +31,6 @@
     
     <ul>
         <li>{{ inputgamecount }}</li>
-        <li></li>
-        <li>{{ allgamecount }}</li>
-        <li>{{ gamecount_cero_A_3 }}</li>
-        <li>{{ gamecount_cero_7 }}</li>
-        <li>{{ gamecount_cero_B_12 }}</li>
-        <li>{{ gamecount_cero_C }}</li>
-        <li>{{ gamecount_cero_16 }}</li>
-        <li>{{ gamecount_cero_D }}</li>
-        <li>{{ gamecount_cero_Z }}</li>
-        <li></li>
-        <li>{{ downloadallgamecount }}</li>
-        <li>{{ downloadgamecount_cero_A_3 }}</li>
-        <li>{{ downloadgamecount_cero_7 }}</li>
-        <li>{{ downloadgamecount_cero_B_12 }}</li>
-        <li>{{ downloadgamecount_cero_C }}</li>
-        <li>{{ downloadgamecount_cero_16 }}</li>
-        <li>{{ downloadgamecount_cero_D }}</li>
-        <li>{{ downloadgamecount_cero_Z }}</li>
-        <li></li>
-        <li>{{ packageallgamecount }}</li>
-        <li>{{ packagegamecount_cero_A_3 }}</li>
-        <li>{{ packagegamecount_cero_7 }}</li>
-        <li>{{ packagegamecount_cero_B_12 }}</li>
-        <li>{{ packagegamecount_cero_C }}</li>
-        <li>{{ packagegamecount_cero_16 }}</li>
-        <li>{{ packagegamecount_cero_D }}</li>
-        <li>{{ packagegamecount_cero_Z }}</li>
     </ul>
 </div>
 </template>
@@ -69,210 +42,269 @@
             return {
                 inputgamecount: this.gamecount[0],
 
-                allgamecount: this.gamecount[0],
-                gamecount_cero_A_3: this.gamecount[1],
-                gamecount_cero_7: this.gamecount[2],
-                gamecount_cero_B_12: this.gamecount[3],
-                gamecount_cero_C: this.gamecount[4],
-                gamecount_cero_16: this.gamecount[5],
-                gamecount_cero_D: this.gamecount[6],
-                gamecount_cero_Z: this.gamecount[7],
+                allgame: false,
+                packagegame: false,
+                downloadgame: false,
 
-                downloadallgamecount: this.gamecount[8],
-                downloadgamecount_cero_A_3: this.gamecount[9],
-                downloadgamecount_cero_7: this.gamecount[10],
-                downloadgamecount_cero_B_12: this.gamecount[11],
-                downloadgamecount_cero_C: this.gamecount[12],
-                downloadgamecount_cero_16: this.gamecount[13],
-                downloadgamecount_cero_D: this.gamecount[14],
-                downloadgamecount_cero_Z: this.gamecount[15],
-
-                packageallgamecount: this.gamecount[16],
-                packagegamecount_cero_A_3: this.gamecount[17],
-                packagegamecount_cero_7: this.gamecount[18],
-                packagegamecount_cero_B_12: this.gamecount[19],
-                packagegamecount_cero_C: this.gamecount[20],
-                packagegamecount_cero_16: this.gamecount[21],
-                packagegamecount_cero_D: this.gamecount[22],
-                packagegamecount_cero_Z: this.gamecount[23]
+                cero_all: false,
+                cero_A_3: false,
+                cero_7: false,
+                cero_B_12: false,
+                cero_C: false,
+                cero_16: false,
+                cero_D: false,
+                cero_Z: false
             }
         },
         methods: {
             all_click: function() {
+                this.allgame = true;
+                this.packagegame = false;
+                this.downloadgame = false;
                 this.inputgamecount = this.gamecount[0];
-                if(cero_all_click == true) {
+                if(this.cero_all == true) {
                     this.inputgamecount = this.gamecount[0];
                 }
-                if(cero_A_3_click == true) {
+                if(this.cero_A_3 == true) {
                     this.inputgamecount = this.gamecount[1];
                 }
-                if(cero_7_click == true) {
+                if(this.cero_7 == true) {
                     this.inputgamecount = this.gamecount[2];
                 }
-                if(cero_B_12_click == true) {
+                if(this.cero_B_12 == true) {
                     this.inputgamecount = this.gamecount[3];
                 }    
-                if(cero_C_click == true) {
+                if(this.cero_C == true) {
                     this.inputgamecount = this.gamecount[4];
                 }
-                if(cero_16_click == true) {
+                if(this.cero_16 == true) {
                     this.inputgamecount = this.gamecount[5];
                 }
-                if(cero_D_click == true) {
+                if(this.cero_D == true) {
                     this.inputgamecount = this.gamecount[6];
                 }
-                if(cero_Z_click == true) {
+                if(this.cero_Z == true) {
                     this.inputgamecount = this.gamecount[7];
                 }
             },
             download_click: function() {
+                this.allgame = false;
+                this.packagegame = false;
+                this.downloadgame = true;
                 this.inputgamecount = this.gamecount[8];
-                if(cero_all_click == true) {
+                if(this.cero_all == true) {
                     this.inputgamecount = this.gamecount[8];
                 }
-                if(cero_A_3_click == true) {
+                if(this.cero_A_3 == true) {
                     this.inputgamecount = this.gamecount[9];
                 }
-                if(cero_7_click == true) {
+                if(this.cero_7 == true) {
                     this.inputgamecount = this.gamecount[10];
                 }
-                if(cero_B_12_click == true) {
+                if(this.cero_B_12 == true) {
                     this.inputgamecount = this.gamecount[11];
                 }    
-                if(cero_C_click == true) {
+                if(this.cero_C == true) {
                     this.inputgamecount = this.gamecount[12];
                 }
-                if(cero_16_click == true) {
+                if(this.cero_16 == true) {
                     this.inputgamecount = this.gamecount[13];
                 }
-                if(cero_D_click == true) {
+                if(this.cero_D == true) {
                     this.inputgamecount = this.gamecount[14];
                 }
-                if(cero_Z_click == true) {
+                if(this.cero_Z == true) {
                     this.inputgamecount = this.gamecount[15];
                 }
             },
             package_click: function() {
+                this.allgame = false;
+                this.packagegame = true;
+                this.downloadgame = false;
                 this.inputgamecount = this.gamecount[16];
-                if(cero_all_click == true) {
+                if(this.cero_all == true) {
                     this.inputgamecount = this.gamecount[16];
                 }
-                if(cero_A_3_click == true) {
+                if(this.cero_A_3 == true) {
                     this.inputgamecount = this.gamecount[17];
                 }
-                if(cero_7_click == true) {
+                if(this.cero_7 == true) {
                     this.inputgamecount = this.gamecount[18];
                 }
-                if(cero_B_12_click == true) {
+                if(this.cero_B_12 == true) {
                     this.inputgamecount = this.gamecount[19];
                 }    
-                if(cero_C_click == true) {
+                if(this.cero_C == true) {
                     this.inputgamecount = this.gamecount[20];
                 }
-                if(cero_16_click == true) {
+                if(this.cero_16 == true) {
                     this.inputgamecount = this.gamecount[21];
                 }
-                if(cero_D_click == true) {
+                if(this.cero_D == true) {
                     this.inputgamecount = this.gamecount[22];
                 }
-                if(cero_Z_click == true) {
+                if(this.cero_Z == true) {
                     this.inputgamecount = this.gamecount[23];
                 }
             },
 
             cero_all_click: function() {
+                this.cero_all = true;
+                this.cero_A_3 = false;
+                this.cero_7 = false;
+                this.cero_B_12 = false;
+                this.cero_C = false;
+                this.cero_16 = false;
+                this.cero_D = false;
+                this.cero_Z = false;
                 this.inputgamecount = this.gamecount[0];
-                if(all_click == true) {
+                if(this.allgame == true) {
                     this.inputgamecount = this.gamecount[0];
                 }
-                if(download_click == true) {
+                if(this.downloadgame == true) {
                     this.inputgamecount = this.gamecount[8];
                 }
-                if(package_click == true) {
+                if(this.packagegame == true) {
                     this.inputgamecount = this.gamecount[16];
                 }
             },
             cero_A_3_click: function() {
+                this.cero_all = false;
+                this.cero_A_3 = true;
+                this.cero_7 = false;
+                this.cero_B_12 = false;
+                this.cero_C = false;
+                this.cero_16 = false;
+                this.cero_D = false;
+                this.cero_Z = false;
                 this.inputgamecount = this.gamecount[1];
-                if(all_click == true) {
+                if(this.allgame == true) {
                     this.inputgamecount = this.gamecount[1];
                 }
-                if(download_click == true) {
+                if(this.downloadgame == true) {
                     this.inputgamecount = this.gamecount[9];
                 }
-                if(package_click == true) {
+                if(this.packagegame == true) {
                     this.inputgamecount = this.gamecount[17];
                 }
             },
             cero_7_click: function() {
+                this.cero_all = false;
+                this.cero_A_3 = false;
+                this.cero_7 = true;
+                this.cero_B_12 = false;
+                this.cero_C = false;
+                this.cero_16 = false;
+                this.cero_D = false;
+                this.cero_Z = false;
                 this.inputgamecount = this.gamecount[2];
-                if(all_click == true) {
+                if(this.allgame == true) {
                     this.inputgamecount = this.gamecount[2];
                 }
-                if(download_click == true) {
+                if(this.downloadgame == true) {
                     this.inputgamecount = this.gamecount[10];
                 }
-                if(package_click == true) {
+                if(this.packagegame == true) {
                     this.inputgamecount = this.gamecount[18];
                 }
             },
             cero_B_12_click: function() {
+                this.cero_all = false;
+                this.cero_A_3 = false;
+                this.cero_7 = false;
+                this.cero_B_12 = true;
+                this.cero_C = false;
+                this.cero_16 = false;
+                this.cero_D = false;
+                this.cero_Z = false;
                 this.inputgamecount = this.gamecount[3];
-                if(all_click == true) {
+                if(this.allgame == true) {
                     this.inputgamecount = this.gamecount[3];
                 }
-                if(download_click == true) {
+                if(this.downloadgame == true) {
                     this.inputgamecount = this.gamecount[11];
                 }
-                if(package_click == true) {
+                if(this.packagegame == true) {
                     this.inputgamecount = this.gamecount[19];
                 }
             },
             cero_C_click: function() {
+                this.cero_all = false;
+                this.cero_A_3 = false;
+                this.cero_7 = false;
+                this.cero_B_12 = false;
+                this.cero_C = true;
+                this.cero_16 = false;
+                this.cero_D = false;
+                this.cero_Z = false;
                 this.inputgamecount = this.gamecount[4];
-                if(all_click == true) {
+                if(this.allgame == true) {
                     this.inputgamecount = this.gamecount[4];
                 }
-                if(download_click == true) {
+                if(this.downloadgame == true) {
                     this.inputgamecount = this.gamecount[12];
                 }
-                if(package_click == true) {
+                if(this.packagegame == true) {
                     this.inputgamecount = this.gamecount[20];
                 }
             },
             cero_16_click: function() {
+                this.cero_all = false;
+                this.cero_A_3 = false;
+                this.cero_7 = false;
+                this.cero_B_12 = false;
+                this.cero_C = false;
+                this.cero_16 = true;
+                this.cero_D = false;
+                this.cero_Z = false;
                 this.inputgamecount = this.gamecount[5];
-                if(all_click == true) {
+                if(this.allgame == true) {
                     this.inputgamecount = this.gamecount[5];
                 }
-                if(download_click == true) {
+                if(this.downloadgame == true) {
                     this.inputgamecount = this.gamecount[13];
                 }
-                if(package_click == true) {
+                if(this.packagegame == true) {
                     this.inputgamecount = this.gamecount[21];
                 }
             },
             cero_D_click: function() {
+                this.cero_all = false;
+                this.cero_A_3 = false;
+                this.cero_7 = false;
+                this.cero_B_12 = false;
+                this.cero_C = false;
+                this.cero_16 = false;
+                this.cero_D = true;
+                this.cero_Z = false;
                 this.inputgamecount = this.gamecount[6];
-                if(all_click == true) {
+                if(this.allgame == true) {
                     this.inputgamecount = this.gamecount[6];
                 }
-                if(download_click == true) {
+                if(this.downloadgame == true) {
                     this.inputgamecount = this.gamecount[14];
                 }
-                if(package_click == true) {
+                if(this.packagegame == true) {
                     this.inputgamecount = this.gamecount[22];
                 }
             },
             cero_Z_click: function() {
+                this.cero_all = false;
+                this.cero_A_3 = false;
+                this.cero_7 = false;
+                this.cero_B_12 = false;
+                this.cero_C = false;
+                this.cero_16 = false;
+                this.cero_D = false;
+                this.cero_Z = true;
                 this.inputgamecount = this.gamecount[7];
-                if(all_click == true) {
+                if(this.allgame == true) {
                     this.inputgamecount = this.gamecount[7];
                 }
-                if(download_click == true) {
+                if(this.downloadgame == true) {
                     this.inputgamecount = this.gamecount[15];
                 }
-                if(package_click == true) {
+                if(this.packagegame == true) {
                     this.inputgamecount = this.gamecount[23];
                 }
             }
