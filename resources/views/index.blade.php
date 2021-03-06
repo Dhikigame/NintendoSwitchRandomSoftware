@@ -6,7 +6,9 @@
 
 @section('content')
 
-
+<?php
+echo "sub";
+?>
 <div id="app">
     <example-component 
     v-bind:gamecount="{{ $gamecount }}"
