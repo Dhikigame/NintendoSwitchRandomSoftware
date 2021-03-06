@@ -31,45 +31,45 @@ class SwitchRandom extends Model {
     }
     public function Gamecount_Cero_A_3($type=null) {
         $query = $this->db();
-        $gamecount_cero_A_3 = $query->where('cero_A_3', "<>" , NULL)->sum('cero_A_3');
+        $gamecount = $query->where('cero_A_3', "<>" , NULL)->sum('cero_A_3');
 
-        return $gamecount_cero_A_3;
+        return $gamecount;
     }
     public function Gamecount_Cero_7($type=null) {
         $query = $this->db();
-        $gamecount_cero_7 = $query->where('cero_7', "<>" , NULL)->sum('cero_7');
+        $gamecount = $query->where('cero_7', "<>" , NULL)->sum('cero_7');
 
-        return $gamecount_cero_7;
+        return $gamecount;
     }
     public function Gamecount_Cero_B_12($type=null) {
         $query = $this->db();
-        $gamecount_cero_B_12 = $query->where('cero_B_12', "<>" , NULL)->sum('cero_B_12');
+        $gamecount = $query->where('cero_B_12', "<>" , NULL)->sum('cero_B_12');
 
-        return $gamecount_cero_B_12;
+        return $gamecount;
     }
     public function Gamecount_Cero_C($type=null) {
         $query = $this->db();
-        $gamecount_cero_C = $query->where('cero_C', "<>" , NULL)->sum('cero_C');
+        $gamecount = $query->where('cero_C', "<>" , NULL)->sum('cero_C');
 
-        return $gamecount_cero_C;
+        return $gamecount;
     }
     public function Gamecount_Cero_16($type=null) {
         $query = $this->db();
-        $gamecount_cero_16 = $query->where('cero_16', "<>" , NULL)->sum('cero_16');
+        $gamecount = $query->where('cero_16', "<>" , NULL)->sum('cero_16');
 
-        return $gamecount_cero_16;
+        return $gamecount;
     }
     public function Gamecount_Cero_D($type=null) {
         $query = $this->db();
-        $gamecount_cero_D = $query->where('cero_D', "<>" , NULL)->sum('cero_D');
+        $gamecount = $query->where('cero_D', "<>" , NULL)->sum('cero_D');
 
-        return $gamecount_cero_D;
+        return $gamecount;
     }
     public function Gamecount_Cero_Z($type=null) {
         $query = $this->db();
-        $gamecount_cero_Z = $query->where('cero_Z', "<>" , NULL)->sum('cero_Z');
+        $gamecount = $query->where('cero_Z', "<>" , NULL)->sum('cero_Z');
 
-        return $gamecount_cero_Z;
+        return $gamecount;
     }
 
     // ダウンロードのゲームのカウント
@@ -81,45 +81,45 @@ class SwitchRandom extends Model {
     }
     public function DownloadGamecount_Cero_A_3($type=null) {
         $query = $this->db();
-        $gamecount_cero_A_3 = $query->where('download_A_3', "<>" , NULL)->sum('download_A_3');
+        $gamecount = $query->where('download_A_3', "<>" , NULL)->sum('download_A_3');
 
-        return $gamecount_cero_A_3;
+        return $gamecount;
     }
     public function DownloadGamecount_Cero_7($type=null) {
         $query = $this->db();
-        $gamecount_cero_7 = $query->where('download_7', "<>" , NULL)->sum('download_7');
+        $gamecount = $query->where('download_7', "<>" , NULL)->sum('download_7');
 
-        return $gamecount_cero_7;
+        return $gamecount;
     }
     public function DownloadGamecount_Cero_B_12($type=null) {
         $query = $this->db();
-        $gamecount_cero_B_12 = $query->where('download_B_12', "<>" , NULL)->sum('download_B_12');
+        $gamecount = $query->where('download_B_12', "<>" , NULL)->sum('download_B_12');
 
-        return $gamecount_cero_B_12;
+        return $gamecount;
     }
     public function DownloadGamecount_Cero_C($type=null) {
         $query = $this->db();
-        $gamecount_cero_C = $query->where('download_C', "<>" , NULL)->sum('download_C');
+        $gamecount = $query->where('download_C', "<>" , NULL)->sum('download_C');
 
-        return $gamecount_cero_C;
+        return $gamecount;
     }
     public function DownloadGamecount_Cero_16($type=null) {
         $query = $this->db();
-        $gamecount_cero_16 = $query->where('download_16', "<>" , NULL)->sum('download_16');
+        $gamecount = $query->where('download_16', "<>" , NULL)->sum('download_16');
 
-        return $gamecount_cero_16;
+        return $gamecount;
     }
     public function DownloadGamecount_Cero_D($type=null) {
         $query = $this->db();
-        $gamecount_cero_D = $query->where('download_D', "<>" , NULL)->sum('download_D');
+        $gamecount = $query->where('download_D', "<>" , NULL)->sum('download_D');
 
-        return $gamecount_cero_D;
+        return $gamecount;
     }
     public function DownloadGamecount_Cero_Z($type=null) {
         $query = $this->db();
-        $gamecount_cero_Z = $query->where('download_Z', "<>" , NULL)->sum('download_Z');
+        $gamecount = $query->where('download_Z', "<>" , NULL)->sum('download_Z');
 
-        return $gamecount_cero_Z;
+        return $gamecount;
     }
 
     // パッケージのゲームのカウント
