@@ -1927,18 +1927,90 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["myname"],
+  props: ["gamecount"],
   data: function data() {
     return {
-      list: [1, 2, 4]
+      inputgamecount: this.gamecount[0],
+      allgamecount: this.gamecount[0],
+      gamecount_cero_A_3: this.gamecount[1],
+      gamecount_cero_7: this.gamecount[2],
+      gamecount_cero_B_12: this.gamecount[3],
+      gamecount_cero_C: this.gamecount[4],
+      gamecount_cero_16: this.gamecount[5],
+      gamecount_cero_D: this.gamecount[6],
+      gamecount_cero_Z: this.gamecount[7],
+      downloadallgamecount: this.gamecount[8],
+      downloadgamecount_cero_A_3: this.gamecount[9],
+      downloadgamecount_cero_7: this.gamecount[10],
+      downloadgamecount_cero_B_12: this.gamecount[11],
+      downloadgamecount_cero_C: this.gamecount[12],
+      downloadgamecount_cero_16: this.gamecount[13],
+      downloadgamecount_cero_D: this.gamecount[14],
+      downloadgamecount_cero_Z: this.gamecount[15],
+      packageallgamecount: this.gamecount[16],
+      packagegamecount_cero_A_3: this.gamecount[17],
+      packagegamecount_cero_7: this.gamecount[18],
+      packagegamecount_cero_B_12: this.gamecount[19],
+      packagegamecount_cero_C: this.gamecount[20],
+      packagegamecount_cero_16: this.gamecount[21],
+      packagegamecount_cero_D: this.gamecount[22],
+      packagegamecount_cero_Z: this.gamecount[23]
     };
   },
-  // props:["test"],
-  mounted: function mounted() {
-    console.log(this.myname); // console.log("Component mounted.")
-    // axios.get('/switch_software_releasemaker_gamecount').then(response => this.switch_software_releasemaker_gamecount = response.data)
-  }
+  methods: {
+    cero_A_3_click: function cero_A_3_click() {
+      this.inputgamecount = this.gamecount[1];
+    }
+  } // mounted() {
+  //     console.log(this.count)
+  // }
+
 });
 
 /***/ }),
@@ -37547,29 +37619,127 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-md-8" }, [
-        _c("div", { staticClass: "card" }, [
-          _c("div", { staticClass: "card-header" }, [
-            _vm._v("Example Component")
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
-            _c(
-              "ul",
-              _vm._l(_vm.myname, function(name) {
-                return _c("li", [_vm._v(_vm._s(name))])
-              }),
-              0
-            )
-          ])
-        ])
-      ])
+  return _c("div", [
+    _c("h3", [_vm._v("ゲーム種別")]),
+    _vm._v(" "),
+    _c("input", {
+      attrs: { type: "radio", name: "type", value: "ALL", checked: "" }
+    }),
+    _vm._v("全て\n    "),
+    _c("input", { attrs: { type: "radio", name: "type", value: "package" } }),
+    _vm._v("パッケージ販売\n    "),
+    _c("input", { attrs: { type: "radio", name: "type", value: "download" } }),
+    _vm._v("ダウンロード専売\n\n    "),
+    _c("h3", [_vm._v("販売メーカー(販売本数が多いメーカーのみ)")]),
+    _vm._v(" "),
+    _vm._m(0),
+    _vm._v(" "),
+    _c("h3", [_vm._v("年齢制限")]),
+    _vm._v(" "),
+    _c("input", {
+      attrs: { type: "radio", name: "age-limit", value: "ALL", checked: "" }
+    }),
+    _vm._v("年齢制限なし\n    "),
+    _c("input", {
+      attrs: { type: "radio", name: "age-limit", value: "A3+" },
+      on: { click: _vm.cero_A_3_click }
+    }),
+    _vm._v("全年齢対象(CERO:A,IARC:3+)\n    "),
+    _c("input", { attrs: { type: "radio", name: "age-limit", value: "7+" } }),
+    _vm._v("7歳まで(IARC:7+)\n    "),
+    _c("input", { attrs: { type: "radio", name: "age-limit", value: "B12+" } }),
+    _vm._v("12歳まで(CERO:B,IARC:12+)"),
+    _c("br"),
+    _vm._v(" "),
+    _c("input", { attrs: { type: "radio", name: "age-limit", value: "C+" } }),
+    _vm._v("15歳まで(CERO:C)\n    "),
+    _c("input", { attrs: { type: "radio", name: "age-limit", value: "16+" } }),
+    _vm._v("16歳まで(IARC:16+)\n    "),
+    _c("input", { attrs: { type: "radio", name: "age-limit", value: "D" } }),
+    _vm._v("17歳まで(CERO:D)\n    "),
+    _c("input", { attrs: { type: "radio", name: "age-limit", value: "Z18+" } }),
+    _vm._v("18歳以上(CERO:Z,IARC:18+)\n    \n    "),
+    _c("ul", [
+      _c("li", [_vm._v(_vm._s(_vm.inputgamecount))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.allgamecount))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.gamecount_cero_A_3))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.gamecount_cero_7))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.gamecount_cero_B_12))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.gamecount_cero_C))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.gamecount_cero_16))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.gamecount_cero_D))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.gamecount_cero_Z))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.downloadallgamecount))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.downloadgamecount_cero_A_3))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.downloadgamecount_cero_7))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.downloadgamecount_cero_B_12))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.downloadgamecount_cero_C))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.downloadgamecount_cero_16))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.downloadgamecount_cero_D))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.downloadgamecount_cero_Z))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.packageallgamecount))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.packagegamecount_cero_A_3))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.packagegamecount_cero_7))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.packagegamecount_cero_B_12))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.packagegamecount_cero_C))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.packagegamecount_cero_16))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.packagegamecount_cero_D))]),
+      _vm._v(" "),
+      _c("li", [_vm._v(_vm._s(_vm.packagegamecount_cero_Z))])
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("select", { attrs: { name: "publisher" } }, [
+      _c("option", { attrs: { value: "" } }, [_vm._v("1")]),
+      _vm._v(" "),
+      _c("option", { attrs: { value: "" } }, [_vm._v("1")]),
+      _vm._v(" "),
+      _c("option", { attrs: { value: "" } }, [_vm._v("1")]),
+      _vm._v(" "),
+      _c("option", { attrs: { value: "" } }, [_vm._v("1")]),
+      _vm._v(" "),
+      _c("option", { attrs: { value: "" } }, [_vm._v("1")]),
+      _vm._v(" "),
+      _c("option", { attrs: { value: "" } }, [_vm._v("1")]),
+      _vm._v(" "),
+      _c("option", { attrs: { value: "" } }, [_vm._v("1")]),
+      _vm._v(" "),
+      _c("option", { attrs: { value: "" } }, [_vm._v("1")]),
+      _vm._v(" "),
+      _c("option", { attrs: { value: "" } }, [_vm._v("1")]),
+      _vm._v(" "),
+      _c("option", { attrs: { value: "" } }, [_vm._v("1")])
+    ])
+  }
+]
 render._withStripped = true
 
 
