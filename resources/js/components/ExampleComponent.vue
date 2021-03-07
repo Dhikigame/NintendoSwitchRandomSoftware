@@ -15,28 +15,9 @@
     <input type="radio" name="age-limit" value="D" v-on:click="cero_D_click">17歳まで(CERO:D)
     <input type="radio" name="age-limit" value="Z18+" v-on:click="cero_Z_click">18歳以上(CERO:Z,IARC:18+)
 
-    <h3>販売メーカー(販売本数が多いメーカーのみ)</h3>
+    <h3>販売メーカー(販売本数が多いメーカー20社のみ)</h3>
     <select name="publisher">
-        <option v-bind:value="release_maker[0]">{{ release_maker[0] }}</option>
-        <option v-bind:value="release_maker[1]">{{ release_maker[1] }}</option>
-        <option v-bind:value="release_maker[2]">{{ release_maker[2] }}</option>
-        <option v-bind:value="release_maker[3]">{{ release_maker[3] }}</option>
-        <option v-bind:value="release_maker[4]">{{ release_maker[4] }}</option>
-        <option v-bind:value="release_maker[5]">{{ release_maker[5] }}</option>
-        <option v-bind:value="release_maker[6]">{{ release_maker[6] }}</option>
-        <option v-bind:value="release_maker[7]">{{ release_maker[7] }}</option>
-        <option v-bind:value="release_maker[8]">{{ release_maker[8] }}</option>
-        <option v-bind:value="release_maker[9]">{{ release_maker[9] }}</option>
-        <option v-bind:value="release_maker[10]">{{ release_maker[10] }}</option>
-        <option v-bind:value="release_maker[11]">{{ release_maker[11] }}</option>
-        <option v-bind:value="release_maker[12]">{{ release_maker[12] }}</option>
-        <option v-bind:value="release_maker[13]">{{ release_maker[13] }}</option>
-        <option v-bind:value="release_maker[14]">{{ release_maker[14] }}</option>
-        <option v-bind:value="release_maker[15]">{{ release_maker[15] }}</option>
-        <option v-bind:value="release_maker[16]">{{ release_maker[16] }}</option>
-        <option v-bind:value="release_maker[17]">{{ release_maker[17] }}</option>
-        <option v-bind:value="release_maker[18]">{{ release_maker[18] }}</option>
-        <option v-bind:value="release_maker[19]">{{ release_maker[19] }}</option>
+        <option v-on:click="ds(rank)" v-for="rank in 20" v-bind:name="release_maker[rank - 1]" v-bind:value="release_maker[rank - 1]">{{ release_maker[rank - 1] }}</option>
     </select>
     
     <ul>
@@ -236,6 +217,12 @@
                         this.inputgamecount = this.gamecount[i*8+7];
                     }
                 }
+            },
+
+
+            ds: function(rank) {
+                console.log("ds OK!");
+                // this.inputgamecount = this.gamecount[44];
             }
 
         }

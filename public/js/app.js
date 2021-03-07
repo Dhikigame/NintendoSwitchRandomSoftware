@@ -1936,25 +1936,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["gamecount"],
   data: function data() {
@@ -2152,6 +2133,9 @@ __webpack_require__.r(__webpack_exports__);
           this.inputgamecount = this.gamecount[_i11 * 8 + 7];
         }
       }
+    },
+    ds: function ds(rank) {
+      console.log("ds OK!"); // this.inputgamecount = this.gamecount[44];
     }
   }
 });
@@ -37824,89 +37808,28 @@ var render = function() {
       on: { click: _vm.cero_Z_click }
     }),
     _vm._v("18歳以上(CERO:Z,IARC:18+)\n\n    "),
-    _c("h3", [_vm._v("販売メーカー(販売本数が多いメーカーのみ)")]),
+    _c("h3", [_vm._v("販売メーカー(販売本数が多いメーカー20社のみ)")]),
     _vm._v(" "),
-    _c("select", { attrs: { name: "publisher" } }, [
-      _c("option", { domProps: { value: _vm.release_maker[0] } }, [
-        _vm._v(_vm._s(_vm.release_maker[0]))
-      ]),
-      _vm._v(" "),
-      _c("option", { domProps: { value: _vm.release_maker[1] } }, [
-        _vm._v(_vm._s(_vm.release_maker[1]))
-      ]),
-      _vm._v(" "),
-      _c("option", { domProps: { value: _vm.release_maker[2] } }, [
-        _vm._v(_vm._s(_vm.release_maker[2]))
-      ]),
-      _vm._v(" "),
-      _c("option", { domProps: { value: _vm.release_maker[3] } }, [
-        _vm._v(_vm._s(_vm.release_maker[3]))
-      ]),
-      _vm._v(" "),
-      _c("option", { domProps: { value: _vm.release_maker[4] } }, [
-        _vm._v(_vm._s(_vm.release_maker[4]))
-      ]),
-      _vm._v(" "),
-      _c("option", { domProps: { value: _vm.release_maker[5] } }, [
-        _vm._v(_vm._s(_vm.release_maker[5]))
-      ]),
-      _vm._v(" "),
-      _c("option", { domProps: { value: _vm.release_maker[6] } }, [
-        _vm._v(_vm._s(_vm.release_maker[6]))
-      ]),
-      _vm._v(" "),
-      _c("option", { domProps: { value: _vm.release_maker[7] } }, [
-        _vm._v(_vm._s(_vm.release_maker[7]))
-      ]),
-      _vm._v(" "),
-      _c("option", { domProps: { value: _vm.release_maker[8] } }, [
-        _vm._v(_vm._s(_vm.release_maker[8]))
-      ]),
-      _vm._v(" "),
-      _c("option", { domProps: { value: _vm.release_maker[9] } }, [
-        _vm._v(_vm._s(_vm.release_maker[9]))
-      ]),
-      _vm._v(" "),
-      _c("option", { domProps: { value: _vm.release_maker[10] } }, [
-        _vm._v(_vm._s(_vm.release_maker[10]))
-      ]),
-      _vm._v(" "),
-      _c("option", { domProps: { value: _vm.release_maker[11] } }, [
-        _vm._v(_vm._s(_vm.release_maker[11]))
-      ]),
-      _vm._v(" "),
-      _c("option", { domProps: { value: _vm.release_maker[12] } }, [
-        _vm._v(_vm._s(_vm.release_maker[12]))
-      ]),
-      _vm._v(" "),
-      _c("option", { domProps: { value: _vm.release_maker[13] } }, [
-        _vm._v(_vm._s(_vm.release_maker[13]))
-      ]),
-      _vm._v(" "),
-      _c("option", { domProps: { value: _vm.release_maker[14] } }, [
-        _vm._v(_vm._s(_vm.release_maker[14]))
-      ]),
-      _vm._v(" "),
-      _c("option", { domProps: { value: _vm.release_maker[15] } }, [
-        _vm._v(_vm._s(_vm.release_maker[15]))
-      ]),
-      _vm._v(" "),
-      _c("option", { domProps: { value: _vm.release_maker[16] } }, [
-        _vm._v(_vm._s(_vm.release_maker[16]))
-      ]),
-      _vm._v(" "),
-      _c("option", { domProps: { value: _vm.release_maker[17] } }, [
-        _vm._v(_vm._s(_vm.release_maker[17]))
-      ]),
-      _vm._v(" "),
-      _c("option", { domProps: { value: _vm.release_maker[18] } }, [
-        _vm._v(_vm._s(_vm.release_maker[18]))
-      ]),
-      _vm._v(" "),
-      _c("option", { domProps: { value: _vm.release_maker[19] } }, [
-        _vm._v(_vm._s(_vm.release_maker[19]))
-      ])
-    ]),
+    _c(
+      "select",
+      { attrs: { name: "publisher" } },
+      _vm._l(20, function(rank) {
+        return _c(
+          "option",
+          {
+            attrs: { name: _vm.release_maker[rank - 1] },
+            domProps: { value: _vm.release_maker[rank - 1] },
+            on: {
+              click: function($event) {
+                return _vm.ds(rank)
+              }
+            }
+          },
+          [_vm._v(_vm._s(_vm.release_maker[rank - 1]))]
+        )
+      }),
+      0
+    ),
     _vm._v(" "),
     _c("ul", [_c("li", [_vm._v(_vm._s(_vm.inputgamecount))])])
   ])
