@@ -17,16 +17,26 @@
 
     <h3>販売メーカー(販売本数が多いメーカーのみ)</h3>
     <select name="publisher">
-      <option value="">1</option>
-      <option value="">1</option>
-      <option value="">1</option>
-      <option value="">1</option>
-      <option value="">1</option>
-      <option value="">1</option>
-      <option value="">1</option>
-      <option value="">1</option>
-      <option value="">1</option>
-      <option value="">1</option>
+        <option v-bind:value="release_maker[0]">{{ release_maker[0] }}</option>
+        <option v-bind:value="release_maker[1]">{{ release_maker[1] }}</option>
+        <option v-bind:value="release_maker[2]">{{ release_maker[2] }}</option>
+        <option v-bind:value="release_maker[3]">{{ release_maker[3] }}</option>
+        <option v-bind:value="release_maker[4]">{{ release_maker[4] }}</option>
+        <option v-bind:value="release_maker[5]">{{ release_maker[5] }}</option>
+        <option v-bind:value="release_maker[6]">{{ release_maker[6] }}</option>
+        <option v-bind:value="release_maker[7]">{{ release_maker[7] }}</option>
+        <option v-bind:value="release_maker[8]">{{ release_maker[8] }}</option>
+        <option v-bind:value="release_maker[9]">{{ release_maker[9] }}</option>
+        <option v-bind:value="release_maker[10]">{{ release_maker[10] }}</option>
+        <option v-bind:value="release_maker[11]">{{ release_maker[11] }}</option>
+        <option v-bind:value="release_maker[12]">{{ release_maker[12] }}</option>
+        <option v-bind:value="release_maker[13]">{{ release_maker[13] }}</option>
+        <option v-bind:value="release_maker[14]">{{ release_maker[14] }}</option>
+        <option v-bind:value="release_maker[15]">{{ release_maker[15] }}</option>
+        <option v-bind:value="release_maker[16]">{{ release_maker[16] }}</option>
+        <option v-bind:value="release_maker[17]">{{ release_maker[17] }}</option>
+        <option v-bind:value="release_maker[18]">{{ release_maker[18] }}</option>
+        <option v-bind:value="release_maker[19]">{{ release_maker[19] }}</option>
     </select>
     
     <ul>
@@ -42,7 +52,11 @@
             return {
                 inputgamecount: this.gamecount[0],
                 game_type: [false,false,false],
-                cero_select: [false,false,false,false,false,false,false,false]
+                cero_select: [false,false,false,false,false,false,false,false],
+                release_maker: [this.gamecount[24],this.gamecount[25],this.gamecount[26],this.gamecount[27],this.gamecount[28],
+                                this.gamecount[29],this.gamecount[30],this.gamecount[31],this.gamecount[32],this.gamecount[33],
+                                this.gamecount[34],this.gamecount[35],this.gamecount[36],this.gamecount[37],this.gamecount[38],
+                                this.gamecount[39],this.gamecount[40],this.gamecount[41],this.gamecount[42],this.gamecount[43]]
             }
         },
         methods: {

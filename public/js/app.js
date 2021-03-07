@@ -1945,13 +1945,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["gamecount"],
   data: function data() {
     return {
       inputgamecount: this.gamecount[0],
       game_type: [false, false, false],
-      cero_select: [false, false, false, false, false, false, false, false]
+      cero_select: [false, false, false, false, false, false, false, false],
+      release_maker: [this.gamecount[24], this.gamecount[25], this.gamecount[26], this.gamecount[27], this.gamecount[28], this.gamecount[29], this.gamecount[30], this.gamecount[31], this.gamecount[32], this.gamecount[33], this.gamecount[34], this.gamecount[35], this.gamecount[36], this.gamecount[37], this.gamecount[38], this.gamecount[39], this.gamecount[40], this.gamecount[41], this.gamecount[42], this.gamecount[43]]
     };
   },
   methods: {
@@ -37815,39 +37826,92 @@ var render = function() {
     _vm._v("18歳以上(CERO:Z,IARC:18+)\n\n    "),
     _c("h3", [_vm._v("販売メーカー(販売本数が多いメーカーのみ)")]),
     _vm._v(" "),
-    _vm._m(0),
+    _c("select", { attrs: { name: "publisher" } }, [
+      _c("option", { domProps: { value: _vm.release_maker[0] } }, [
+        _vm._v(_vm._s(_vm.release_maker[0]))
+      ]),
+      _vm._v(" "),
+      _c("option", { domProps: { value: _vm.release_maker[1] } }, [
+        _vm._v(_vm._s(_vm.release_maker[1]))
+      ]),
+      _vm._v(" "),
+      _c("option", { domProps: { value: _vm.release_maker[2] } }, [
+        _vm._v(_vm._s(_vm.release_maker[2]))
+      ]),
+      _vm._v(" "),
+      _c("option", { domProps: { value: _vm.release_maker[3] } }, [
+        _vm._v(_vm._s(_vm.release_maker[3]))
+      ]),
+      _vm._v(" "),
+      _c("option", { domProps: { value: _vm.release_maker[4] } }, [
+        _vm._v(_vm._s(_vm.release_maker[4]))
+      ]),
+      _vm._v(" "),
+      _c("option", { domProps: { value: _vm.release_maker[5] } }, [
+        _vm._v(_vm._s(_vm.release_maker[5]))
+      ]),
+      _vm._v(" "),
+      _c("option", { domProps: { value: _vm.release_maker[6] } }, [
+        _vm._v(_vm._s(_vm.release_maker[6]))
+      ]),
+      _vm._v(" "),
+      _c("option", { domProps: { value: _vm.release_maker[7] } }, [
+        _vm._v(_vm._s(_vm.release_maker[7]))
+      ]),
+      _vm._v(" "),
+      _c("option", { domProps: { value: _vm.release_maker[8] } }, [
+        _vm._v(_vm._s(_vm.release_maker[8]))
+      ]),
+      _vm._v(" "),
+      _c("option", { domProps: { value: _vm.release_maker[9] } }, [
+        _vm._v(_vm._s(_vm.release_maker[9]))
+      ]),
+      _vm._v(" "),
+      _c("option", { domProps: { value: _vm.release_maker[10] } }, [
+        _vm._v(_vm._s(_vm.release_maker[10]))
+      ]),
+      _vm._v(" "),
+      _c("option", { domProps: { value: _vm.release_maker[11] } }, [
+        _vm._v(_vm._s(_vm.release_maker[11]))
+      ]),
+      _vm._v(" "),
+      _c("option", { domProps: { value: _vm.release_maker[12] } }, [
+        _vm._v(_vm._s(_vm.release_maker[12]))
+      ]),
+      _vm._v(" "),
+      _c("option", { domProps: { value: _vm.release_maker[13] } }, [
+        _vm._v(_vm._s(_vm.release_maker[13]))
+      ]),
+      _vm._v(" "),
+      _c("option", { domProps: { value: _vm.release_maker[14] } }, [
+        _vm._v(_vm._s(_vm.release_maker[14]))
+      ]),
+      _vm._v(" "),
+      _c("option", { domProps: { value: _vm.release_maker[15] } }, [
+        _vm._v(_vm._s(_vm.release_maker[15]))
+      ]),
+      _vm._v(" "),
+      _c("option", { domProps: { value: _vm.release_maker[16] } }, [
+        _vm._v(_vm._s(_vm.release_maker[16]))
+      ]),
+      _vm._v(" "),
+      _c("option", { domProps: { value: _vm.release_maker[17] } }, [
+        _vm._v(_vm._s(_vm.release_maker[17]))
+      ]),
+      _vm._v(" "),
+      _c("option", { domProps: { value: _vm.release_maker[18] } }, [
+        _vm._v(_vm._s(_vm.release_maker[18]))
+      ]),
+      _vm._v(" "),
+      _c("option", { domProps: { value: _vm.release_maker[19] } }, [
+        _vm._v(_vm._s(_vm.release_maker[19]))
+      ])
+    ]),
     _vm._v(" "),
     _c("ul", [_c("li", [_vm._v(_vm._s(_vm.inputgamecount))])])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("select", { attrs: { name: "publisher" } }, [
-      _c("option", { attrs: { value: "" } }, [_vm._v("1")]),
-      _vm._v(" "),
-      _c("option", { attrs: { value: "" } }, [_vm._v("1")]),
-      _vm._v(" "),
-      _c("option", { attrs: { value: "" } }, [_vm._v("1")]),
-      _vm._v(" "),
-      _c("option", { attrs: { value: "" } }, [_vm._v("1")]),
-      _vm._v(" "),
-      _c("option", { attrs: { value: "" } }, [_vm._v("1")]),
-      _vm._v(" "),
-      _c("option", { attrs: { value: "" } }, [_vm._v("1")]),
-      _vm._v(" "),
-      _c("option", { attrs: { value: "" } }, [_vm._v("1")]),
-      _vm._v(" "),
-      _c("option", { attrs: { value: "" } }, [_vm._v("1")]),
-      _vm._v(" "),
-      _c("option", { attrs: { value: "" } }, [_vm._v("1")]),
-      _vm._v(" "),
-      _c("option", { attrs: { value: "" } }, [_vm._v("1")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

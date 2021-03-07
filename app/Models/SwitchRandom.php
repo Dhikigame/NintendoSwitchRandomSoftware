@@ -72,6 +72,56 @@ class SwitchRandom extends Model {
         return $gamecount;
     }
 
+    // パッケージのゲームのカウント
+    public function PackageAllGamecount($type=null) {
+        $query = $this->db();
+        $allgamecount = $query->where('type1_all', "<>" , NULL)->sum('type1_all');
+
+        return $allgamecount;
+    }
+    public function PackageGamecount_Cero_A_3($type=null) {
+        $query = $this->db();
+        $gamecount_cero_A_3 = $query->where('type1_A_3', "<>" , NULL)->sum('type1_A_3');
+
+        return $gamecount_cero_A_3;
+    }
+    public function PackageGamecount_Cero_7($type=null) {
+        $query = $this->db();
+        $gamecount_cero_7 = $query->where('type1_7', "<>" , NULL)->sum('type1_7');
+
+        return $gamecount_cero_7;
+    }
+    public function PackageGamecount_Cero_B_12($type=null) {
+        $query = $this->db();
+        $gamecount_cero_B_12 = $query->where('type1_B_12', "<>" , NULL)->sum('type1_B_12');
+
+        return $gamecount_cero_B_12;
+    }
+    public function PackageGamecount_Cero_C($type=null) {
+        $query = $this->db();
+        $gamecount_cero_C = $query->where('type1_C', "<>" , NULL)->sum('type1_C');
+
+        return $gamecount_cero_C;
+    }
+    public function PackageGamecount_Cero_16($type=null) {
+        $query = $this->db();
+        $gamecount_cero_16 = $query->where('type1_16', "<>" , NULL)->sum('type1_16');
+
+        return $gamecount_cero_16;
+    }
+    public function PackageGamecount_Cero_D($type=null) {
+        $query = $this->db();
+        $gamecount_cero_D = $query->where('type1_D', "<>" , NULL)->sum('type1_D');
+
+        return $gamecount_cero_D;
+    }
+    public function PackageGamecount_Cero_Z($type=null) {
+        $query = $this->db();
+        $gamecount_cero_Z = $query->where('type1_Z', "<>" , NULL)->sum('type1_Z');
+
+        return $gamecount_cero_Z;
+    }
+
     // ダウンロードのゲームのカウント
     public function DownloadAllGamecount($type=null) {
         $query = $this->db();
@@ -122,53 +172,161 @@ class SwitchRandom extends Model {
         return $gamecount;
     }
 
-    // パッケージのゲームのカウント
-    public function PackageAllGamecount($type=null) {
+    // 販売メーカーのソフトが多いメーカーを取得
+    public function ReleaseMakerNameTop20($type=null) {
         $query = $this->db();
-        $allgamecount = $query->where('type1_all', "<>" , NULL)->sum('type1_all');
+        $release_maker_top20 = $query->orderby('cero_all', 'desc')->select('release_maker')->limit(20)->get();
 
-        return $allgamecount;
+        return $release_maker_top20;
     }
-    public function PackageGamecount_Cero_A_3($type=null) {
-        $query = $this->db();
-        $gamecount_cero_A_3 = $query->where('type1_A_3', "<>" , NULL)->sum('type1_A_3');
 
-        return $gamecount_cero_A_3;
+    // 販売メーカーのソフトが多いメーカーのゲームリリース数を取得
+    public function ReleaseMakerGameCountTop20($type=null) {
+        $query = $this->db();
+        $release_maker_top20 = $query->orderby('cero_all', 'desc')->select('release_maker', 'cero_all')->limit(20)->get();
+
+        return $release_maker_top20;
     }
-    public function PackageGamecount_Cero_7($type=null) {
+    public function ReleaseMakerGameCountTop20_Cero_A_3($type=null) {
         $query = $this->db();
-        $gamecount_cero_7 = $query->where('type1_7', "<>" , NULL)->sum('type1_7');
+        $release_maker_top20 = $query->orderby('cero_all', 'desc')->select('release_maker', 'cero_A_3')->limit(20)->get();
 
-        return $gamecount_cero_7;
+        return $release_maker_top20;
     }
-    public function PackageGamecount_Cero_B_12($type=null) {
+    public function ReleaseMakerGameCountTop20_Cero_7($type=null) {
         $query = $this->db();
-        $gamecount_cero_B_12 = $query->where('type1_B_12', "<>" , NULL)->sum('type1_B_12');
+        $release_maker_top20 = $query->orderby('cero_all', 'desc')->select('release_maker', 'cero_7')->limit(20)->get();
 
-        return $gamecount_cero_B_12;
+        return $release_maker_top20;
     }
-    public function PackageGamecount_Cero_C($type=null) {
+    public function ReleaseMakerGameCountTop20_Cero_B_12($type=null) {
         $query = $this->db();
-        $gamecount_cero_C = $query->where('type1_C', "<>" , NULL)->sum('type1_C');
+        $release_maker_top20 = $query->orderby('cero_all', 'desc')->select('release_maker', 'cero_B_12')->limit(20)->get();
 
-        return $gamecount_cero_C;
+        return $release_maker_top20;
     }
-    public function PackageGamecount_Cero_16($type=null) {
+    public function ReleaseMakerGameCountTop20_Cero_C($type=null) {
         $query = $this->db();
-        $gamecount_cero_16 = $query->where('type1_16', "<>" , NULL)->sum('type1_16');
+        $release_maker_top20 = $query->orderby('cero_all', 'desc')->select('release_maker', 'cero_C')->limit(20)->get();
 
-        return $gamecount_cero_16;
+        return $release_maker_top20;
     }
-    public function PackageGamecount_Cero_D($type=null) {
+    public function ReleaseMakerGameCountTop20_Cero_16($type=null) {
         $query = $this->db();
-        $gamecount_cero_D = $query->where('type1_D', "<>" , NULL)->sum('type1_D');
+        $release_maker_top20 = $query->orderby('cero_all', 'desc')->select('release_maker', 'cero_16')->limit(20)->get();
 
-        return $gamecount_cero_D;
+        return $release_maker_top20;
     }
-    public function PackageGamecount_Cero_Z($type=null) {
+    public function ReleaseMakerGameCountTop20_Cero_D($type=null) {
         $query = $this->db();
-        $gamecount_cero_Z = $query->where('type1_Z', "<>" , NULL)->sum('type1_Z');
+        $release_maker_top20 = $query->orderby('cero_all', 'desc')->select('release_maker', 'cero_D')->limit(20)->get();
 
-        return $gamecount_cero_Z;
+        return $release_maker_top20;
+    }
+    public function ReleaseMakerGameCountTop20_Cero_Z($type=null) {
+        $query = $this->db();
+        $release_maker_top20 = $query->orderby('cero_all', 'desc')->select('release_maker', 'cero_Z')->limit(20)->get();
+
+        return $release_maker_top20;
+    }
+
+    // 販売メーカーのソフトが多いメーカーのゲームリリース数を取得(パッケージ)
+    public function ReleaseMakerPackageGameCountTop20($type=null) {
+        $query = $this->db();
+        $release_maker_top20 = $query->orderby('cero_all', 'desc')->select('release_maker', 'type1_all')->limit(20)->get();
+
+        return $release_maker_top20;
+    }
+    public function ReleaseMakerPackageGameCountTop20_Cero_A_3($type=null) {
+        $query = $this->db();
+        $release_maker_top20 = $query->orderby('cero_all', 'desc')->select('release_maker', 'type1_A_3')->limit(20)->get();
+
+        return $release_maker_top20;
+    }
+    public function ReleaseMakerPackageGameCountTop20_Cero_7($type=null) {
+        $query = $this->db();
+        $release_maker_top20 = $query->orderby('cero_all', 'desc')->select('release_maker', 'type1_7')->limit(20)->get();
+
+        return $release_maker_top20;
+    }
+    public function ReleaseMakerPackageGameCountTop20_Cero_B_12($type=null) {
+        $query = $this->db();
+        $release_maker_top20 = $query->orderby('cero_all', 'desc')->select('release_maker', 'type1_B_12')->limit(20)->get();
+
+        return $release_maker_top20;
+    }
+    public function ReleaseMakerPackageGameCountTop20_Cero_C($type=null) {
+        $query = $this->db();
+        $release_maker_top20 = $query->orderby('cero_all', 'desc')->select('release_maker', 'type1_C')->limit(20)->get();
+
+        return $release_maker_top20;
+    }
+    public function ReleaseMakerPackageGameCountTop20_Cero_16($type=null) {
+        $query = $this->db();
+        $release_maker_top20 = $query->orderby('cero_all', 'desc')->select('release_maker', 'type1_16')->limit(20)->get();
+
+        return $release_maker_top20;
+    }
+    public function ReleaseMakerPackageGameCountTop20_Cero_D($type=null) {
+        $query = $this->db();
+        $release_maker_top20 = $query->orderby('cero_all', 'desc')->select('release_maker', 'type1_D')->limit(20)->get();
+
+        return $release_maker_top20;
+    }
+    public function ReleaseMakerPackageGameCountTop20_Cero_Z($type=null) {
+        $query = $this->db();
+        $release_maker_top20 = $query->orderby('cero_all', 'desc')->select('release_maker', 'type1_Z')->limit(20)->get();
+
+        return $release_maker_top20;
+    }
+
+    // 販売メーカーのソフトが多いメーカーのゲームリリース数を取得(ダウンロード)
+    public function ReleaseMakerDownloadGameCountTop20($type=null) {
+        $query = $this->db();
+        $release_maker_top20 = $query->orderby('cero_all', 'desc')->select('release_maker', 'download_all')->limit(20)->get();
+
+        return $release_maker_top20;
+    }
+    public function ReleaseMakerDownloadGameCountTop20_Cero_A_3($type=null) {
+        $query = $this->db();
+        $release_maker_top20 = $query->orderby('cero_all', 'desc')->select('release_maker', 'download_A_3')->limit(20)->get();
+
+        return $release_maker_top20;
+    }
+    public function ReleaseMakerDownloadGameCountTop20_Cero_7($type=null) {
+        $query = $this->db();
+        $release_maker_top20 = $query->orderby('cero_all', 'desc')->select('release_maker', 'download_7')->limit(20)->get();
+
+        return $release_maker_top20;
+    }
+    public function ReleaseMakerDownloadGameCountTop20_Cero_B_12($type=null) {
+        $query = $this->db();
+        $release_maker_top20 = $query->orderby('cero_all', 'desc')->select('release_maker', 'download_B_12')->limit(20)->get();
+
+        return $release_maker_top20;
+    }
+    public function ReleaseMakerDownloadGameCountTop20_Cero_C($type=null) {
+        $query = $this->db();
+        $release_maker_top20 = $query->orderby('cero_all', 'desc')->select('release_maker', 'download_C')->limit(20)->get();
+
+        return $release_maker_top20;
+    }
+    public function ReleaseMakerDownloadGameCountTop20_Cero_16($type=null) {
+        $query = $this->db();
+        $release_maker_top20 = $query->orderby('cero_all', 'desc')->select('release_maker', 'download_16')->limit(20)->get();
+
+        return $release_maker_top20;
+    }
+    public function ReleaseMakerDownloadGameCountTop20_Cero_D($type=null) {
+        $query = $this->db();
+        $release_maker_top20 = $query->orderby('cero_all', 'desc')->select('release_maker', 'download_D')->limit(20)->get();
+
+        return $release_maker_top20;
+    }
+    public function ReleaseMakerDownloadGameCountTop20_Cero_Z($type=null) {
+        $query = $this->db();
+        $release_maker_top20 = $query->orderby('cero_all', 'desc')->select('release_maker', 'download_Z')->limit(20)->get();
+
+        return $release_maker_top20;
     }
 }
