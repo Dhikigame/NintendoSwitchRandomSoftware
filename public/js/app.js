@@ -1941,9 +1941,10 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       inputgamecount: this.gamecount[0],
-      game_type: [false, false, false],
-      cero_select: [false, false, false, false, false, false, false, false],
-      release_maker: [this.gamecount[24], this.gamecount[25], this.gamecount[26], this.gamecount[27], this.gamecount[28], this.gamecount[29], this.gamecount[30], this.gamecount[31], this.gamecount[32], this.gamecount[33], this.gamecount[34], this.gamecount[35], this.gamecount[36], this.gamecount[37], this.gamecount[38], this.gamecount[39], this.gamecount[40], this.gamecount[41], this.gamecount[42], this.gamecount[43]]
+      release_maker: [this.gamecount[24], this.gamecount[25], this.gamecount[26], this.gamecount[27], this.gamecount[28], this.gamecount[29], this.gamecount[30], this.gamecount[31], this.gamecount[32], this.gamecount[33], this.gamecount[34], this.gamecount[35], this.gamecount[36], this.gamecount[37], this.gamecount[38], this.gamecount[39], this.gamecount[40], this.gamecount[41], this.gamecount[42], this.gamecount[43]],
+      game_type: [true, false, false],
+      cero_select: [true, false, false, false, false, false, false, false],
+      release_maker_select: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
     };
   },
   methods: {
@@ -2134,8 +2135,33 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
     },
-    ds: function ds(rank) {
-      console.log("ds OK!"); // this.inputgamecount = this.gamecount[44];
+    release_maker_click: function release_maker_click(e) {
+      var rank = e.target.value; // console.log(rank);
+      //     for (let i = 1; i <= this.release_maker.length; i++) {
+      //         for (let j = 0; j < this.game_type.length; j++) {
+      //             for (let k = 0; k < this.cero_select.length; k++) {
+      //                 if(i == rank && this.game_type[j] == true && this.cero_select[k] == true) {
+      //                     this.inputgamecount = this.gamecount[i+43];
+      //                 }
+      //             }
+      //         }
+      //     }
+      // }
+
+      var gamecount_sub = 0;
+
+      for (var i = 0; i < this.game_type.length; i++) {
+        for (var j = 0; j < this.cero_select.length; j++) {
+          for (var k = 1; k <= this.release_maker.length; k++) {
+            if (this.game_type[i] == true && this.cero_select[j] == true && k == rank) {
+              this.inputgamecount = this.gamecount[gamecount_sub + 44];
+              console.log(gamecount_sub + 44);
+            }
+
+            gamecount_sub++;
+          }
+        }
+      }
     }
   }
 });
@@ -37812,18 +37838,20 @@ var render = function() {
     _vm._v(" "),
     _c(
       "select",
-      { attrs: { name: "publisher" } },
+      {
+        attrs: { name: "publisher" },
+        on: {
+          change: function($event) {
+            return _vm.release_maker_click($event)
+          }
+        }
+      },
       _vm._l(20, function(rank) {
         return _c(
           "option",
           {
             attrs: { name: _vm.release_maker[rank - 1] },
-            domProps: { value: _vm.release_maker[rank - 1] },
-            on: {
-              click: function($event) {
-                return _vm.ds(rank)
-              }
-            }
+            domProps: { value: rank }
           },
           [_vm._v(_vm._s(_vm.release_maker[rank - 1]))]
         )

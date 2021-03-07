@@ -16,8 +16,8 @@
     <input type="radio" name="age-limit" value="Z18+" v-on:click="cero_Z_click">18歳以上(CERO:Z,IARC:18+)
 
     <h3>販売メーカー(販売本数が多いメーカー20社のみ)</h3>
-    <select name="publisher">
-        <option v-on:click="ds(rank)" v-for="rank in 20" v-bind:name="release_maker[rank - 1]" v-bind:value="release_maker[rank - 1]">{{ release_maker[rank - 1] }}</option>
+    <select name="publisher" v-on:change="release_maker_click($event)">
+        <option v-for="rank in 20" v-bind:name="release_maker[rank - 1]" v-bind:value="rank">{{ release_maker[rank - 1] }}</option>
     </select>
     
     <ul>
@@ -32,12 +32,13 @@
         data(){
             return {
                 inputgamecount: this.gamecount[0],
-                game_type: [false,false,false],
-                cero_select: [false,false,false,false,false,false,false,false],
                 release_maker: [this.gamecount[24],this.gamecount[25],this.gamecount[26],this.gamecount[27],this.gamecount[28],
                                 this.gamecount[29],this.gamecount[30],this.gamecount[31],this.gamecount[32],this.gamecount[33],
                                 this.gamecount[34],this.gamecount[35],this.gamecount[36],this.gamecount[37],this.gamecount[38],
-                                this.gamecount[39],this.gamecount[40],this.gamecount[41],this.gamecount[42],this.gamecount[43]]
+                                this.gamecount[39],this.gamecount[40],this.gamecount[41],this.gamecount[42],this.gamecount[43]],
+                game_type: [true,false,false],
+                cero_select: [true,false,false,false,false,false,false,false],
+                release_maker_select: [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
             }
         },
         methods: {
@@ -220,9 +221,31 @@
             },
 
 
-            ds: function(rank) {
-                console.log("ds OK!");
-                // this.inputgamecount = this.gamecount[44];
+            release_maker_click: function(e) {
+                let rank = e.target.value
+                // console.log(rank);
+            //     for (let i = 1; i <= this.release_maker.length; i++) {
+            //         for (let j = 0; j < this.game_type.length; j++) {
+            //             for (let k = 0; k < this.cero_select.length; k++) {
+            //                 if(i == rank && this.game_type[j] == true && this.cero_select[k] == true) {
+            //                     this.inputgamecount = this.gamecount[i+43];
+            //                 }
+            //             }
+            //         }
+            //     }
+            // }
+                let gamecount_sub = 0;
+                for (let i = 0; i < this.game_type.length; i++) {
+                    for (let j = 0; j < this.cero_select.length; j++) {
+                        for (let k = 1; k <= this.release_maker.length; k++) {
+                            if(this.game_type[i] == true && this.cero_select[j] == true && k == rank) {
+                                this.inputgamecount = this.gamecount[gamecount_sub+44];
+                                console.log(gamecount_sub+44);
+                            }
+                            gamecount_sub++;
+                        }
+                    }
+                }
             }
 
         }
