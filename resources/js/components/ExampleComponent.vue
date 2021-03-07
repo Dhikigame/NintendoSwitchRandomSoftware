@@ -17,6 +17,7 @@
 
     <h3>販売メーカー(販売本数が多いメーカー20社のみ)</h3>
     <select name="publisher" v-on:change="release_maker_click($event)">
+        <option name="all_release_maker" v-bind:value=0>全ての販売メーカー</option>
         <option v-for="rank in 20" v-bind:name="release_maker[rank - 1]" v-bind:value="rank">{{ release_maker[rank - 1] }}</option>
     </select>
     
@@ -38,7 +39,11 @@
                                 this.gamecount[39],this.gamecount[40],this.gamecount[41],this.gamecount[42],this.gamecount[43]],
                 game_type: [true,false,false],
                 cero_select: [true,false,false,false,false,false,false,false],
-                release_maker_select: [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
+                release_maker_select: [true,
+                                    false,false,false,false,false,
+                                    false,false,false,false,false,
+                                    false,false,false,false,false,
+                                    false,false,false,false,false]
             }
         },
         methods: {
@@ -52,9 +57,27 @@
                     }
                 }
 
-                for (let i = 0; i < this.cero_select.length; i++) {
-                    if(this.cero_select[i] == true) {
-                        this.inputgamecount = this.gamecount[i];
+                if(this.release_maker_select[0] == true) {
+                    let gamecount_sub = 0;
+                    for (let i = 0; i < this.game_type.length; i++) {
+                        for (let j = 0; j < this.cero_select.length; j++) {
+                            if(this.game_type[i] == true && this.cero_select[j] == true) {
+                                this.inputgamecount = this.gamecount[gamecount_sub];
+                            }
+                            gamecount_sub++;
+                        }
+                    }
+                } else {
+                    let gamecount_sub = 0;
+                    for (let i = 0; i < this.game_type.length; i++) {
+                        for (let j = 0; j < this.cero_select.length; j++) {
+                            for (let k = 1; k < this.release_maker_select.length; k++) {
+                                if(this.game_type[i] == true && this.cero_select[j] == true && this.release_maker_select[k] == true) {
+                                    this.inputgamecount = this.gamecount[gamecount_sub+44];
+                                }
+                                gamecount_sub++;
+                            }
+                        }
                     }
                 }
             },
@@ -68,9 +91,27 @@
                     }
                 }
 
-                for (let i = 0; i < this.cero_select.length; i++) {
-                    if(this.cero_select[i] == true) {
-                        this.inputgamecount = this.gamecount[i+8];
+                if(this.release_maker_select[0] == true) {
+                    let gamecount_sub = 0;
+                    for (let i = 0; i < this.game_type.length; i++) {
+                        for (let j = 0; j < this.cero_select.length; j++) {
+                            if(this.game_type[i] == true && this.cero_select[j] == true) {
+                                this.inputgamecount = this.gamecount[gamecount_sub];
+                            }
+                            gamecount_sub++;
+                        }
+                    }
+                } else {
+                    let gamecount_sub = 0;
+                    for (let i = 0; i < this.game_type.length; i++) {
+                        for (let j = 0; j < this.cero_select.length; j++) {
+                            for (let k = 1; k < this.release_maker_select.length; k++) {
+                                if(this.game_type[i] == true && this.cero_select[j] == true && this.release_maker_select[k] == true) {
+                                    this.inputgamecount = this.gamecount[gamecount_sub+44];
+                                }
+                                gamecount_sub++;
+                            }
+                        }
                     }
                 }
             },
@@ -84,9 +125,27 @@
                     }
                 }
 
-                for (let i = 0; i < this.cero_select.length; i++) {
-                    if(this.cero_select[i] == true) {
-                        this.inputgamecount = this.gamecount[i+16];
+                if(this.release_maker_select[0] == true) {
+                    let gamecount_sub = 0;
+                    for (let i = 0; i < this.game_type.length; i++) {
+                        for (let j = 0; j < this.cero_select.length; j++) {
+                            if(this.game_type[i] == true && this.cero_select[j] == true) {
+                                this.inputgamecount = this.gamecount[gamecount_sub];
+                            }
+                            gamecount_sub++;
+                        }
+                    }
+                } else {
+                    let gamecount_sub = 0;
+                    for (let i = 0; i < this.game_type.length; i++) {
+                        for (let j = 0; j < this.cero_select.length; j++) {
+                            for (let k = 1; k < this.release_maker_select.length; k++) {
+                                if(this.game_type[i] == true && this.cero_select[j] == true && this.release_maker_select[k] == true) {
+                                    this.inputgamecount = this.gamecount[gamecount_sub+44];
+                                }
+                                gamecount_sub++;
+                            }
+                        }
                     }
                 }
             },
@@ -101,9 +160,27 @@
                     }
                 }
 
-                for (let i = 0; i < this.game_type.length; i++) {
-                    if(this.game_type[i] == true) {
-                        this.inputgamecount = this.gamecount[i*8];
+                if(this.release_maker_select[0] == true) {
+                    let gamecount_sub = 0;
+                    for (let i = 0; i < this.game_type.length; i++) {
+                        for (let j = 0; j < this.cero_select.length; j++) {
+                            if(this.game_type[i] == true && this.cero_select[j] == true) {
+                                this.inputgamecount = this.gamecount[gamecount_sub];
+                            }
+                            gamecount_sub++;
+                        }
+                    }
+                } else {
+                    let gamecount_sub = 0;
+                    for (let i = 0; i < this.game_type.length; i++) {
+                        for (let j = 0; j < this.cero_select.length; j++) {
+                            for (let k = 1; k < this.release_maker_select.length; k++) {
+                                if(this.game_type[i] == true && this.cero_select[j] == true && this.release_maker_select[k] == true) {
+                                    this.inputgamecount = this.gamecount[gamecount_sub+44];
+                                }
+                                gamecount_sub++;
+                            }
+                        }
                     }
                 }
             },
@@ -117,9 +194,27 @@
                     }
                 }
 
-                for (let i = 0; i < this.game_type.length; i++) {
-                    if(this.game_type[i] == true) {
-                        this.inputgamecount = this.gamecount[i*8+1];
+                if(this.release_maker_select[0] == true) {
+                    let gamecount_sub = 0;
+                    for (let i = 0; i < this.game_type.length; i++) {
+                        for (let j = 0; j < this.cero_select.length; j++) {
+                            if(this.game_type[i] == true && this.cero_select[j] == true) {
+                                this.inputgamecount = this.gamecount[gamecount_sub];
+                            }
+                            gamecount_sub++;
+                        }
+                    }
+                } else {
+                    let gamecount_sub = 0;
+                    for (let i = 0; i < this.game_type.length; i++) {
+                        for (let j = 0; j < this.cero_select.length; j++) {
+                            for (let k = 1; k < this.release_maker_select.length; k++) {
+                                if(this.game_type[i] == true && this.cero_select[j] == true && this.release_maker_select[k] == true) {
+                                    this.inputgamecount = this.gamecount[gamecount_sub+44];
+                                }
+                                gamecount_sub++;
+                            }
+                        }
                     }
                 }
             },
@@ -133,9 +228,27 @@
                     }
                 }
 
-                for (let i = 0; i < this.game_type.length; i++) {
-                    if(this.game_type[i] == true) {
-                        this.inputgamecount = this.gamecount[i*8+2];
+                if(this.release_maker_select[0] == true) {
+                    let gamecount_sub = 0;
+                    for (let i = 0; i < this.game_type.length; i++) {
+                        for (let j = 0; j < this.cero_select.length; j++) {
+                            if(this.game_type[i] == true && this.cero_select[j] == true) {
+                                this.inputgamecount = this.gamecount[gamecount_sub];
+                            }
+                            gamecount_sub++;
+                        }
+                    }
+                } else {
+                    let gamecount_sub = 0;
+                    for (let i = 0; i < this.game_type.length; i++) {
+                        for (let j = 0; j < this.cero_select.length; j++) {
+                            for (let k = 1; k < this.release_maker_select.length; k++) {
+                                if(this.game_type[i] == true && this.cero_select[j] == true && this.release_maker_select[k] == true) {
+                                    this.inputgamecount = this.gamecount[gamecount_sub+44];
+                                }
+                                gamecount_sub++;
+                            }
+                        }
                     }
                 }
             },
@@ -149,9 +262,27 @@
                     }
                 }
 
-                for (let i = 0; i < this.game_type.length; i++) {
-                    if(this.game_type[i] == true) {
-                        this.inputgamecount = this.gamecount[i*8+3];
+                if(this.release_maker_select[0] == true) {
+                    let gamecount_sub = 0;
+                    for (let i = 0; i < this.game_type.length; i++) {
+                        for (let j = 0; j < this.cero_select.length; j++) {
+                            if(this.game_type[i] == true && this.cero_select[j] == true) {
+                                this.inputgamecount = this.gamecount[gamecount_sub];
+                            }
+                            gamecount_sub++;
+                        }
+                    }
+                } else {
+                    let gamecount_sub = 0;
+                    for (let i = 0; i < this.game_type.length; i++) {
+                        for (let j = 0; j < this.cero_select.length; j++) {
+                            for (let k = 1; k < this.release_maker_select.length; k++) {
+                                if(this.game_type[i] == true && this.cero_select[j] == true && this.release_maker_select[k] == true) {
+                                    this.inputgamecount = this.gamecount[gamecount_sub+44];
+                                }
+                                gamecount_sub++;
+                            }
+                        }
                     }
                 }
             },
@@ -165,9 +296,27 @@
                     }
                 }
 
-                for (let i = 0; i < this.game_type.length; i++) {
-                    if(this.game_type[i] == true) {
-                        this.inputgamecount = this.gamecount[i*8+4];
+                if(this.release_maker_select[0] == true) {
+                    let gamecount_sub = 0;
+                    for (let i = 0; i < this.game_type.length; i++) {
+                        for (let j = 0; j < this.cero_select.length; j++) {
+                            if(this.game_type[i] == true && this.cero_select[j] == true) {
+                                this.inputgamecount = this.gamecount[gamecount_sub];
+                            }
+                            gamecount_sub++;
+                        }
+                    }
+                } else {
+                    let gamecount_sub = 0;
+                    for (let i = 0; i < this.game_type.length; i++) {
+                        for (let j = 0; j < this.cero_select.length; j++) {
+                            for (let k = 1; k < this.release_maker_select.length; k++) {
+                                if(this.game_type[i] == true && this.cero_select[j] == true && this.release_maker_select[k] == true) {
+                                    this.inputgamecount = this.gamecount[gamecount_sub+44];
+                                }
+                                gamecount_sub++;
+                            }
+                        }
                     }
                 }
             },
@@ -181,9 +330,27 @@
                     }
                 }
 
-                for (let i = 0; i < this.game_type.length; i++) {
-                    if(this.game_type[i] == true) {
-                        this.inputgamecount = this.gamecount[i*8+5];
+                if(this.release_maker_select[0] == true) {
+                    let gamecount_sub = 0;
+                    for (let i = 0; i < this.game_type.length; i++) {
+                        for (let j = 0; j < this.cero_select.length; j++) {
+                            if(this.game_type[i] == true && this.cero_select[j] == true) {
+                                this.inputgamecount = this.gamecount[gamecount_sub];
+                            }
+                            gamecount_sub++;
+                        }
+                    }
+                } else {
+                    let gamecount_sub = 0;
+                    for (let i = 0; i < this.game_type.length; i++) {
+                        for (let j = 0; j < this.cero_select.length; j++) {
+                            for (let k = 1; k < this.release_maker_select.length; k++) {
+                                if(this.game_type[i] == true && this.cero_select[j] == true && this.release_maker_select[k] == true) {
+                                    this.inputgamecount = this.gamecount[gamecount_sub+44];
+                                }
+                                gamecount_sub++;
+                            }
+                        }
                     }
                 }
             },
@@ -197,9 +364,27 @@
                     }
                 }
 
-                for (let i = 0; i < this.game_type.length; i++) {
-                    if(this.game_type[i] == true) {
-                        this.inputgamecount = this.gamecount[i*8+6];
+                if(this.release_maker_select[0] == true) {
+                    let gamecount_sub = 0;
+                    for (let i = 0; i < this.game_type.length; i++) {
+                        for (let j = 0; j < this.cero_select.length; j++) {
+                            if(this.game_type[i] == true && this.cero_select[j] == true) {
+                                this.inputgamecount = this.gamecount[gamecount_sub];
+                            }
+                            gamecount_sub++;
+                        }
+                    }
+                } else {
+                    let gamecount_sub = 0;
+                    for (let i = 0; i < this.game_type.length; i++) {
+                        for (let j = 0; j < this.cero_select.length; j++) {
+                            for (let k = 1; k < this.release_maker_select.length; k++) {
+                                if(this.game_type[i] == true && this.cero_select[j] == true && this.release_maker_select[k] == true) {
+                                    this.inputgamecount = this.gamecount[gamecount_sub+44];
+                                }
+                                gamecount_sub++;
+                            }
+                        }
                     }
                 }
             },
@@ -213,9 +398,27 @@
                     }
                 }
 
-                for (let i = 0; i < this.game_type.length; i++) {
-                    if(this.game_type[i] == true) {
-                        this.inputgamecount = this.gamecount[i*8+7];
+                if(this.release_maker_select[0] == true) {
+                    let gamecount_sub = 0;
+                    for (let i = 0; i < this.game_type.length; i++) {
+                        for (let j = 0; j < this.cero_select.length; j++) {
+                            if(this.game_type[i] == true && this.cero_select[j] == true) {
+                                this.inputgamecount = this.gamecount[gamecount_sub];
+                            }
+                            gamecount_sub++;
+                        }
+                    }
+                } else {
+                    let gamecount_sub = 0;
+                    for (let i = 0; i < this.game_type.length; i++) {
+                        for (let j = 0; j < this.cero_select.length; j++) {
+                            for (let k = 1; k < this.release_maker_select.length; k++) {
+                                if(this.game_type[i] == true && this.cero_select[j] == true && this.release_maker_select[k] == true) {
+                                    this.inputgamecount = this.gamecount[gamecount_sub+44];
+                                }
+                                gamecount_sub++;
+                            }
+                        }
                     }
                 }
             },
@@ -223,26 +426,34 @@
 
             release_maker_click: function(e) {
                 let rank = e.target.value
-                // console.log(rank);
-            //     for (let i = 1; i <= this.release_maker.length; i++) {
-            //         for (let j = 0; j < this.game_type.length; j++) {
-            //             for (let k = 0; k < this.cero_select.length; k++) {
-            //                 if(i == rank && this.game_type[j] == true && this.cero_select[k] == true) {
-            //                     this.inputgamecount = this.gamecount[i+43];
-            //                 }
-            //             }
-            //         }
-            //     }
-            // }
-                let gamecount_sub = 0;
-                for (let i = 0; i < this.game_type.length; i++) {
-                    for (let j = 0; j < this.cero_select.length; j++) {
-                        for (let k = 1; k <= this.release_maker.length; k++) {
-                            if(this.game_type[i] == true && this.cero_select[j] == true && k == rank) {
-                                this.inputgamecount = this.gamecount[gamecount_sub+44];
-                                console.log(gamecount_sub+44);
+                for (let i = 0; i < this.release_maker.length; i++) {
+                    if(i == rank) {
+                        this.release_maker_select[i] = true;
+                    } else {
+                        this.release_maker_select[i] = false;
+                    }
+                }
+
+                if(this.release_maker_select[0] == true) {
+                    let gamecount_sub = 0;
+                    for (let i = 0; i < this.game_type.length; i++) {
+                        for (let j = 0; j < this.cero_select.length; j++) {
+                            if(this.game_type[i] == true && this.cero_select[j] == true) {
+                                this.inputgamecount = this.gamecount[gamecount_sub];
                             }
                             gamecount_sub++;
+                        }
+                    }
+                } else {
+                    let gamecount_sub = 0;
+                    for (let i = 0; i < this.game_type.length; i++) {
+                        for (let j = 0; j < this.cero_select.length; j++) {
+                            for (let k = 1; k < this.release_maker_select.length; k++) {
+                                if(this.game_type[i] == true && this.cero_select[j] == true && this.release_maker_select[k] == true) {
+                                    this.inputgamecount = this.gamecount[gamecount_sub+44];
+                                }
+                                gamecount_sub++;
+                            }
                         }
                     }
                 }

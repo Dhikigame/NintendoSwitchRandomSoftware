@@ -66,74 +66,70 @@ class SwitchRandomController extends Controller
         $gamecount = $this->releasemakertop20_package_gamecount($md, $gamecount);
         $gamecount = $this->releasemakertop20_download_gamecount($md, $gamecount);
 
-        // for($i = 0; $i < count($gamecount); $i++) {
+        // for($i = 0; $i <= 23; $i++) {
         //     echo $i . " " . $gamecount[$i] . "<br>";
         // }
 
-        for($i = 0; $i <= 23; $i++) {
-            echo $i . " " . $gamecount[$i] . "<br>";
-        }
-
-        for($i = 24; $i < count($gamecount); $i = $i + 20) {
-            echo $i . " " . $gamecount[$i] . "<br>";
-        }
-        for($i = 25; $i < count($gamecount); $i = $i + 20) {
-            echo $i . " " . $gamecount[$i] . "<br>";
-        }
-        for($i = 26; $i < count($gamecount); $i = $i + 20) {
-            echo $i . " " . $gamecount[$i] . "<br>";
-        }
-        for($i = 27; $i < count($gamecount); $i = $i + 20) {
-            echo $i . " " . $gamecount[$i] . "<br>";
-        }
-        for($i = 28; $i < count($gamecount); $i = $i + 20) {
-            echo $i . " " . $gamecount[$i] . "<br>";
-        }
-        for($i = 29; $i < count($gamecount); $i = $i + 20) {
-            echo $i . " " . $gamecount[$i] . "<br>";
-        }
-        for($i = 30; $i < count($gamecount); $i = $i + 20) {
-            echo $i . " " . $gamecount[$i] . "<br>";
-        }
-        for($i = 31; $i < count($gamecount); $i = $i + 20) {
-            echo $i . " " . $gamecount[$i] . "<br>";
-        }
-        for($i = 32; $i < count($gamecount); $i = $i + 20) {
-            echo $i . " " . $gamecount[$i] . "<br>";
-        }
-        for($i = 33; $i < count($gamecount); $i = $i + 20) {
-            echo $i . " " . $gamecount[$i] . "<br>";
-        }
-        for($i = 34; $i < count($gamecount); $i = $i + 20) {
-            echo $i . " " . $gamecount[$i] . "<br>";
-        }
-        for($i = 35; $i < count($gamecount); $i = $i + 20) {
-            echo $i . " " . $gamecount[$i] . "<br>";
-        }
-        for($i = 36; $i < count($gamecount); $i = $i + 20) {
-            echo $i . " " . $gamecount[$i] . "<br>";
-        }
-        for($i = 37; $i < count($gamecount); $i = $i + 20) {
-            echo $i . " " . $gamecount[$i] . "<br>";
-        }
-        for($i = 38; $i < count($gamecount); $i = $i + 20) {
-            echo $i . " " . $gamecount[$i] . "<br>";
-        }
-        for($i = 39; $i < count($gamecount); $i = $i + 20) {
-            echo $i . " " . $gamecount[$i] . "<br>";
-        }
-        for($i = 40; $i < count($gamecount); $i = $i + 20) {
-            echo $i . " " . $gamecount[$i] . "<br>";
-        }
-        for($i = 41; $i < count($gamecount); $i = $i + 20) {
-            echo $i . " " . $gamecount[$i] . "<br>";
-        }
-        for($i = 42; $i < count($gamecount); $i = $i + 20) {
-            echo $i . " " . $gamecount[$i] . "<br>";
-        }
-        for($i = 43; $i < count($gamecount); $i = $i + 20) {
-            echo $i . " " . $gamecount[$i] . "<br>";
-        }
+        // for($i = 24; $i < count($gamecount); $i = $i + 20) {
+        //     echo $i . " " . $gamecount[$i] . "<br>";
+        // }
+        // for($i = 25; $i < count($gamecount); $i = $i + 20) {
+        //     echo $i . " " . $gamecount[$i] . "<br>";
+        // }
+        // for($i = 26; $i < count($gamecount); $i = $i + 20) {
+        //     echo $i . " " . $gamecount[$i] . "<br>";
+        // }
+        // for($i = 27; $i < count($gamecount); $i = $i + 20) {
+        //     echo $i . " " . $gamecount[$i] . "<br>";
+        // }
+        // for($i = 28; $i < count($gamecount); $i = $i + 20) {
+        //     echo $i . " " . $gamecount[$i] . "<br>";
+        // }
+        // for($i = 29; $i < count($gamecount); $i = $i + 20) {
+        //     echo $i . " " . $gamecount[$i] . "<br>";
+        // }
+        // for($i = 30; $i < count($gamecount); $i = $i + 20) {
+        //     echo $i . " " . $gamecount[$i] . "<br>";
+        // }
+        // for($i = 31; $i < count($gamecount); $i = $i + 20) {
+        //     echo $i . " " . $gamecount[$i] . "<br>";
+        // }
+        // for($i = 32; $i < count($gamecount); $i = $i + 20) {
+        //     echo $i . " " . $gamecount[$i] . "<br>";
+        // }
+        // for($i = 33; $i < count($gamecount); $i = $i + 20) {
+        //     echo $i . " " . $gamecount[$i] . "<br>";
+        // }
+        // for($i = 34; $i < count($gamecount); $i = $i + 20) {
+        //     echo $i . " " . $gamecount[$i] . "<br>";
+        // }
+        // for($i = 35; $i < count($gamecount); $i = $i + 20) {
+        //     echo $i . " " . $gamecount[$i] . "<br>";
+        // }
+        // for($i = 36; $i < count($gamecount); $i = $i + 20) {
+        //     echo $i . " " . $gamecount[$i] . "<br>";
+        // }
+        // for($i = 37; $i < count($gamecount); $i = $i + 20) {
+        //     echo $i . " " . $gamecount[$i] . "<br>";
+        // }
+        // for($i = 38; $i < count($gamecount); $i = $i + 20) {
+        //     echo $i . " " . $gamecount[$i] . "<br>";
+        // }
+        // for($i = 39; $i < count($gamecount); $i = $i + 20) {
+        //     echo $i . " " . $gamecount[$i] . "<br>";
+        // }
+        // for($i = 40; $i < count($gamecount); $i = $i + 20) {
+        //     echo $i . " " . $gamecount[$i] . "<br>";
+        // }
+        // for($i = 41; $i < count($gamecount); $i = $i + 20) {
+        //     echo $i . " " . $gamecount[$i] . "<br>";
+        // }
+        // for($i = 42; $i < count($gamecount); $i = $i + 20) {
+        //     echo $i . " " . $gamecount[$i] . "<br>";
+        // }
+        // for($i = 43; $i < count($gamecount); $i = $i + 20) {
+        //     echo $i . " " . $gamecount[$i] . "<br>";
+        // }
 
 
 

@@ -1936,6 +1936,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["gamecount"],
   data: function data() {
@@ -1944,7 +1945,7 @@ __webpack_require__.r(__webpack_exports__);
       release_maker: [this.gamecount[24], this.gamecount[25], this.gamecount[26], this.gamecount[27], this.gamecount[28], this.gamecount[29], this.gamecount[30], this.gamecount[31], this.gamecount[32], this.gamecount[33], this.gamecount[34], this.gamecount[35], this.gamecount[36], this.gamecount[37], this.gamecount[38], this.gamecount[39], this.gamecount[40], this.gamecount[41], this.gamecount[42], this.gamecount[43]],
       game_type: [true, false, false],
       cero_select: [true, false, false, false, false, false, false, false],
-      release_maker_select: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+      release_maker_select: [true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
     };
   },
   methods: {
@@ -1959,9 +1960,31 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
 
-      for (var _i = 0; _i < this.cero_select.length; _i++) {
-        if (this.cero_select[_i] == true) {
-          this.inputgamecount = this.gamecount[_i];
+      if (this.release_maker_select[0] == true) {
+        var gamecount_sub = 0;
+
+        for (var _i = 0; _i < this.game_type.length; _i++) {
+          for (var j = 0; j < this.cero_select.length; j++) {
+            if (this.game_type[_i] == true && this.cero_select[j] == true) {
+              this.inputgamecount = this.gamecount[gamecount_sub];
+            }
+
+            gamecount_sub++;
+          }
+        }
+      } else {
+        var _gamecount_sub = 0;
+
+        for (var _i2 = 0; _i2 < this.game_type.length; _i2++) {
+          for (var _j = 0; _j < this.cero_select.length; _j++) {
+            for (var k = 1; k < this.release_maker_select.length; k++) {
+              if (this.game_type[_i2] == true && this.cero_select[_j] == true && this.release_maker_select[k] == true) {
+                this.inputgamecount = this.gamecount[_gamecount_sub + 44];
+              }
+
+              _gamecount_sub++;
+            }
+          }
         }
       }
     },
@@ -1976,9 +1999,31 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
 
-      for (var _i2 = 0; _i2 < this.cero_select.length; _i2++) {
-        if (this.cero_select[_i2] == true) {
-          this.inputgamecount = this.gamecount[_i2 + 8];
+      if (this.release_maker_select[0] == true) {
+        var gamecount_sub = 0;
+
+        for (var _i3 = 0; _i3 < this.game_type.length; _i3++) {
+          for (var j = 0; j < this.cero_select.length; j++) {
+            if (this.game_type[_i3] == true && this.cero_select[j] == true) {
+              this.inputgamecount = this.gamecount[gamecount_sub];
+            }
+
+            gamecount_sub++;
+          }
+        }
+      } else {
+        var _gamecount_sub2 = 0;
+
+        for (var _i4 = 0; _i4 < this.game_type.length; _i4++) {
+          for (var _j2 = 0; _j2 < this.cero_select.length; _j2++) {
+            for (var k = 1; k < this.release_maker_select.length; k++) {
+              if (this.game_type[_i4] == true && this.cero_select[_j2] == true && this.release_maker_select[k] == true) {
+                this.inputgamecount = this.gamecount[_gamecount_sub2 + 44];
+              }
+
+              _gamecount_sub2++;
+            }
+          }
         }
       }
     },
@@ -1993,9 +2038,31 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
 
-      for (var _i3 = 0; _i3 < this.cero_select.length; _i3++) {
-        if (this.cero_select[_i3] == true) {
-          this.inputgamecount = this.gamecount[_i3 + 16];
+      if (this.release_maker_select[0] == true) {
+        var gamecount_sub = 0;
+
+        for (var _i5 = 0; _i5 < this.game_type.length; _i5++) {
+          for (var j = 0; j < this.cero_select.length; j++) {
+            if (this.game_type[_i5] == true && this.cero_select[j] == true) {
+              this.inputgamecount = this.gamecount[gamecount_sub];
+            }
+
+            gamecount_sub++;
+          }
+        }
+      } else {
+        var _gamecount_sub3 = 0;
+
+        for (var _i6 = 0; _i6 < this.game_type.length; _i6++) {
+          for (var _j3 = 0; _j3 < this.cero_select.length; _j3++) {
+            for (var k = 1; k < this.release_maker_select.length; k++) {
+              if (this.game_type[_i6] == true && this.cero_select[_j3] == true && this.release_maker_select[k] == true) {
+                this.inputgamecount = this.gamecount[_gamecount_sub3 + 44];
+              }
+
+              _gamecount_sub3++;
+            }
+          }
         }
       }
     },
@@ -2010,9 +2077,31 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
 
-      for (var _i4 = 0; _i4 < this.game_type.length; _i4++) {
-        if (this.game_type[_i4] == true) {
-          this.inputgamecount = this.gamecount[_i4 * 8];
+      if (this.release_maker_select[0] == true) {
+        var gamecount_sub = 0;
+
+        for (var _i7 = 0; _i7 < this.game_type.length; _i7++) {
+          for (var j = 0; j < this.cero_select.length; j++) {
+            if (this.game_type[_i7] == true && this.cero_select[j] == true) {
+              this.inputgamecount = this.gamecount[gamecount_sub];
+            }
+
+            gamecount_sub++;
+          }
+        }
+      } else {
+        var _gamecount_sub4 = 0;
+
+        for (var _i8 = 0; _i8 < this.game_type.length; _i8++) {
+          for (var _j4 = 0; _j4 < this.cero_select.length; _j4++) {
+            for (var k = 1; k < this.release_maker_select.length; k++) {
+              if (this.game_type[_i8] == true && this.cero_select[_j4] == true && this.release_maker_select[k] == true) {
+                this.inputgamecount = this.gamecount[_gamecount_sub4 + 44];
+              }
+
+              _gamecount_sub4++;
+            }
+          }
         }
       }
     },
@@ -2027,9 +2116,31 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
 
-      for (var _i5 = 0; _i5 < this.game_type.length; _i5++) {
-        if (this.game_type[_i5] == true) {
-          this.inputgamecount = this.gamecount[_i5 * 8 + 1];
+      if (this.release_maker_select[0] == true) {
+        var gamecount_sub = 0;
+
+        for (var _i9 = 0; _i9 < this.game_type.length; _i9++) {
+          for (var j = 0; j < this.cero_select.length; j++) {
+            if (this.game_type[_i9] == true && this.cero_select[j] == true) {
+              this.inputgamecount = this.gamecount[gamecount_sub];
+            }
+
+            gamecount_sub++;
+          }
+        }
+      } else {
+        var _gamecount_sub5 = 0;
+
+        for (var _i10 = 0; _i10 < this.game_type.length; _i10++) {
+          for (var _j5 = 0; _j5 < this.cero_select.length; _j5++) {
+            for (var k = 1; k < this.release_maker_select.length; k++) {
+              if (this.game_type[_i10] == true && this.cero_select[_j5] == true && this.release_maker_select[k] == true) {
+                this.inputgamecount = this.gamecount[_gamecount_sub5 + 44];
+              }
+
+              _gamecount_sub5++;
+            }
+          }
         }
       }
     },
@@ -2044,9 +2155,31 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
 
-      for (var _i6 = 0; _i6 < this.game_type.length; _i6++) {
-        if (this.game_type[_i6] == true) {
-          this.inputgamecount = this.gamecount[_i6 * 8 + 2];
+      if (this.release_maker_select[0] == true) {
+        var gamecount_sub = 0;
+
+        for (var _i11 = 0; _i11 < this.game_type.length; _i11++) {
+          for (var j = 0; j < this.cero_select.length; j++) {
+            if (this.game_type[_i11] == true && this.cero_select[j] == true) {
+              this.inputgamecount = this.gamecount[gamecount_sub];
+            }
+
+            gamecount_sub++;
+          }
+        }
+      } else {
+        var _gamecount_sub6 = 0;
+
+        for (var _i12 = 0; _i12 < this.game_type.length; _i12++) {
+          for (var _j6 = 0; _j6 < this.cero_select.length; _j6++) {
+            for (var k = 1; k < this.release_maker_select.length; k++) {
+              if (this.game_type[_i12] == true && this.cero_select[_j6] == true && this.release_maker_select[k] == true) {
+                this.inputgamecount = this.gamecount[_gamecount_sub6 + 44];
+              }
+
+              _gamecount_sub6++;
+            }
+          }
         }
       }
     },
@@ -2061,9 +2194,31 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
 
-      for (var _i7 = 0; _i7 < this.game_type.length; _i7++) {
-        if (this.game_type[_i7] == true) {
-          this.inputgamecount = this.gamecount[_i7 * 8 + 3];
+      if (this.release_maker_select[0] == true) {
+        var gamecount_sub = 0;
+
+        for (var _i13 = 0; _i13 < this.game_type.length; _i13++) {
+          for (var j = 0; j < this.cero_select.length; j++) {
+            if (this.game_type[_i13] == true && this.cero_select[j] == true) {
+              this.inputgamecount = this.gamecount[gamecount_sub];
+            }
+
+            gamecount_sub++;
+          }
+        }
+      } else {
+        var _gamecount_sub7 = 0;
+
+        for (var _i14 = 0; _i14 < this.game_type.length; _i14++) {
+          for (var _j7 = 0; _j7 < this.cero_select.length; _j7++) {
+            for (var k = 1; k < this.release_maker_select.length; k++) {
+              if (this.game_type[_i14] == true && this.cero_select[_j7] == true && this.release_maker_select[k] == true) {
+                this.inputgamecount = this.gamecount[_gamecount_sub7 + 44];
+              }
+
+              _gamecount_sub7++;
+            }
+          }
         }
       }
     },
@@ -2078,9 +2233,31 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
 
-      for (var _i8 = 0; _i8 < this.game_type.length; _i8++) {
-        if (this.game_type[_i8] == true) {
-          this.inputgamecount = this.gamecount[_i8 * 8 + 4];
+      if (this.release_maker_select[0] == true) {
+        var gamecount_sub = 0;
+
+        for (var _i15 = 0; _i15 < this.game_type.length; _i15++) {
+          for (var j = 0; j < this.cero_select.length; j++) {
+            if (this.game_type[_i15] == true && this.cero_select[j] == true) {
+              this.inputgamecount = this.gamecount[gamecount_sub];
+            }
+
+            gamecount_sub++;
+          }
+        }
+      } else {
+        var _gamecount_sub8 = 0;
+
+        for (var _i16 = 0; _i16 < this.game_type.length; _i16++) {
+          for (var _j8 = 0; _j8 < this.cero_select.length; _j8++) {
+            for (var k = 1; k < this.release_maker_select.length; k++) {
+              if (this.game_type[_i16] == true && this.cero_select[_j8] == true && this.release_maker_select[k] == true) {
+                this.inputgamecount = this.gamecount[_gamecount_sub8 + 44];
+              }
+
+              _gamecount_sub8++;
+            }
+          }
         }
       }
     },
@@ -2095,9 +2272,31 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
 
-      for (var _i9 = 0; _i9 < this.game_type.length; _i9++) {
-        if (this.game_type[_i9] == true) {
-          this.inputgamecount = this.gamecount[_i9 * 8 + 5];
+      if (this.release_maker_select[0] == true) {
+        var gamecount_sub = 0;
+
+        for (var _i17 = 0; _i17 < this.game_type.length; _i17++) {
+          for (var j = 0; j < this.cero_select.length; j++) {
+            if (this.game_type[_i17] == true && this.cero_select[j] == true) {
+              this.inputgamecount = this.gamecount[gamecount_sub];
+            }
+
+            gamecount_sub++;
+          }
+        }
+      } else {
+        var _gamecount_sub9 = 0;
+
+        for (var _i18 = 0; _i18 < this.game_type.length; _i18++) {
+          for (var _j9 = 0; _j9 < this.cero_select.length; _j9++) {
+            for (var k = 1; k < this.release_maker_select.length; k++) {
+              if (this.game_type[_i18] == true && this.cero_select[_j9] == true && this.release_maker_select[k] == true) {
+                this.inputgamecount = this.gamecount[_gamecount_sub9 + 44];
+              }
+
+              _gamecount_sub9++;
+            }
+          }
         }
       }
     },
@@ -2112,9 +2311,31 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
 
-      for (var _i10 = 0; _i10 < this.game_type.length; _i10++) {
-        if (this.game_type[_i10] == true) {
-          this.inputgamecount = this.gamecount[_i10 * 8 + 6];
+      if (this.release_maker_select[0] == true) {
+        var gamecount_sub = 0;
+
+        for (var _i19 = 0; _i19 < this.game_type.length; _i19++) {
+          for (var j = 0; j < this.cero_select.length; j++) {
+            if (this.game_type[_i19] == true && this.cero_select[j] == true) {
+              this.inputgamecount = this.gamecount[gamecount_sub];
+            }
+
+            gamecount_sub++;
+          }
+        }
+      } else {
+        var _gamecount_sub10 = 0;
+
+        for (var _i20 = 0; _i20 < this.game_type.length; _i20++) {
+          for (var _j10 = 0; _j10 < this.cero_select.length; _j10++) {
+            for (var k = 1; k < this.release_maker_select.length; k++) {
+              if (this.game_type[_i20] == true && this.cero_select[_j10] == true && this.release_maker_select[k] == true) {
+                this.inputgamecount = this.gamecount[_gamecount_sub10 + 44];
+              }
+
+              _gamecount_sub10++;
+            }
+          }
         }
       }
     },
@@ -2129,36 +2350,69 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
 
-      for (var _i11 = 0; _i11 < this.game_type.length; _i11++) {
-        if (this.game_type[_i11] == true) {
-          this.inputgamecount = this.gamecount[_i11 * 8 + 7];
+      if (this.release_maker_select[0] == true) {
+        var gamecount_sub = 0;
+
+        for (var _i21 = 0; _i21 < this.game_type.length; _i21++) {
+          for (var j = 0; j < this.cero_select.length; j++) {
+            if (this.game_type[_i21] == true && this.cero_select[j] == true) {
+              this.inputgamecount = this.gamecount[gamecount_sub];
+            }
+
+            gamecount_sub++;
+          }
+        }
+      } else {
+        var _gamecount_sub11 = 0;
+
+        for (var _i22 = 0; _i22 < this.game_type.length; _i22++) {
+          for (var _j11 = 0; _j11 < this.cero_select.length; _j11++) {
+            for (var k = 1; k < this.release_maker_select.length; k++) {
+              if (this.game_type[_i22] == true && this.cero_select[_j11] == true && this.release_maker_select[k] == true) {
+                this.inputgamecount = this.gamecount[_gamecount_sub11 + 44];
+              }
+
+              _gamecount_sub11++;
+            }
+          }
         }
       }
     },
     release_maker_click: function release_maker_click(e) {
-      var rank = e.target.value; // console.log(rank);
-      //     for (let i = 1; i <= this.release_maker.length; i++) {
-      //         for (let j = 0; j < this.game_type.length; j++) {
-      //             for (let k = 0; k < this.cero_select.length; k++) {
-      //                 if(i == rank && this.game_type[j] == true && this.cero_select[k] == true) {
-      //                     this.inputgamecount = this.gamecount[i+43];
-      //                 }
-      //             }
-      //         }
-      //     }
-      // }
+      var rank = e.target.value;
 
-      var gamecount_sub = 0;
+      for (var i = 0; i < this.release_maker.length; i++) {
+        if (i == rank) {
+          this.release_maker_select[i] = true;
+        } else {
+          this.release_maker_select[i] = false;
+        }
+      }
 
-      for (var i = 0; i < this.game_type.length; i++) {
-        for (var j = 0; j < this.cero_select.length; j++) {
-          for (var k = 1; k <= this.release_maker.length; k++) {
-            if (this.game_type[i] == true && this.cero_select[j] == true && k == rank) {
-              this.inputgamecount = this.gamecount[gamecount_sub + 44];
-              console.log(gamecount_sub + 44);
+      if (this.release_maker_select[0] == true) {
+        var gamecount_sub = 0;
+
+        for (var _i23 = 0; _i23 < this.game_type.length; _i23++) {
+          for (var j = 0; j < this.cero_select.length; j++) {
+            if (this.game_type[_i23] == true && this.cero_select[j] == true) {
+              this.inputgamecount = this.gamecount[gamecount_sub];
             }
 
             gamecount_sub++;
+          }
+        }
+      } else {
+        var _gamecount_sub12 = 0;
+
+        for (var _i24 = 0; _i24 < this.game_type.length; _i24++) {
+          for (var _j12 = 0; _j12 < this.cero_select.length; _j12++) {
+            for (var k = 1; k < this.release_maker_select.length; k++) {
+              if (this.game_type[_i24] == true && this.cero_select[_j12] == true && this.release_maker_select[k] == true) {
+                this.inputgamecount = this.gamecount[_gamecount_sub12 + 44];
+              }
+
+              _gamecount_sub12++;
+            }
           }
         }
       }
@@ -37846,17 +38100,25 @@ var render = function() {
           }
         }
       },
-      _vm._l(20, function(rank) {
-        return _c(
+      [
+        _c(
           "option",
-          {
-            attrs: { name: _vm.release_maker[rank - 1] },
-            domProps: { value: rank }
-          },
-          [_vm._v(_vm._s(_vm.release_maker[rank - 1]))]
-        )
-      }),
-      0
+          { attrs: { name: "all_release_maker" }, domProps: { value: 0 } },
+          [_vm._v("全ての販売メーカー")]
+        ),
+        _vm._v(" "),
+        _vm._l(20, function(rank) {
+          return _c(
+            "option",
+            {
+              attrs: { name: _vm.release_maker[rank - 1] },
+              domProps: { value: rank }
+            },
+            [_vm._v(_vm._s(_vm.release_maker[rank - 1]))]
+          )
+        })
+      ],
+      2
     ),
     _vm._v(" "),
     _c("ul", [_c("li", [_vm._v(_vm._s(_vm.inputgamecount))])])
