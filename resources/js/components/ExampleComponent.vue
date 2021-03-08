@@ -22,7 +22,7 @@
     </select>
     
     <ul>
-        <li>{{ inputgamecount }}</li>
+        <li>{{ animegamecount }}</li>
     </ul>
 </div>
 </template>
@@ -34,7 +34,8 @@
         props:["gamecount"],
         data(){
             return {
-                inputgamecount: this.gamecount[0],
+                outputgamecount: this.gamecount[0],
+                outputgamecount_firstflag: 0,
                 release_maker: [this.gamecount[24],this.gamecount[25],this.gamecount[26],this.gamecount[27],this.gamecount[28],
                                 this.gamecount[29],this.gamecount[30],this.gamecount[31],this.gamecount[32],this.gamecount[33],
                                 this.gamecount[34],this.gamecount[35],this.gamecount[36],this.gamecount[37],this.gamecount[38],
@@ -50,7 +51,6 @@
         },
         methods: {
             all_click: function() {
-                this.inputgamecount = this.gamecount[0];
                 for (let i = 0; i < this.game_type.length; i++) {
                     if(i == 0) {
                         this.game_type[i] = true;
@@ -59,10 +59,9 @@
                     }
                 }
 
-                this.outputgamecount();
+                this.searchgamecount();
             },
             package_click: function() {
-                this.inputgamecount = this.gamecount[8];
                 for (let i = 0; i < this.game_type.length; i++) {
                     if(i == 1) {
                         this.game_type[i] = true;
@@ -71,10 +70,9 @@
                     }
                 }
 
-                this.outputgamecount();
+                this.searchgamecount();
             },
             download_click: function() {
-                this.inputgamecount = this.gamecount[16];
                 for (let i = 0; i < this.game_type.length; i++) {
                     if(i == 2) {
                         this.game_type[i] = true;
@@ -83,11 +81,10 @@
                     }
                 }
 
-                this.outputgamecount();
+                this.searchgamecount();
             },
 
             cero_all_click: function() {
-                this.inputgamecount = this.gamecount[0];
                 for (let i = 0; i < this.cero_select.length; i++) {
                     if(i == 0) {
                         this.cero_select[i] = true;
@@ -96,10 +93,9 @@
                     }
                 }
 
-                this.outputgamecount();
+                this.searchgamecount();
             },
             cero_A_3_click: function() {
-                this.inputgamecount = this.gamecount[1];
                 for (let i = 0; i < this.cero_select.length; i++) {
                     if(i == 1) {
                         this.cero_select[i] = true;
@@ -108,10 +104,9 @@
                     }
                 }
 
-                this.outputgamecount();
+                this.searchgamecount();
             },
             cero_7_click: function() {
-                this.inputgamecount = this.gamecount[2];
                 for (let i = 0; i < this.cero_select.length; i++) {
                     if(i == 2) {
                         this.cero_select[i] = true;
@@ -120,10 +115,9 @@
                     }
                 }
 
-                this.outputgamecount();
+                this.searchgamecount();
             },
             cero_B_12_click: function() {
-                this.inputgamecount = this.gamecount[3];
                 for (let i = 0; i < this.cero_select.length; i++) {
                     if(i == 3) {
                         this.cero_select[i] = true;
@@ -132,10 +126,9 @@
                     }
                 }
 
-                this.outputgamecount();
+                this.searchgamecount();
             },
             cero_C_click: function() {
-                this.inputgamecount = this.gamecount[4];
                 for (let i = 0; i < this.cero_select.length; i++) {
                     if(i == 4) {
                         this.cero_select[i] = true;
@@ -144,10 +137,9 @@
                     }
                 }
 
-                this.outputgamecount();
+                this.searchgamecount();
             },
             cero_16_click: function() {
-                this.inputgamecount = this.gamecount[5];
                 for (let i = 0; i < this.cero_select.length; i++) {
                     if(i == 5) {
                         this.cero_select[i] = true;
@@ -156,10 +148,9 @@
                     }
                 }
 
-                this.outputgamecount();
+                this.searchgamecount();
             },
             cero_D_click: function() {
-                this.inputgamecount = this.gamecount[6];
                 for (let i = 0; i < this.cero_select.length; i++) {
                     if(i == 6) {
                         this.cero_select[i] = true;
@@ -168,10 +159,9 @@
                     }
                 }
 
-                this.outputgamecount();
+                this.searchgamecount();
             },
             cero_Z_click: function() {
-                this.inputgamecount = this.gamecount[7];
                 for (let i = 0; i < this.cero_select.length; i++) {
                     if(i == 7) {
                         this.cero_select[i] = true;
@@ -180,13 +170,13 @@
                     }
                 }
 
-                this.outputgamecount();
+                this.searchgamecount();
             },
 
 
             release_maker_click: function(e) {
                 let rank = e.target.value
-                for (let i = 0; i < this.release_maker.length; i++) {
+                for (let i = 0; i <= this.release_maker.length; i++) {
                     if(i == rank) {
                         this.release_maker_select[i] = true;
                     } else {
@@ -194,17 +184,16 @@
                     }
                 }
 
-                this.outputgamecount();
+                this.searchgamecount();
             },
 
-
-            outputgamecount: function() {
+            searchgamecount: function() {
                 let gamecount_sub = 0;
                 if(this.release_maker_select[0] == true) {
                     for (let i = 0; i < this.game_type.length; i++) {
                         for (let j = 0; j < this.cero_select.length; j++) {
                             if(this.game_type[i] == true && this.cero_select[j] == true) {
-                                this.inputgamecount = this.gamecount[gamecount_sub];
+                                this.countupgamecount(this.gamecount[gamecount_sub]);
                             }
                             gamecount_sub++;
                         }
@@ -214,28 +203,28 @@
                         for (let j = 0; j < this.cero_select.length; j++) {
                             for (let k = 1; k < this.release_maker_select.length; k++) {
                                 if(this.game_type[i] == true && this.cero_select[j] == true && this.release_maker_select[k] == true) {
-                                    this.inputgamecount = this.gamecount[gamecount_sub+44];
+                                    this.countupgamecount(this.gamecount[gamecount_sub+44]);
                                 }
                                 gamecount_sub++;
                             }
                         }
                     }
                 }
+            },
+
+            countupgamecount: function(value) {
+                TweenMax.to(this.$data, 1, {outputgamecount: value});
             }
 
         },
-        watch: {
-            // inputgamecount: function() {
-            //     for (let i = 0; i < this.game_type.length; i++) {
-            //         for (let j = 0; j < this.cero_select.length; j++) {
-            //             for (let k = 1; k < this.release_maker_select.length; k++) {
-            //                 if(this.game_type[i] == true && this.cero_select[j] == true && this.release_maker_select[k] == true) {
-            //                     TweenMax.to(this.$data, 1, {this.gamecount[gamecount_sub+44]: this.inputgamecount});
-            //                 }
-            //             }
-            //         }
-            //     }
-            // }
+        computed: {
+            animegamecount: function() {
+                if(this.outputgamecount_firstflag == 0) {
+                    this.outputgamecount_firstflag = 1;
+                    return this.outputgamecount;
+                }
+                return this.outputgamecount.toFixed(0);
+            }
         }
     }
 </script>

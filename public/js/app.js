@@ -1990,7 +1990,8 @@ __webpack_require__.r(__webpack_exports__);
   props: ["gamecount"],
   data: function data() {
     return {
-      inputgamecount: this.gamecount[0],
+      outputgamecount: this.gamecount[0],
+      outputgamecount_firstflag: 0,
       release_maker: [this.gamecount[24], this.gamecount[25], this.gamecount[26], this.gamecount[27], this.gamecount[28], this.gamecount[29], this.gamecount[30], this.gamecount[31], this.gamecount[32], this.gamecount[33], this.gamecount[34], this.gamecount[35], this.gamecount[36], this.gamecount[37], this.gamecount[38], this.gamecount[39], this.gamecount[40], this.gamecount[41], this.gamecount[42], this.gamecount[43]],
       game_type: [true, false, false],
       cero_select: [true, false, false, false, false, false, false, false],
@@ -1999,8 +2000,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     all_click: function all_click() {
-      this.inputgamecount = this.gamecount[0];
-
       for (var i = 0; i < this.game_type.length; i++) {
         if (i == 0) {
           this.game_type[i] = true;
@@ -2009,11 +2008,9 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
 
-      this.outputgamecount();
+      this.searchgamecount();
     },
     package_click: function package_click() {
-      this.inputgamecount = this.gamecount[8];
-
       for (var i = 0; i < this.game_type.length; i++) {
         if (i == 1) {
           this.game_type[i] = true;
@@ -2022,11 +2019,9 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
 
-      this.outputgamecount();
+      this.searchgamecount();
     },
     download_click: function download_click() {
-      this.inputgamecount = this.gamecount[16];
-
       for (var i = 0; i < this.game_type.length; i++) {
         if (i == 2) {
           this.game_type[i] = true;
@@ -2035,11 +2030,9 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
 
-      this.outputgamecount();
+      this.searchgamecount();
     },
     cero_all_click: function cero_all_click() {
-      this.inputgamecount = this.gamecount[0];
-
       for (var i = 0; i < this.cero_select.length; i++) {
         if (i == 0) {
           this.cero_select[i] = true;
@@ -2048,11 +2041,9 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
 
-      this.outputgamecount();
+      this.searchgamecount();
     },
     cero_A_3_click: function cero_A_3_click() {
-      this.inputgamecount = this.gamecount[1];
-
       for (var i = 0; i < this.cero_select.length; i++) {
         if (i == 1) {
           this.cero_select[i] = true;
@@ -2061,11 +2052,9 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
 
-      this.outputgamecount();
+      this.searchgamecount();
     },
     cero_7_click: function cero_7_click() {
-      this.inputgamecount = this.gamecount[2];
-
       for (var i = 0; i < this.cero_select.length; i++) {
         if (i == 2) {
           this.cero_select[i] = true;
@@ -2074,11 +2063,9 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
 
-      this.outputgamecount();
+      this.searchgamecount();
     },
     cero_B_12_click: function cero_B_12_click() {
-      this.inputgamecount = this.gamecount[3];
-
       for (var i = 0; i < this.cero_select.length; i++) {
         if (i == 3) {
           this.cero_select[i] = true;
@@ -2087,11 +2074,9 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
 
-      this.outputgamecount();
+      this.searchgamecount();
     },
     cero_C_click: function cero_C_click() {
-      this.inputgamecount = this.gamecount[4];
-
       for (var i = 0; i < this.cero_select.length; i++) {
         if (i == 4) {
           this.cero_select[i] = true;
@@ -2100,11 +2085,9 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
 
-      this.outputgamecount();
+      this.searchgamecount();
     },
     cero_16_click: function cero_16_click() {
-      this.inputgamecount = this.gamecount[5];
-
       for (var i = 0; i < this.cero_select.length; i++) {
         if (i == 5) {
           this.cero_select[i] = true;
@@ -2113,11 +2096,9 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
 
-      this.outputgamecount();
+      this.searchgamecount();
     },
     cero_D_click: function cero_D_click() {
-      this.inputgamecount = this.gamecount[6];
-
       for (var i = 0; i < this.cero_select.length; i++) {
         if (i == 6) {
           this.cero_select[i] = true;
@@ -2126,11 +2107,9 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
 
-      this.outputgamecount();
+      this.searchgamecount();
     },
     cero_Z_click: function cero_Z_click() {
-      this.inputgamecount = this.gamecount[7];
-
       for (var i = 0; i < this.cero_select.length; i++) {
         if (i == 7) {
           this.cero_select[i] = true;
@@ -2139,12 +2118,12 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
 
-      this.outputgamecount();
+      this.searchgamecount();
     },
     release_maker_click: function release_maker_click(e) {
       var rank = e.target.value;
 
-      for (var i = 0; i < this.release_maker.length; i++) {
+      for (var i = 0; i <= this.release_maker.length; i++) {
         if (i == rank) {
           this.release_maker_select[i] = true;
         } else {
@@ -2152,16 +2131,16 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
 
-      this.outputgamecount();
+      this.searchgamecount();
     },
-    outputgamecount: function outputgamecount() {
+    searchgamecount: function searchgamecount() {
       var gamecount_sub = 0;
 
       if (this.release_maker_select[0] == true) {
         for (var i = 0; i < this.game_type.length; i++) {
           for (var j = 0; j < this.cero_select.length; j++) {
             if (this.game_type[i] == true && this.cero_select[j] == true) {
-              this.inputgamecount = this.gamecount[gamecount_sub];
+              this.countupgamecount(this.gamecount[gamecount_sub]);
             }
 
             gamecount_sub++;
@@ -2172,7 +2151,7 @@ __webpack_require__.r(__webpack_exports__);
           for (var _j = 0; _j < this.cero_select.length; _j++) {
             for (var k = 1; k < this.release_maker_select.length; k++) {
               if (this.game_type[_i] == true && this.cero_select[_j] == true && this.release_maker_select[k] == true) {
-                this.inputgamecount = this.gamecount[gamecount_sub + 44];
+                this.countupgamecount(this.gamecount[gamecount_sub + 44]);
               }
 
               gamecount_sub++;
@@ -2180,19 +2159,22 @@ __webpack_require__.r(__webpack_exports__);
           }
         }
       }
+    },
+    countupgamecount: function countupgamecount(value) {
+      gsap__WEBPACK_IMPORTED_MODULE_0__["TweenMax"].to(this.$data, 1, {
+        outputgamecount: value
+      });
     }
   },
-  watch: {// inputgamecount: function() {
-    //     for (let i = 0; i < this.game_type.length; i++) {
-    //         for (let j = 0; j < this.cero_select.length; j++) {
-    //             for (let k = 1; k < this.release_maker_select.length; k++) {
-    //                 if(this.game_type[i] == true && this.cero_select[j] == true && this.release_maker_select[k] == true) {
-    //                     TweenMax.to(this.$data, 1, {this.gamecount[gamecount_sub+44]: this.inputgamecount});
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
+  computed: {
+    animegamecount: function animegamecount() {
+      if (this.outputgamecount_firstflag == 0) {
+        this.outputgamecount_firstflag = 1;
+        return this.outputgamecount;
+      }
+
+      return this.outputgamecount.toFixed(0);
+    }
   }
 });
 
@@ -43284,7 +43266,7 @@ var render = function() {
       2
     ),
     _vm._v(" "),
-    _c("ul", [_c("li", [_vm._v(_vm._s(_vm.inputgamecount))])])
+    _c("ul", [_c("li", [_vm._v(_vm._s(_vm.animegamecount))])])
   ])
 }
 var staticRenderFns = []
