@@ -1985,6 +1985,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["gamecount"],
@@ -1992,6 +1996,9 @@ __webpack_require__.r(__webpack_exports__);
     return {
       outputgamecount: this.gamecount[0],
       outputgamecount_firstflag: 0,
+      software_type: "ALL_software",
+      age_limit: "ALL_cero",
+      release_maker_name: "all_release_maker",
       release_maker: [this.gamecount[24], this.gamecount[25], this.gamecount[26], this.gamecount[27], this.gamecount[28], this.gamecount[29], this.gamecount[30], this.gamecount[31], this.gamecount[32], this.gamecount[33], this.gamecount[34], this.gamecount[35], this.gamecount[36], this.gamecount[37], this.gamecount[38], this.gamecount[39], this.gamecount[40], this.gamecount[41], this.gamecount[42], this.gamecount[43]],
       game_type: [true, false, false],
       cero_select: [true, false, false, false, false, false, false, false],
@@ -1999,7 +2006,9 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    all_click: function all_click() {
+    all_click: function all_click(e) {
+      this.software_type = e.target.value;
+
       for (var i = 0; i < this.game_type.length; i++) {
         if (i == 0) {
           this.game_type[i] = true;
@@ -2010,7 +2019,9 @@ __webpack_require__.r(__webpack_exports__);
 
       this.searchgamecount();
     },
-    package_click: function package_click() {
+    package_click: function package_click(e) {
+      this.software_type = e.target.value;
+
       for (var i = 0; i < this.game_type.length; i++) {
         if (i == 1) {
           this.game_type[i] = true;
@@ -2021,7 +2032,9 @@ __webpack_require__.r(__webpack_exports__);
 
       this.searchgamecount();
     },
-    download_click: function download_click() {
+    download_click: function download_click(e) {
+      this.software_type = e.target.value;
+
       for (var i = 0; i < this.game_type.length; i++) {
         if (i == 2) {
           this.game_type[i] = true;
@@ -2032,7 +2045,9 @@ __webpack_require__.r(__webpack_exports__);
 
       this.searchgamecount();
     },
-    cero_all_click: function cero_all_click() {
+    cero_all_click: function cero_all_click(e) {
+      this.age_limit = e.target.value;
+
       for (var i = 0; i < this.cero_select.length; i++) {
         if (i == 0) {
           this.cero_select[i] = true;
@@ -2043,7 +2058,9 @@ __webpack_require__.r(__webpack_exports__);
 
       this.searchgamecount();
     },
-    cero_A_3_click: function cero_A_3_click() {
+    cero_A_3_click: function cero_A_3_click(e) {
+      this.age_limit = e.target.value;
+
       for (var i = 0; i < this.cero_select.length; i++) {
         if (i == 1) {
           this.cero_select[i] = true;
@@ -2054,7 +2071,9 @@ __webpack_require__.r(__webpack_exports__);
 
       this.searchgamecount();
     },
-    cero_7_click: function cero_7_click() {
+    cero_7_click: function cero_7_click(e) {
+      this.age_limit = e.target.value;
+
       for (var i = 0; i < this.cero_select.length; i++) {
         if (i == 2) {
           this.cero_select[i] = true;
@@ -2065,7 +2084,9 @@ __webpack_require__.r(__webpack_exports__);
 
       this.searchgamecount();
     },
-    cero_B_12_click: function cero_B_12_click() {
+    cero_B_12_click: function cero_B_12_click(e) {
+      this.age_limit = e.target.value;
+
       for (var i = 0; i < this.cero_select.length; i++) {
         if (i == 3) {
           this.cero_select[i] = true;
@@ -2076,7 +2097,9 @@ __webpack_require__.r(__webpack_exports__);
 
       this.searchgamecount();
     },
-    cero_C_click: function cero_C_click() {
+    cero_C_click: function cero_C_click(e) {
+      this.age_limit = e.target.value;
+
       for (var i = 0; i < this.cero_select.length; i++) {
         if (i == 4) {
           this.cero_select[i] = true;
@@ -2087,7 +2110,9 @@ __webpack_require__.r(__webpack_exports__);
 
       this.searchgamecount();
     },
-    cero_16_click: function cero_16_click() {
+    cero_16_click: function cero_16_click(e) {
+      this.age_limit = e.target.value;
+
       for (var i = 0; i < this.cero_select.length; i++) {
         if (i == 5) {
           this.cero_select[i] = true;
@@ -2098,7 +2123,9 @@ __webpack_require__.r(__webpack_exports__);
 
       this.searchgamecount();
     },
-    cero_D_click: function cero_D_click() {
+    cero_D_click: function cero_D_click(e) {
+      this.age_limit = e.target.value;
+
       for (var i = 0; i < this.cero_select.length; i++) {
         if (i == 6) {
           this.cero_select[i] = true;
@@ -2109,7 +2136,9 @@ __webpack_require__.r(__webpack_exports__);
 
       this.searchgamecount();
     },
-    cero_Z_click: function cero_Z_click() {
+    cero_Z_click: function cero_Z_click(e) {
+      this.age_limit = e.target.value;
+
       for (var i = 0; i < this.cero_select.length; i++) {
         if (i == 7) {
           this.cero_select[i] = true;
@@ -2124,10 +2153,16 @@ __webpack_require__.r(__webpack_exports__);
       var rank = e.target.value;
 
       for (var i = 0; i <= this.release_maker.length; i++) {
-        if (i == rank) {
+        if (i == rank && rank != 0) {
           this.release_maker_select[i] = true;
+          this.release_maker_name = this.release_maker[i - 1];
         } else {
           this.release_maker_select[i] = false;
+        }
+
+        if (i == 0 && rank == 0) {
+          this.release_maker_select[i] = true;
+          this.release_maker_name = "all_release_maker";
         }
       }
 
@@ -2141,6 +2176,7 @@ __webpack_require__.r(__webpack_exports__);
           for (var j = 0; j < this.cero_select.length; j++) {
             if (this.game_type[i] == true && this.cero_select[j] == true) {
               this.countupgamecount(this.gamecount[gamecount_sub]);
+              break;
             }
 
             gamecount_sub++;
@@ -2152,6 +2188,7 @@ __webpack_require__.r(__webpack_exports__);
             for (var k = 1; k < this.release_maker_select.length; k++) {
               if (this.game_type[_i] == true && this.cero_select[_j] == true && this.release_maker_select[k] == true) {
                 this.countupgamecount(this.gamecount[gamecount_sub + 44]);
+                break;
               }
 
               gamecount_sub++;
@@ -2164,6 +2201,18 @@ __webpack_require__.r(__webpack_exports__);
       gsap__WEBPACK_IMPORTED_MODULE_0__["TweenMax"].to(this.$data, 1, {
         outputgamecount: value
       });
+    },
+    onSubmit: function onSubmit() {
+      axios.post('/thread', {
+        outputgamecount: this.outputgamecount.toFixed(0),
+        software_type: this.software_type,
+        age_limit: this.age_limit,
+        release_maker_name: this.release_maker_name
+      });
+      console.log(this.outputgamecount.toFixed(0));
+      console.log(this.software_type);
+      console.log(this.age_limit);
+      console.log(this.release_maker_name);
     }
   },
   computed: {
@@ -43172,101 +43221,130 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h3", [_vm._v("ゲーム種別")]),
-    _vm._v(" "),
-    _c("input", {
-      attrs: { type: "radio", name: "type", value: "ALL", checked: "" },
-      on: { click: _vm.all_click }
-    }),
-    _vm._v("全て\n    "),
-    _c("input", {
-      attrs: { type: "radio", name: "type", value: "package" },
-      on: { click: _vm.package_click }
-    }),
-    _vm._v("パッケージ販売\n    "),
-    _c("input", {
-      attrs: { type: "radio", name: "type", value: "download" },
-      on: { click: _vm.download_click }
-    }),
-    _vm._v("ダウンロード販売\n\n    "),
-    _c("h3", [_vm._v("年齢制限")]),
-    _vm._v(" "),
-    _c("input", {
-      attrs: { type: "radio", name: "age-limit", value: "ALL", checked: "" },
-      on: { click: _vm.cero_all_click }
-    }),
-    _vm._v("年齢制限なし\n    "),
-    _c("input", {
-      attrs: { type: "radio", name: "age-limit", value: "A3+" },
-      on: { click: _vm.cero_A_3_click }
-    }),
-    _vm._v("全年齢対象(CERO:A,IARC:3+)\n    "),
-    _c("input", {
-      attrs: { type: "radio", name: "age-limit", value: "7+" },
-      on: { click: _vm.cero_7_click }
-    }),
-    _vm._v("7歳まで(IARC:7+)\n    "),
-    _c("input", {
-      attrs: { type: "radio", name: "age-limit", value: "B12+" },
-      on: { click: _vm.cero_B_12_click }
-    }),
-    _vm._v("12歳まで(CERO:B,IARC:12+)"),
-    _c("br"),
-    _vm._v(" "),
-    _c("input", {
-      attrs: { type: "radio", name: "age-limit", value: "C+" },
-      on: { click: _vm.cero_C_click }
-    }),
-    _vm._v("15歳まで(CERO:C)\n    "),
-    _c("input", {
-      attrs: { type: "radio", name: "age-limit", value: "16+" },
-      on: { click: _vm.cero_16_click }
-    }),
-    _vm._v("16歳まで(IARC:16+)\n    "),
-    _c("input", {
-      attrs: { type: "radio", name: "age-limit", value: "D" },
-      on: { click: _vm.cero_D_click }
-    }),
-    _vm._v("17歳まで(CERO:D)\n    "),
-    _c("input", {
-      attrs: { type: "radio", name: "age-limit", value: "Z18+" },
-      on: { click: _vm.cero_Z_click }
-    }),
-    _vm._v("18歳以上(CERO:Z,IARC:18+)\n\n    "),
-    _c("h3", [_vm._v("販売メーカー(販売本数が多いメーカー20社のみ)")]),
-    _vm._v(" "),
     _c(
-      "select",
+      "form",
       {
-        attrs: { name: "publisher" },
+        staticClass: "simple-form",
+        attrs: { action: "/thread", method: "post" },
         on: {
-          change: function($event) {
-            return _vm.release_maker_click($event)
+          submit: function($event) {
+            $event.preventDefault()
+            return _vm.onSubmit($event)
           }
         }
       },
       [
+        _c("h3", [_vm._v("ゲーム種別")]),
+        _vm._v(" "),
+        _c("input", {
+          attrs: {
+            type: "radio",
+            name: "software-type",
+            value: "ALL_software",
+            checked: ""
+          },
+          on: { click: _vm.all_click }
+        }),
+        _vm._v("全て\n        "),
+        _c("input", {
+          attrs: { type: "radio", name: "software-type", value: "package" },
+          on: { click: _vm.package_click }
+        }),
+        _vm._v("パッケージ販売\n        "),
+        _c("input", {
+          attrs: { type: "radio", name: "software-type", value: "download" },
+          on: { click: _vm.download_click }
+        }),
+        _vm._v("ダウンロード販売\n\n        "),
+        _c("h3", [_vm._v("年齢制限")]),
+        _vm._v(" "),
+        _c("input", {
+          attrs: {
+            type: "radio",
+            name: "age-limit",
+            value: "ALL_cero",
+            checked: ""
+          },
+          on: { click: _vm.cero_all_click }
+        }),
+        _vm._v("年齢制限なし\n        "),
+        _c("input", {
+          attrs: { type: "radio", name: "age-limit", value: "A3+" },
+          on: { click: _vm.cero_A_3_click }
+        }),
+        _vm._v("全年齢対象(CERO:A,IARC:3+)\n        "),
+        _c("input", {
+          attrs: { type: "radio", name: "age-limit", value: "7+" },
+          on: { click: _vm.cero_7_click }
+        }),
+        _vm._v("7歳まで(IARC:7+)\n        "),
+        _c("input", {
+          attrs: { type: "radio", name: "age-limit", value: "B12+" },
+          on: { click: _vm.cero_B_12_click }
+        }),
+        _vm._v("12歳まで(CERO:B,IARC:12+)"),
+        _c("br"),
+        _vm._v(" "),
+        _c("input", {
+          attrs: { type: "radio", name: "age-limit", value: "C+" },
+          on: { click: _vm.cero_C_click }
+        }),
+        _vm._v("15歳まで(CERO:C)\n        "),
+        _c("input", {
+          attrs: { type: "radio", name: "age-limit", value: "16+" },
+          on: { click: _vm.cero_16_click }
+        }),
+        _vm._v("16歳まで(IARC:16+)\n        "),
+        _c("input", {
+          attrs: { type: "radio", name: "age-limit", value: "D" },
+          on: { click: _vm.cero_D_click }
+        }),
+        _vm._v("17歳まで(CERO:D)\n        "),
+        _c("input", {
+          attrs: { type: "radio", name: "age-limit", value: "Z18+" },
+          on: { click: _vm.cero_Z_click }
+        }),
+        _vm._v("18歳以上(CERO:Z,IARC:18+)\n\n        "),
+        _c("h3", [_vm._v("販売メーカー(販売本数が多いメーカー20社のみ)")]),
+        _vm._v(" "),
         _c(
-          "option",
-          { attrs: { name: "all_release_maker" }, domProps: { value: 0 } },
-          [_vm._v("全ての販売メーカー")]
+          "select",
+          {
+            attrs: { name: "publisher" },
+            on: {
+              change: function($event) {
+                return _vm.release_maker_click($event)
+              }
+            }
+          },
+          [
+            _c(
+              "option",
+              { attrs: { name: "all_release_maker" }, domProps: { value: 0 } },
+              [_vm._v("全ての販売メーカー")]
+            ),
+            _vm._v(" "),
+            _vm._l(20, function(rank) {
+              return _c(
+                "option",
+                {
+                  attrs: { name: _vm.release_maker[rank - 1] },
+                  domProps: { value: rank }
+                },
+                [_vm._v(_vm._s(_vm.release_maker[rank - 1]))]
+              )
+            })
+          ],
+          2
         ),
         _vm._v(" "),
-        _vm._l(20, function(rank) {
-          return _c(
-            "option",
-            {
-              attrs: { name: _vm.release_maker[rank - 1] },
-              domProps: { value: rank }
-            },
-            [_vm._v(_vm._s(_vm.release_maker[rank - 1]))]
-          )
-        })
-      ],
-      2
-    ),
-    _vm._v(" "),
-    _c("ul", [_c("li", [_vm._v(_vm._s(_vm.animegamecount))])])
+        _c("ul", [_c("li", [_vm._v(_vm._s(_vm.animegamecount))])]),
+        _vm._v(" "),
+        _c("button", { staticClass: "simple-form__submit-btn" }, [
+          _vm._v("Post")
+        ])
+      ]
+    )
   ])
 }
 var staticRenderFns = []
