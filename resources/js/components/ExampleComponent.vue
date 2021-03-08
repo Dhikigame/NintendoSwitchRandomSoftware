@@ -3,7 +3,7 @@
     <h3>ゲーム種別</h3>
     <input type="radio" name="type" value="ALL" v-on:click="all_click" checked>全て
     <input type="radio" name="type" value="package" v-on:click="package_click">パッケージ販売
-    <input type="radio" name="type" value="download" v-on:click="download_click">ダウンロード専売
+    <input type="radio" name="type" value="download" v-on:click="download_click">ダウンロード販売
 
     <h3>年齢制限</h3>
     <input type="radio" name="age-limit" value="ALL" v-on:click="cero_all_click" checked>年齢制限なし
@@ -28,6 +28,8 @@
 </template>
 
 <script>
+    import {TweenMax} from 'gsap';
+    
     export default {
         props:["gamecount"],
         data(){
@@ -57,29 +59,7 @@
                     }
                 }
 
-                if(this.release_maker_select[0] == true) {
-                    let gamecount_sub = 0;
-                    for (let i = 0; i < this.game_type.length; i++) {
-                        for (let j = 0; j < this.cero_select.length; j++) {
-                            if(this.game_type[i] == true && this.cero_select[j] == true) {
-                                this.inputgamecount = this.gamecount[gamecount_sub];
-                            }
-                            gamecount_sub++;
-                        }
-                    }
-                } else {
-                    let gamecount_sub = 0;
-                    for (let i = 0; i < this.game_type.length; i++) {
-                        for (let j = 0; j < this.cero_select.length; j++) {
-                            for (let k = 1; k < this.release_maker_select.length; k++) {
-                                if(this.game_type[i] == true && this.cero_select[j] == true && this.release_maker_select[k] == true) {
-                                    this.inputgamecount = this.gamecount[gamecount_sub+44];
-                                }
-                                gamecount_sub++;
-                            }
-                        }
-                    }
-                }
+                this.outputgamecount();
             },
             package_click: function() {
                 this.inputgamecount = this.gamecount[8];
@@ -91,29 +71,7 @@
                     }
                 }
 
-                if(this.release_maker_select[0] == true) {
-                    let gamecount_sub = 0;
-                    for (let i = 0; i < this.game_type.length; i++) {
-                        for (let j = 0; j < this.cero_select.length; j++) {
-                            if(this.game_type[i] == true && this.cero_select[j] == true) {
-                                this.inputgamecount = this.gamecount[gamecount_sub];
-                            }
-                            gamecount_sub++;
-                        }
-                    }
-                } else {
-                    let gamecount_sub = 0;
-                    for (let i = 0; i < this.game_type.length; i++) {
-                        for (let j = 0; j < this.cero_select.length; j++) {
-                            for (let k = 1; k < this.release_maker_select.length; k++) {
-                                if(this.game_type[i] == true && this.cero_select[j] == true && this.release_maker_select[k] == true) {
-                                    this.inputgamecount = this.gamecount[gamecount_sub+44];
-                                }
-                                gamecount_sub++;
-                            }
-                        }
-                    }
-                }
+                this.outputgamecount();
             },
             download_click: function() {
                 this.inputgamecount = this.gamecount[16];
@@ -125,29 +83,7 @@
                     }
                 }
 
-                if(this.release_maker_select[0] == true) {
-                    let gamecount_sub = 0;
-                    for (let i = 0; i < this.game_type.length; i++) {
-                        for (let j = 0; j < this.cero_select.length; j++) {
-                            if(this.game_type[i] == true && this.cero_select[j] == true) {
-                                this.inputgamecount = this.gamecount[gamecount_sub];
-                            }
-                            gamecount_sub++;
-                        }
-                    }
-                } else {
-                    let gamecount_sub = 0;
-                    for (let i = 0; i < this.game_type.length; i++) {
-                        for (let j = 0; j < this.cero_select.length; j++) {
-                            for (let k = 1; k < this.release_maker_select.length; k++) {
-                                if(this.game_type[i] == true && this.cero_select[j] == true && this.release_maker_select[k] == true) {
-                                    this.inputgamecount = this.gamecount[gamecount_sub+44];
-                                }
-                                gamecount_sub++;
-                            }
-                        }
-                    }
-                }
+                this.outputgamecount();
             },
 
             cero_all_click: function() {
@@ -160,29 +96,7 @@
                     }
                 }
 
-                if(this.release_maker_select[0] == true) {
-                    let gamecount_sub = 0;
-                    for (let i = 0; i < this.game_type.length; i++) {
-                        for (let j = 0; j < this.cero_select.length; j++) {
-                            if(this.game_type[i] == true && this.cero_select[j] == true) {
-                                this.inputgamecount = this.gamecount[gamecount_sub];
-                            }
-                            gamecount_sub++;
-                        }
-                    }
-                } else {
-                    let gamecount_sub = 0;
-                    for (let i = 0; i < this.game_type.length; i++) {
-                        for (let j = 0; j < this.cero_select.length; j++) {
-                            for (let k = 1; k < this.release_maker_select.length; k++) {
-                                if(this.game_type[i] == true && this.cero_select[j] == true && this.release_maker_select[k] == true) {
-                                    this.inputgamecount = this.gamecount[gamecount_sub+44];
-                                }
-                                gamecount_sub++;
-                            }
-                        }
-                    }
-                }
+                this.outputgamecount();
             },
             cero_A_3_click: function() {
                 this.inputgamecount = this.gamecount[1];
@@ -194,29 +108,7 @@
                     }
                 }
 
-                if(this.release_maker_select[0] == true) {
-                    let gamecount_sub = 0;
-                    for (let i = 0; i < this.game_type.length; i++) {
-                        for (let j = 0; j < this.cero_select.length; j++) {
-                            if(this.game_type[i] == true && this.cero_select[j] == true) {
-                                this.inputgamecount = this.gamecount[gamecount_sub];
-                            }
-                            gamecount_sub++;
-                        }
-                    }
-                } else {
-                    let gamecount_sub = 0;
-                    for (let i = 0; i < this.game_type.length; i++) {
-                        for (let j = 0; j < this.cero_select.length; j++) {
-                            for (let k = 1; k < this.release_maker_select.length; k++) {
-                                if(this.game_type[i] == true && this.cero_select[j] == true && this.release_maker_select[k] == true) {
-                                    this.inputgamecount = this.gamecount[gamecount_sub+44];
-                                }
-                                gamecount_sub++;
-                            }
-                        }
-                    }
-                }
+                this.outputgamecount();
             },
             cero_7_click: function() {
                 this.inputgamecount = this.gamecount[2];
@@ -228,29 +120,7 @@
                     }
                 }
 
-                if(this.release_maker_select[0] == true) {
-                    let gamecount_sub = 0;
-                    for (let i = 0; i < this.game_type.length; i++) {
-                        for (let j = 0; j < this.cero_select.length; j++) {
-                            if(this.game_type[i] == true && this.cero_select[j] == true) {
-                                this.inputgamecount = this.gamecount[gamecount_sub];
-                            }
-                            gamecount_sub++;
-                        }
-                    }
-                } else {
-                    let gamecount_sub = 0;
-                    for (let i = 0; i < this.game_type.length; i++) {
-                        for (let j = 0; j < this.cero_select.length; j++) {
-                            for (let k = 1; k < this.release_maker_select.length; k++) {
-                                if(this.game_type[i] == true && this.cero_select[j] == true && this.release_maker_select[k] == true) {
-                                    this.inputgamecount = this.gamecount[gamecount_sub+44];
-                                }
-                                gamecount_sub++;
-                            }
-                        }
-                    }
-                }
+                this.outputgamecount();
             },
             cero_B_12_click: function() {
                 this.inputgamecount = this.gamecount[3];
@@ -262,29 +132,7 @@
                     }
                 }
 
-                if(this.release_maker_select[0] == true) {
-                    let gamecount_sub = 0;
-                    for (let i = 0; i < this.game_type.length; i++) {
-                        for (let j = 0; j < this.cero_select.length; j++) {
-                            if(this.game_type[i] == true && this.cero_select[j] == true) {
-                                this.inputgamecount = this.gamecount[gamecount_sub];
-                            }
-                            gamecount_sub++;
-                        }
-                    }
-                } else {
-                    let gamecount_sub = 0;
-                    for (let i = 0; i < this.game_type.length; i++) {
-                        for (let j = 0; j < this.cero_select.length; j++) {
-                            for (let k = 1; k < this.release_maker_select.length; k++) {
-                                if(this.game_type[i] == true && this.cero_select[j] == true && this.release_maker_select[k] == true) {
-                                    this.inputgamecount = this.gamecount[gamecount_sub+44];
-                                }
-                                gamecount_sub++;
-                            }
-                        }
-                    }
-                }
+                this.outputgamecount();
             },
             cero_C_click: function() {
                 this.inputgamecount = this.gamecount[4];
@@ -296,29 +144,7 @@
                     }
                 }
 
-                if(this.release_maker_select[0] == true) {
-                    let gamecount_sub = 0;
-                    for (let i = 0; i < this.game_type.length; i++) {
-                        for (let j = 0; j < this.cero_select.length; j++) {
-                            if(this.game_type[i] == true && this.cero_select[j] == true) {
-                                this.inputgamecount = this.gamecount[gamecount_sub];
-                            }
-                            gamecount_sub++;
-                        }
-                    }
-                } else {
-                    let gamecount_sub = 0;
-                    for (let i = 0; i < this.game_type.length; i++) {
-                        for (let j = 0; j < this.cero_select.length; j++) {
-                            for (let k = 1; k < this.release_maker_select.length; k++) {
-                                if(this.game_type[i] == true && this.cero_select[j] == true && this.release_maker_select[k] == true) {
-                                    this.inputgamecount = this.gamecount[gamecount_sub+44];
-                                }
-                                gamecount_sub++;
-                            }
-                        }
-                    }
-                }
+                this.outputgamecount();
             },
             cero_16_click: function() {
                 this.inputgamecount = this.gamecount[5];
@@ -330,29 +156,7 @@
                     }
                 }
 
-                if(this.release_maker_select[0] == true) {
-                    let gamecount_sub = 0;
-                    for (let i = 0; i < this.game_type.length; i++) {
-                        for (let j = 0; j < this.cero_select.length; j++) {
-                            if(this.game_type[i] == true && this.cero_select[j] == true) {
-                                this.inputgamecount = this.gamecount[gamecount_sub];
-                            }
-                            gamecount_sub++;
-                        }
-                    }
-                } else {
-                    let gamecount_sub = 0;
-                    for (let i = 0; i < this.game_type.length; i++) {
-                        for (let j = 0; j < this.cero_select.length; j++) {
-                            for (let k = 1; k < this.release_maker_select.length; k++) {
-                                if(this.game_type[i] == true && this.cero_select[j] == true && this.release_maker_select[k] == true) {
-                                    this.inputgamecount = this.gamecount[gamecount_sub+44];
-                                }
-                                gamecount_sub++;
-                            }
-                        }
-                    }
-                }
+                this.outputgamecount();
             },
             cero_D_click: function() {
                 this.inputgamecount = this.gamecount[6];
@@ -364,29 +168,7 @@
                     }
                 }
 
-                if(this.release_maker_select[0] == true) {
-                    let gamecount_sub = 0;
-                    for (let i = 0; i < this.game_type.length; i++) {
-                        for (let j = 0; j < this.cero_select.length; j++) {
-                            if(this.game_type[i] == true && this.cero_select[j] == true) {
-                                this.inputgamecount = this.gamecount[gamecount_sub];
-                            }
-                            gamecount_sub++;
-                        }
-                    }
-                } else {
-                    let gamecount_sub = 0;
-                    for (let i = 0; i < this.game_type.length; i++) {
-                        for (let j = 0; j < this.cero_select.length; j++) {
-                            for (let k = 1; k < this.release_maker_select.length; k++) {
-                                if(this.game_type[i] == true && this.cero_select[j] == true && this.release_maker_select[k] == true) {
-                                    this.inputgamecount = this.gamecount[gamecount_sub+44];
-                                }
-                                gamecount_sub++;
-                            }
-                        }
-                    }
-                }
+                this.outputgamecount();
             },
             cero_Z_click: function() {
                 this.inputgamecount = this.gamecount[7];
@@ -398,29 +180,7 @@
                     }
                 }
 
-                if(this.release_maker_select[0] == true) {
-                    let gamecount_sub = 0;
-                    for (let i = 0; i < this.game_type.length; i++) {
-                        for (let j = 0; j < this.cero_select.length; j++) {
-                            if(this.game_type[i] == true && this.cero_select[j] == true) {
-                                this.inputgamecount = this.gamecount[gamecount_sub];
-                            }
-                            gamecount_sub++;
-                        }
-                    }
-                } else {
-                    let gamecount_sub = 0;
-                    for (let i = 0; i < this.game_type.length; i++) {
-                        for (let j = 0; j < this.cero_select.length; j++) {
-                            for (let k = 1; k < this.release_maker_select.length; k++) {
-                                if(this.game_type[i] == true && this.cero_select[j] == true && this.release_maker_select[k] == true) {
-                                    this.inputgamecount = this.gamecount[gamecount_sub+44];
-                                }
-                                gamecount_sub++;
-                            }
-                        }
-                    }
-                }
+                this.outputgamecount();
             },
 
 
@@ -434,8 +194,13 @@
                     }
                 }
 
+                this.outputgamecount();
+            },
+
+
+            outputgamecount: function() {
+                let gamecount_sub = 0;
                 if(this.release_maker_select[0] == true) {
-                    let gamecount_sub = 0;
                     for (let i = 0; i < this.game_type.length; i++) {
                         for (let j = 0; j < this.cero_select.length; j++) {
                             if(this.game_type[i] == true && this.cero_select[j] == true) {
@@ -445,7 +210,6 @@
                         }
                     }
                 } else {
-                    let gamecount_sub = 0;
                     for (let i = 0; i < this.game_type.length; i++) {
                         for (let j = 0; j < this.cero_select.length; j++) {
                             for (let k = 1; k < this.release_maker_select.length; k++) {
@@ -459,6 +223,19 @@
                 }
             }
 
+        },
+        watch: {
+            // inputgamecount: function() {
+            //     for (let i = 0; i < this.game_type.length; i++) {
+            //         for (let j = 0; j < this.cero_select.length; j++) {
+            //             for (let k = 1; k < this.release_maker_select.length; k++) {
+            //                 if(this.game_type[i] == true && this.cero_select[j] == true && this.release_maker_select[k] == true) {
+            //                     TweenMax.to(this.$data, 1, {this.gamecount[gamecount_sub+44]: this.inputgamecount});
+            //                 }
+            //             }
+            //         }
+            //     }
+            // }
         }
     }
 </script>
