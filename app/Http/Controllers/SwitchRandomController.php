@@ -58,6 +58,14 @@ class SwitchRandomController extends Controller
         ]);
     }
 
+    public function result(Request $request) {
+        $age_limit = $request->age_limit;
+
+        return view('result')->with([
+            'age_limit' => $age_limit,
+        ]);
+    }
+
     private function gamecount($md) {
 
         $gamecount = [];        
