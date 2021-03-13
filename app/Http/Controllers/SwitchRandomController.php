@@ -6,12 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\SwitchRandom;
 use Storage;
 
+
 class SwitchRandomController extends Controller
 {
-    // //
-    // public function index() {
-    //     return "hello";
-    // }
+
     private function calc_image($img) {
         $img_size = getimagesize($img);
         $width = floor(187 * $img_size[0] / $img_size[1]);
@@ -55,14 +53,6 @@ class SwitchRandomController extends Controller
 
         return view('index')->with([
             'gamecount' => $gamecount,
-        ]);
-    }
-
-    public function result(Request $request) {
-        $age_limit = $request->age_limit;
-
-        return view('result')->with([
-            'age_limit' => $age_limit,
         ]);
     }
 

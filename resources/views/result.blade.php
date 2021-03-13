@@ -7,7 +7,7 @@
 @section('content')
 
 <?php
-echo $age_limit;
+// echo $publisher;
 ?>
 
 @endsection

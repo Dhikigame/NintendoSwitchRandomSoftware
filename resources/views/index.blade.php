@@ -10,10 +10,10 @@
 <h2>発売しているswitchのソフトの中からオススメします</h2>
 <div id="app">
     <form class="simple-form" action="{{ url('/result') }}" method="get">
-    <example-component 
-    v-bind:gamecount="{{ $gamecount }}"
-    >
-    </example-component>
+        <example-component 
+        v-bind:gamecount="{{ $gamecount }}"
+        >
+        </example-component>
     </form>
 </div>
 

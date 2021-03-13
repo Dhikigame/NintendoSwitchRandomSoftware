@@ -12,7 +12,7 @@
         <input type="radio" name="age_limit" value="B12+" v-on:click="cero_B_12_click">12歳まで(CERO:B,IARC:12+)<br>
         <input type="radio" name="age_limit" value="C+" v-on:click="cero_C_click">15歳まで(CERO:C)
         <input type="radio" name="age_limit" value="16+" v-on:click="cero_16_click">16歳まで(IARC:16+)
-        <input type="radio" name="age_limit" value="D" v-on:click="cero_D_click">17歳まで(CERO:D)
+        <input type="radio" name="age_limit" value="D+" v-on:click="cero_D_click">17歳まで(CERO:D)
         <input type="radio" name="age_limit" value="Z18+" v-on:click="cero_Z_click">18歳以上(CERO:Z,IARC:18+)
 
         <h3>販売メーカー(販売本数が多いメーカー20社のみ)</h3>

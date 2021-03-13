@@ -42980,7 +42980,7 @@ var render = function() {
     }),
     _vm._v("16歳まで(IARC:16+)\n    "),
     _c("input", {
-      attrs: { type: "radio", name: "age_limit", value: "D" },
+      attrs: { type: "radio", name: "age_limit", value: "D+" },
       on: { click: _vm.cero_D_click }
     }),
     _vm._v("17歳まで(CERO:D)\n    "),
