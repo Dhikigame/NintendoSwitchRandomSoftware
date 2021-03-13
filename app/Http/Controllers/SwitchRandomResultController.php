@@ -17,15 +17,16 @@ class SwitchRandomResultController extends Controller
 
         // SwitchRandomモデルのインスタンス化
         $md = new SwitchRandomResult();
-
-        $release_maker = $md->ReleaseMakerSearch($publisher);
-        // echo $release_maker;
-        $searchcolumn = $this->searchcolumn_gamecount($software_type, $age_limit, $release_maker, $md);
-        // echo $searchcolumn;
-        // $release_maker = $md->GameRandomSearch($searchcolumn, $release_maker);
         // echo $software_type;
         // echo $age_limit;
         // echo $publisher;
+
+        $release_maker = $md->ReleaseMakerSearch($publisher);
+        // echo $release_maker;
+        $search_gamecount = $this->searchcolumn_gamecount($software_type, $age_limit, $release_maker, $md);
+
+        $md->GameRandomSearch($search_gamecount, $age_limit, $release_maker);
+
 
         return view('result')->with([
             'software_type' => $software_type,
@@ -140,6 +141,6 @@ class SwitchRandomResultController extends Controller
             $search_gamecount = $md->SearchGamecountDownloadCeroSum($column, $release_maker);
         }
 
-        return $column;
+        return $search_gamecount;
     }
 }
