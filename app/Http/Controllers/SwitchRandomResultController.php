@@ -25,7 +25,7 @@ class SwitchRandomResultController extends Controller
         // echo $release_maker;
         $search_gamecount = $this->searchcolumn_gamecount($software_type, $age_limit, $release_maker, $md);
 
-        $md->GameRandomSearch($search_gamecount, $age_limit, $release_maker);
+        $md->GameRandomSearch($search_gamecount, $age_limit, $release_maker, $software_type);
 
 
         return view('result')->with([
