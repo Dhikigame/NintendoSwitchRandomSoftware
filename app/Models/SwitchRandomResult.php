@@ -40,26 +40,32 @@ class SwitchRandomResult extends SwitchRandom
         $query = $this->db_switch_software_data();
         $this->search_game_result_query = $query;
 
-        $search_gamecount_rand = rand(0, $search_gamecount);
-        echo $search_gamecount . "<br>";
-        echo $search_gamecount_rand . "<br>";
+        $search_gamecount_rand = rand(0, $search_gamecount-1);
 
         $this->softwaretype_query_conv($software_type, $release_maker);
         $this->releasemaker_query_conv($release_maker);
         $this->cero_query_conv($age_limit);
 
         $search_game_result = $this->search_game_result_query->offset($search_gamecount_rand)->limit(1)->get();
-        var_dump($search_game_result);
-        $search_game_result = $this->search_game_result_query->offset($search_gamecount_rand)->limit(1)->toSql();
-        var_dump($search_game_result);
-        // $search_game_result = $this->search_game_result_query->offset(11)->limit(1)->get();
-        // var_dump($search_game_result);
-        // $search_game_result = $this->search_game_result_query->count();
-        // echo $search_gamecount . "<br>";
-        // echo $search_game_result . "<br>";
-        // $sql = $this->search_game_result_query->count()->toSql();
-        // var_dump($sql);
+        // echo "検索ゲーム数:" . $search_gamecount . "<br>";
+        // echo "<br>";
+        // echo "ランダムゲーム<br>";
+        // echo "offset:" . $search_gamecount_rand . "<br>";
+        // echo "date:" . $search_game_result[0]->release_date . "<br>";
+        // echo "title:" . $search_game_result[0]->title . "<br>";
+        // echo "<br>";
 
+        // var_dump($search_game_result);
+        // $search_game_result = $this->search_game_result_query->offset($search_gamecount_rand)->limit(1)->toSql();
+        // var_dump($search_game_result);
+        $search_game_result_tmp = $this->search_game_result_query->offset(0)->limit(1)->get();
+        // var_dump($search_game_result_tmp);
+
+        // echo "手動offsetゲーム<br>";
+        // echo "date:" . $search_game_result_tmp[0]->release_date . "<br>";
+        // echo "title:" . $search_game_result_tmp[0]->title . "<br>";
+
+        return $search_game_result;
     }
 
     private function cero_query_conv($age_limit="ALL_cero") {
@@ -104,11 +110,6 @@ class SwitchRandomResult extends SwitchRandom
                 $query->orwhere('cero', 'LIKE', $cero[3]);
                 $query->orwhere('cero', 'LIKE', $cero[4]);
             });
-            // ->where('cero', 'LIKE', $cero[0])
-            // ->orwhere('cero', 'LIKE', $cero[1])
-            // ->orwhere('cero', 'LIKE', $cero[2])
-            // ->orwhere('cero', 'LIKE', $cero[3])
-            // ->orwhere('cero', 'LIKE', $cero[4]);
         }
         if($age_limit == "C+") {
             $cero[0] = "A";
@@ -127,12 +128,6 @@ class SwitchRandomResult extends SwitchRandom
                 $query->orwhere('cero', 'LIKE', $cero[4]);
                 $query->orwhere('cero', 'LIKE', $cero[5]);
             });
-            // ->where('cero', 'LIKE', $cero[0])
-            // ->orwhere('cero', 'LIKE', $cero[1])
-            // ->orwhere('cero', 'LIKE', $cero[2])
-            // ->orwhere('cero', 'LIKE', $cero[3])
-            // ->orwhere('cero', 'LIKE', $cero[4])
-            // ->orwhere('cero', 'LIKE', $cero[5]);
         }
         if($age_limit == "16+") {
             $cero[0] = "A";
@@ -153,13 +148,6 @@ class SwitchRandomResult extends SwitchRandom
                 $query->orwhere('cero', 'LIKE', $cero[5]);
                 $query->orwhere('cero', 'LIKE', $cero[6]);
             });
-            // ->where('cero', 'LIKE', $cero[0])
-            // ->orwhere('cero', 'LIKE', $cero[1])
-            // ->orwhere('cero', 'LIKE', $cero[2])
-            // ->orwhere('cero', 'LIKE', $cero[3])
-            // ->orwhere('cero', 'LIKE', $cero[4])
-            // ->orwhere('cero', 'LIKE', $cero[5])
-            // ->orwhere('cero', 'LIKE', $cero[6]);
         }
         if($age_limit == "D+") {
             $cero[0] = "A";
@@ -182,14 +170,6 @@ class SwitchRandomResult extends SwitchRandom
                 $query->orwhere('cero', 'LIKE', $cero[6]);
                 $query->orwhere('cero', 'LIKE', $cero[7]);
             });
-            // ->where('cero', 'LIKE', $cero[0])
-            // ->orwhere('cero', 'LIKE', $cero[1])
-            // ->orwhere('cero', 'LIKE', $cero[2])
-            // ->orwhere('cero', 'LIKE', $cero[3])
-            // ->orwhere('cero', 'LIKE', $cero[4])
-            // ->orwhere('cero', 'LIKE', $cero[5])
-            // ->orwhere('cero', 'LIKE', $cero[6])
-            // ->orwhere('cero', 'LIKE', $cero[7]);
         }
         if($age_limit == "Z18+") {
             $cero[0] = "Z";
@@ -200,11 +180,7 @@ class SwitchRandomResult extends SwitchRandom
                 $query->where('cero', 'LIKE', $cero[0]);
                 $query->orwhere('cero', 'LIKE', $cero[1]);
             });
-            // ->where('cero', 'LIKE', $cero[0])
-            // ->orwhere('cero', 'LIKE', $cero[1]);
         }
-
-        // return $cero;
     }
 
     private function releasemaker_query_conv($release_maker="ALL") {
@@ -439,10 +415,10 @@ class SwitchRandomResult extends SwitchRandom
             $search_gamecount_tmp = $query->where('release_maker', $release_maker)->select("type1_16")->get()[0]->type1_16;
             $search_gamecount_tmp == null ? $search_gamecount_tmp = 0 : 1;
             $search_gamecount += $search_gamecount_tmp;
-            $search_gamecount_tmp = $query->where('release_maker', $release_maker)->select("type1_C")->get()->type1_C;
+            $search_gamecount_tmp = $query->where('release_maker', $release_maker)->select("type1_C")->get()[0]->type1_C;
             $search_gamecount_tmp == null ? $search_gamecount_tmp = 0 : 1;
             $search_gamecount += $search_gamecount_tmp;
-            $search_gamecount_tmp = $query->where('release_maker', $release_maker)->select("type1_B_12")->get()->type1_B_12;
+            $search_gamecount_tmp = $query->where('release_maker', $release_maker)->select("type1_B_12")->get()[0]->type1_B_12;
             $search_gamecount_tmp == null ? $search_gamecount_tmp = 0 : 1;
             $search_gamecount += $search_gamecount_tmp;
             $search_gamecount_tmp = $query->where('release_maker', $release_maker)->select("type1_7")->get()[0]->type1_7;

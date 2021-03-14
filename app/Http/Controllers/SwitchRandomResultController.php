@@ -22,10 +22,9 @@ class SwitchRandomResultController extends Controller
         // echo $publisher;
 
         $release_maker = $md->ReleaseMakerSearch($publisher);
-        // echo $release_maker;
         $search_gamecount = $this->searchcolumn_gamecount($software_type, $age_limit, $release_maker, $md);
-
-        $md->GameRandomSearch($search_gamecount, $age_limit, $release_maker, $software_type);
+        $search_gameinfo = $md->GameRandomSearch($search_gamecount, $age_limit, $release_maker, $software_type);
+        $search_gameimg = $this->search_gameimg($search_gameinfo);
 
 
         return view('result')->with([
@@ -142,5 +141,50 @@ class SwitchRandomResultController extends Controller
         }
 
         return $search_gamecount;
+    }
+
+    private function calc_image($img) {
+        $img_size = getimagesize($img);
+        $width = floor(187 * $img_size[0] / $img_size[1]);
+        if($width > 332){
+            $width = 332;
+        } else {
+            return "width='332' height='187'";
+        }
+        return "width='".$width."' height='187'";
+    }
+
+    private function search_gameimg($search_gameinfo) {
+
+        $disk = Storage::disk('s3');
+
+        $image_id = $search_gameinfo[0]->id;
+        echo $search_gameinfo[0]->title . "<br>";
+
+        $path[0] = $disk->url($image_id . '/000001.jpg');
+        // $img_path[0] = "<img src='".$path[0]."' ".$this->calc_image($path[0]).">";
+        $path[1] = $disk->url($image_id . '/000002.jpg');
+        // $img_path[1] = "<img src='".$path[1]."' ".$this->calc_image($path[1]).">";
+        $path[2] = $disk->url($image_id . '/000003.jpg');
+        // $img_path[2] = "<img src='".$path[2]."' ".$this->calc_image($path[2]).">";
+        $path[3] = $disk->url($image_id . '/000004.jpg');
+        // $img_path[3] = "<img src='".$path[3]."' ".$this->calc_image($path[3]).">";
+        $path[4] = $disk->url($image_id . '/000005.jpg');
+        // $img_path[4] = "<img src='".$path[4]."' ".$this->calc_image($path[4]).">";
+        $path[5] = $disk->url($image_id . '/000006.jpg');
+        // $img_path[5] = "<img src='".$path[5]."' ".$this->calc_image($path[5]).">";
+
+        $img_path[0] = "<img src='".$path[0]."'>";
+        $img_path[1] = "<img src='".$path[1]."'>";
+        $img_path[2] = "<img src='".$path[2]."'>";
+        $img_path[3] = "<img src='".$path[3]."'>";
+        $img_path[4] = "<img src='".$path[4]."'>";
+        $img_path[5] = "<img src='".$path[5]."'>";
+
+        for($i = 0; $i <= 5; $i++) {
+            echo $img_path[$i] . "<br>";
+        }
+
+        return $img_path;
     }
 }
