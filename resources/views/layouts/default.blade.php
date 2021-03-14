@@ -6,6 +6,28 @@
   <meta http-equiv="Cache-Control" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>@yield('title')</title>
+  <style>
+  button {
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 6px;
+    color: #fff;
+    border: 2px;
+    background-color: #007bff;
+    transition: background-color .2s
+  }
+  button:hover {
+    background-color: #0069d9;
+  }
+  button:active {
+	  background-color: #003c7c;
+  }
+  button:disabled {
+    opacity: .5;
+    pointer-events: none;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 </head>
 <body>
     @yield('content')

@@ -16,26 +16,48 @@
         <input type="radio" name="age_limit" value="Z18+" v-on:click="cero_Z_click">18歳以上(CERO:Z,IARC:18+)
 
         <h3>販売メーカー(販売本数が多いメーカー20社のみ)</h3>
-        <select name="publisher" v-on:change="release_maker_click($event)">
-            <option name="all_release_maker" v-bind:value=0>全ての販売メーカー</option>
+        <select name="publisher" id="publisher" v-on:change="release_maker_click($event)">
+            <option name="all_release_maker" v-bind:value=0 selected>全ての販売メーカー</option>
             <option v-for="rank in 20" v-bind:name="release_maker[rank - 1]" v-bind:value="rank">{{ release_maker[rank - 1] }}</option>
         </select>
         
         <p><span>検索ソフトリリース数 / 全ソフトリリース数</span></p>
         <p><span>{{ animegamecount }} / {{ this.gamecount[0] }}</span></p>
         
-        <button class="simple-form__submit-btn">Post</button>
+        <button v-bind:disabled="buttonvisibleflag==false">Post</button>
     </div>
 </template>
 
 <script>
     import {TweenMax} from 'gsap';
+
+    window.onpageshow = function(event){
+        //ラジオボタンALL_softwareにチェックを入れる
+        document.search_random.software_type[0].checked = true;
+        document.search_random.software_type[1].checked = false;
+        document.search_random.software_type[2].checked = false;
+        //ラジオボタンALL_ceroにチェックを入れる
+        document.search_random.age_limit[0].checked = true;
+        document.search_random.age_limit[1].checked = false;
+        document.search_random.age_limit[2].checked = false;
+        document.search_random.age_limit[3].checked = false;
+        document.search_random.age_limit[4].checked = false;
+        document.search_random.age_limit[5].checked = false;
+        document.search_random.age_limit[6].checked = false;
+        document.search_random.age_limit[7].checked = false;
+    };
+    $(document).ready(function() {
+        $("#publisher").val(0).trigger("change");
+    });
+
     
     export default {
         props:["gamecount"],
         data(){
             return {
                 outputgamecount: this.gamecount[0],
+                // buttongamecount: this.gamecount[0],
+                buttonvisibleflag: true,
                 outputgamecount_firstflag: 0,
                 software_type: "ALL_software",
                 age_limit: "ALL_cero",
@@ -154,6 +176,7 @@
                     for (let i = 0; i < this.game_type.length; i++) {
                         for (let j = 0; j < this.cero_select.length; j++) {
                             if(this.game_type[i] == true && this.cero_select[j] == true) {
+                                this.buttonvisible(this.gamecount[gamecount_sub]);
                                 this.countupgamecount(this.gamecount[gamecount_sub]);
                                 break;
                             }
@@ -165,6 +188,7 @@
                         for (let j = 0; j < this.cero_select.length; j++) {
                             for (let k = 1; k < this.release_maker_select.length; k++) {
                                 if(this.game_type[i] == true && this.cero_select[j] == true && this.release_maker_select[k] == true) {
+                                    this.buttonvisible(this.gamecount[gamecount_sub+44]);
                                     this.countupgamecount(this.gamecount[gamecount_sub+44]);
                                     break;
                                 }
@@ -176,8 +200,18 @@
             },
 
             countupgamecount: function(value) {
+                this.buttongamecount = value;
                 TweenMax.to(this.$data, 1, {outputgamecount: value});
             },
+
+            buttonvisible: function(value) {
+                if(value == 0) {
+                    this.buttonvisibleflag = false;
+                } else {
+                    this.buttonvisibleflag = true;
+                }
+                return this.buttonvisibleflag;
+            }
 
             // onSubmit: function() {
             //     axios.get("http://127.0.0.1:8000/result")

@@ -1877,11 +1877,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
+window.onpageshow = function (event) {
+  //ラジオボタンALL_softwareにチェックを入れる
+  document.search_random.software_type[0].checked = true;
+  document.search_random.software_type[1].checked = false;
+  document.search_random.software_type[2].checked = false; //ラジオボタンALL_ceroにチェックを入れる
+
+  document.search_random.age_limit[0].checked = true;
+  document.search_random.age_limit[1].checked = false;
+  document.search_random.age_limit[2].checked = false;
+  document.search_random.age_limit[3].checked = false;
+  document.search_random.age_limit[4].checked = false;
+  document.search_random.age_limit[5].checked = false;
+  document.search_random.age_limit[6].checked = false;
+  document.search_random.age_limit[7].checked = false;
+};
+
+$(document).ready(function () {
+  $("#publisher").val(0).trigger("change");
+});
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ["gamecount"],
   data: function data() {
     return {
       outputgamecount: this.gamecount[0],
+      // buttongamecount: this.gamecount[0],
+      buttonvisibleflag: true,
       outputgamecount_firstflag: 0,
       software_type: "ALL_software",
       age_limit: "ALL_cero",
@@ -1992,6 +2014,7 @@ __webpack_require__.r(__webpack_exports__);
         for (var i = 0; i < this.game_type.length; i++) {
           for (var j = 0; j < this.cero_select.length; j++) {
             if (this.game_type[i] == true && this.cero_select[j] == true) {
+              this.buttonvisible(this.gamecount[gamecount_sub]);
               this.countupgamecount(this.gamecount[gamecount_sub]);
               break;
             }
@@ -2004,6 +2027,7 @@ __webpack_require__.r(__webpack_exports__);
           for (var _j = 0; _j < this.cero_select.length; _j++) {
             for (var k = 1; k < this.release_maker_select.length; k++) {
               if (this.game_type[_i] == true && this.cero_select[_j] == true && this.release_maker_select[k] == true) {
+                this.buttonvisible(this.gamecount[gamecount_sub + 44]);
                 this.countupgamecount(this.gamecount[gamecount_sub + 44]);
                 break;
               }
@@ -2015,9 +2039,19 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     countupgamecount: function countupgamecount(value) {
+      this.buttongamecount = value;
       gsap__WEBPACK_IMPORTED_MODULE_0__.TweenMax.to(this.$data, 1, {
         outputgamecount: value
       });
+    },
+    buttonvisible: function buttonvisible(value) {
+      if (value == 0) {
+        this.buttonvisibleflag = false;
+      } else {
+        this.buttonvisibleflag = true;
+      }
+
+      return this.buttonvisibleflag;
     } // onSubmit: function() {
     //     axios.get("http://127.0.0.1:8000/result")
     //     .then(response => {
@@ -42994,7 +43028,7 @@ var render = function() {
     _c(
       "select",
       {
-        attrs: { name: "publisher" },
+        attrs: { name: "publisher", id: "publisher" },
         on: {
           change: function($event) {
             return _vm.release_maker_click($event)
@@ -43004,7 +43038,10 @@ var render = function() {
       [
         _c(
           "option",
-          { attrs: { name: "all_release_maker" }, domProps: { value: 0 } },
+          {
+            attrs: { name: "all_release_maker", selected: "" },
+            domProps: { value: 0 }
+          },
           [_vm._v("全ての販売メーカー")]
         ),
         _vm._v(" "),
@@ -43030,7 +43067,9 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("button", { staticClass: "simple-form__submit-btn" }, [_vm._v("Post")])
+    _c("button", { attrs: { disabled: _vm.buttonvisibleflag == false } }, [
+      _vm._v("Post")
+    ])
   ])
 }
 var staticRenderFns = [

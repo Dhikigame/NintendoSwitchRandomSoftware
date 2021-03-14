@@ -9,7 +9,7 @@
 <h1>Nintendo Switch ランダムソフト検索</h1>
 <h2>発売しているswitchのソフトの中からオススメします</h2>
 <div id="app">
-    <form class="simple-form" action="{{ url('/result') }}" method="get">
+    <form class="simple-form" name="search_random" action="{{ url('/result') }}" method="get">
         <example-component 
         v-bind:gamecount="{{ $gamecount }}"
         >
