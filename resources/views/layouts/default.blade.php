@@ -27,7 +27,6 @@
     pointer-events: none;
   }
   </style>
-  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 </head>
 <body>
     @yield('content')

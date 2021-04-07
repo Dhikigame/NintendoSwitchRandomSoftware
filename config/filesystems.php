@@ -43,6 +43,18 @@ return [
 
     'disks' => [
 
+        'darwin_thumbnail' => [
+            'driver' => 'local',
+            'root' => storage_path('../../../../../../Applications/MAMP/htdocs/switch_random/images_store/download'),
+            'url' => env('APP_URL').'/storage/download',
+            'visibility' => 'public',
+        ],
+
+        'linux_thumbnail' => [
+            'driver' => 'local',
+            'root' => storage_path('/mnt/nintendoswitch_thumbnail/'),
+        ],
+
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),

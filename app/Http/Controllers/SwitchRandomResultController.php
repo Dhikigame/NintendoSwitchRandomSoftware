@@ -9,6 +9,25 @@ use Storage;
 class SwitchRandomResultController extends Controller
 {
 
+    // public function show($image_id) {
+    //     $disk = Storage::disk('s3');
+
+    //     $path[0] = $disk->url($image_id . '/000001.jpg');
+    //     $img_path[0] = "<img src='".$path[0]."' ".$this->calc_image($path[0]).">";
+    //     $path[1] = $disk->url($image_id . '/000002.jpg');
+    //     $img_path[1] = "<img src='".$path[1]."' ".$this->calc_image($path[1]).">";
+    //     $path[2] = $disk->url($image_id . '/000003.jpg');
+    //     $img_path[2] = "<img src='".$path[2]."' ".$this->calc_image($path[2]).">";
+    //     $path[3] = $disk->url($image_id . '/000004.jpg');
+    //     $img_path[3] = "<img src='".$path[3]."' ".$this->calc_image($path[3]).">";
+    //     $path[4] = $disk->url($image_id . '/000005.jpg');
+    //     $img_path[4] = "<img src='".$path[4]."' ".$this->calc_image($path[4]).">";
+    //     $path[5] = $disk->url($image_id . '/000006.jpg');
+    //     $img_path[5] = "<img src='".$path[5]."' ".$this->calc_image($path[5]).">";
+
+    //     return view('show', compact('img_path'));
+    // }
+
     public function result(Request $request) {
 
         $software_type = $request->software_type;
@@ -17,15 +36,16 @@ class SwitchRandomResultController extends Controller
 
         // SwitchRandomモデルのインスタンス化
         $md = new SwitchRandomResult();
-        // echo $software_type;
-        // echo $age_limit;
-        // echo $publisher;
-
+        
         $release_maker = $md->ReleaseMakerSearch($publisher);
         $search_gamecount = $this->searchcolumn_gamecount($software_type, $age_limit, $release_maker, $md);
         $search_gameinfo = $md->GameRandomSearch($search_gamecount, $age_limit, $release_maker, $software_type);
+        // var_dump($search_gameinfo);
         $search_gameimg = $this->search_gameimg($search_gameinfo);
 
+        $image_id = $search_gameinfo[0]->id;
+        $image_title = $search_gameinfo[0]->title;
+        
 
         return view('result')->with([
             'software_type' => $software_type,
@@ -154,37 +174,113 @@ class SwitchRandomResultController extends Controller
         return "width='".$width."' height='187'";
     }
 
+    private function image_pass() {
+
+        if(PHP_OS === "Darwin") {
+            return Storage::disk('darwin_thumbnail');
+        } else {
+            return Storage::disk('linux_thumbnail');
+        }
+    } 
+
     private function search_gameimg($search_gameinfo) {
 
-        $disk = Storage::disk('s3');
-
         $image_id = $search_gameinfo[0]->id;
-        echo $search_gameinfo[0]->title . "<br>";
+        $image_title = $search_gameinfo[0]->title;
+        echo $image_id ."<br>";
+        echo $image_title ."<br>";
+        // $image_pass = $this->image_pass();
+        // $image_pass = Storage::disk('darwin_thumbnail')->files($image_id);
+        // $image_pass = Storage::disk('darwin_thumbnail')->files($image_id);
+        // print_r($image_pass);
+        // $i = 0;
+        // foreach($image_pass as $file){
+        //     $img_path[$i] = Storage::disk('darwin_thumbnail')->url($file).'';
+        //     $i++;
+        // }
+        // echo $search_gameinfo[0]->title . "<br>";
+        // print_r($img_path[0]);
 
-        $path[0] = $disk->url($image_id . '/000001.jpg');
-        // $img_path[0] = "<img src='".$path[0]."' ".$this->calc_image($path[0]).">";
-        $path[1] = $disk->url($image_id . '/000002.jpg');
-        // $img_path[1] = "<img src='".$path[1]."' ".$this->calc_image($path[1]).">";
-        $path[2] = $disk->url($image_id . '/000003.jpg');
-        // $img_path[2] = "<img src='".$path[2]."' ".$this->calc_image($path[2]).">";
-        $path[3] = $disk->url($image_id . '/000004.jpg');
-        // $img_path[3] = "<img src='".$path[3]."' ".$this->calc_image($path[3]).">";
-        $path[4] = $disk->url($image_id . '/000005.jpg');
-        // $img_path[4] = "<img src='".$path[4]."' ".$this->calc_image($path[4]).">";
-        $path[5] = $disk->url($image_id . '/000006.jpg');
-        // $img_path[5] = "<img src='".$path[5]."' ".$this->calc_image($path[5]).">";
+        // echo "<img src='".$img_path[0]."'>";
+        // $jpegFile = scandir("/download/" . $image_id . "/*.jpg");
+        // echo count($jpegFile);
+        $image_dir = "download/" . $image_id;
+        $result = array();
+        $command = "find " . $image_dir . " -name '*.jpg' | wc -l";
+        exec($command, $result);
+        $image_count = $result[0];
 
-        $img_path[0] = "<img src='".$path[0]."'>";
-        $img_path[1] = "<img src='".$path[1]."'>";
-        $img_path[2] = "<img src='".$path[2]."'>";
-        $img_path[3] = "<img src='".$path[3]."'>";
-        $img_path[4] = "<img src='".$path[4]."'>";
-        $img_path[5] = "<img src='".$path[5]."'>";
-
-        for($i = 0; $i <= 5; $i++) {
-            echo $img_path[$i] . "<br>";
+        for($i = 1; $i <= $image_count; $i++) {
+            $image[$i] = "<img src='/download/" . $image_id . "/00000" . $i . ".jpg'>";
+            echo $image[$i];
         }
+        // echo "<img src='/download/" . $image_id . "/000001.jpg'>";
+        // echo "<img src='/download/" . $image_id . "/000002.jpg'>";
+        // echo "<img src='/download/" . $image_id . "/000003.jpg'>";
+        // echo "<img src='/download/" . $image_id . "/000004.jpg'>";
+        // echo "<img src='/download/" . $image_id . "/000005.jpg'>";
+        // echo "<img src='/download/" . $image_id . "/000006.jpg'>";
+        // echo "<img src='/download/" . $image_id . "/000007.jpg'>";
+        // echo "<img src='".$image_pass."'>";
+        // $path[0] = $image_pass . $image_id . '/000001.jpg';
+        // $path[0] = $image_pass->files($image_id)->url('/000001.jpg');
+        // $response = @file_get_contents($path[0], NULL, NULL, 0, 1);
+        // $img_path[0] = "<img src='".$path[0]."'>";
+        // echo $img_path[0] . "<br>";
+        // if ($response !== false) {
+        //     $img_path[0] = "<img src='".$path[0]."' ".$this->calc_image($path[0]).">";
+        //     echo $img_path[0] . "<br>";
+        // }
 
-        return $img_path;
+        // $path[1] = $disk->url($image_id . '/000002.jpg');
+        // $response = @file_get_contents($path[1], NULL, NULL, 0, 1);
+        // if ($response !== false) {
+        //     $img_path[1] = "<img src='".$path[1]."' ".$this->calc_image($path[1]).">";
+        //     echo $img_path[1] . "<br>";
+        // }
+
+        // $path[2] = $disk->url($image_id . '/000003.jpg');
+        // $response = @file_get_contents($path[2], NULL, NULL, 0, 1);
+        // if ($response !== false) {
+        //     $img_path[2] = "<img src='".$path[2]."' ".$this->calc_image($path[2]).">";
+        //     echo $img_path[2] . "<br>";
+        // }
+
+        // $path[3] = $disk->url($image_id . '/000004.jpg');
+        // $response = @file_get_contents($path[3], NULL, NULL, 0, 1);
+        // if ($response !== false) {
+        //     $img_path[3] = "<img src='".$path[3]."' ".$this->calc_image($path[3]).">";
+        //     echo $img_path[3] . "<br>";
+        // }
+
+        // $path[4] = $disk->url($image_id . '/000005.jpg');
+        // $response = @file_get_contents($path[4], NULL, NULL, 0, 1);
+        // if ($response !== false) {
+        //     $img_path[4] = "<img src='".$path[4]."' ".$this->calc_image($path[4]).">";
+        //     echo $img_path[4] . "<br>";
+        // }
+
+        // $path[5] = $disk->url($image_id . '/000006.jpg');
+        // $response = @file_get_contents($path[5], NULL, NULL, 0, 1);
+        // if ($response !== false) {
+        //     $img_path[5] = "<img src='".$path[5]."' ".$this->calc_image($path[5]).">";
+        //     echo $img_path[5] . "<br>";
+        // }
+
+        // $path[6] = $disk->url($image_id . '/000006.jpg');
+        // $response = @file_get_contents($path[6], NULL, NULL, 0, 1);
+        // if ($response !== false) {
+        //     $img_path[6] = "<img src='".$path[6]."' ".$this->calc_image($path[5]).">";
+        //     echo $img_path[6] . "<br>";
+        // }
+        // $img_path[0] = "<img src='".$path[0]."'>";
+        // $img_path[1] = "<img src='".$path[1]."'>";
+        // $img_path[2] = "<img src='".$path[2]."'>";
+        // $img_path[3] = "<img src='".$path[3]."'>";
+        // $img_path[4] = "<img src='".$path[4]."'>";
+        // $img_path[5] = "<img src='".$path[5]."'>";
+        // $img_path[6] = "<img src='".$path[5]."'>";
+
+        // return $img_path;
     }
 }

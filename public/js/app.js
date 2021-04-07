@@ -1879,10 +1879,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 window.onpageshow = function (event) {
-  //ラジオボタンALL_softwareにチェックを入れる
+  // ラジオボタンALL_softwareにチェックを入れる
   document.search_random.software_type[0].checked = true;
   document.search_random.software_type[1].checked = false;
-  document.search_random.software_type[2].checked = false; //ラジオボタンALL_ceroにチェックを入れる
+  document.search_random.software_type[2].checked = false; // ラジオボタンALL_ceroにチェックを入れる
 
   document.search_random.age_limit[0].checked = true;
   document.search_random.age_limit[1].checked = false;
@@ -1892,7 +1892,8 @@ window.onpageshow = function (event) {
   document.search_random.age_limit[5].checked = false;
   document.search_random.age_limit[6].checked = false;
   document.search_random.age_limit[7].checked = false;
-};
+}; // プルダウンメニューをvalue=0に初期化固定
+
 
 $(document).ready(function () {
   $("#publisher").val(0).trigger("change");
