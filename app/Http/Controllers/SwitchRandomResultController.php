@@ -40,8 +40,10 @@ class SwitchRandomResultController extends Controller
         $release_maker = $md->ReleaseMakerSearch($publisher);
         $search_gamecount = $this->searchcolumn_gamecount($software_type, $age_limit, $release_maker, $md);
         $search_gameinfo = $md->GameRandomSearch($search_gamecount, $age_limit, $release_maker, $software_type);
-        // var_dump($search_gameinfo);
-        $search_gameimg = $this->search_gameimg($search_gameinfo);
+
+        $gameinfo = $this->search_gameimg($search_gameinfo[0], $search_gameinfo[0]->type);
+        $image = $this->image_search($search_gameinfo[0]);
+
 
         return view('result')->with([
             'software_type' => $software_type,
@@ -179,27 +181,13 @@ class SwitchRandomResultController extends Controller
         }
     } 
 
-    private function search_gameimg($search_gameinfo) {
+    private function image_search($search_gameinfo) {
 
-        $image_id = $search_gameinfo[0]->id;
-        $image_title = $search_gameinfo[0]->title;
+        $image_id = $search_gameinfo->id;
+        $image_title = $search_gameinfo->title;
         echo $image_id ."<br>";
         echo $image_title ."<br>";
-        // $image_pass = $this->image_pass();
-        // $image_pass = Storage::disk('darwin_thumbnail')->files($image_id);
-        // $image_pass = Storage::disk('darwin_thumbnail')->files($image_id);
-        // print_r($image_pass);
-        // $i = 0;
-        // foreach($image_pass as $file){
-        //     $img_path[$i] = Storage::disk('darwin_thumbnail')->url($file).'';
-        //     $i++;
-        // }
-        // echo $search_gameinfo[0]->title . "<br>";
-        // print_r($img_path[0]);
 
-        // echo "<img src='".$img_path[0]."'>";
-        // $jpegFile = scandir("/download/" . $image_id . "/*.jpg");
-        // echo count($jpegFile);
         $image_dir = "download/" . $image_id;
         $result = array();
         $command = "find " . $image_dir . " -name '*.jpg' | wc -l";
@@ -210,73 +198,33 @@ class SwitchRandomResultController extends Controller
             $image[$i] = "<img src='/download/" . $image_id . "/00000" . $i . ".jpg'>";
             echo $image[$i];
         }
-        // echo "<img src='/download/" . $image_id . "/000001.jpg'>";
-        // echo "<img src='/download/" . $image_id . "/000002.jpg'>";
-        // echo "<img src='/download/" . $image_id . "/000003.jpg'>";
-        // echo "<img src='/download/" . $image_id . "/000004.jpg'>";
-        // echo "<img src='/download/" . $image_id . "/000005.jpg'>";
-        // echo "<img src='/download/" . $image_id . "/000006.jpg'>";
-        // echo "<img src='/download/" . $image_id . "/000007.jpg'>";
-        // echo "<img src='".$image_pass."'>";
-        // $path[0] = $image_pass . $image_id . '/000001.jpg';
-        // $path[0] = $image_pass->files($image_id)->url('/000001.jpg');
-        // $response = @file_get_contents($path[0], NULL, NULL, 0, 1);
-        // $img_path[0] = "<img src='".$path[0]."'>";
-        // echo $img_path[0] . "<br>";
-        // if ($response !== false) {
-        //     $img_path[0] = "<img src='".$path[0]."' ".$this->calc_image($path[0]).">";
-        //     echo $img_path[0] . "<br>";
-        // }
 
-        // $path[1] = $disk->url($image_id . '/000002.jpg');
-        // $response = @file_get_contents($path[1], NULL, NULL, 0, 1);
-        // if ($response !== false) {
-        //     $img_path[1] = "<img src='".$path[1]."' ".$this->calc_image($path[1]).">";
-        //     echo $img_path[1] . "<br>";
-        // }
+        return $image;
+    }
 
-        // $path[2] = $disk->url($image_id . '/000003.jpg');
-        // $response = @file_get_contents($path[2], NULL, NULL, 0, 1);
-        // if ($response !== false) {
-        //     $img_path[2] = "<img src='".$path[2]."' ".$this->calc_image($path[2]).">";
-        //     echo $img_path[2] . "<br>";
-        // }
+    private function search_gameimg($search_gameinfo, $type) {
 
-        // $path[3] = $disk->url($image_id . '/000004.jpg');
-        // $response = @file_get_contents($path[3], NULL, NULL, 0, 1);
-        // if ($response !== false) {
-        //     $img_path[3] = "<img src='".$path[3]."' ".$this->calc_image($path[3]).">";
-        //     echo $img_path[3] . "<br>";
-        // }
+        $gameinfo[0] = $search_gameinfo->title;
+        $gameinfo[1] = $search_gameinfo->release_date;
+        $gameinfo[2] = $search_gameinfo->release_maker;
+        $gameinfo[3] = $search_gameinfo->download;
+        $gameinfo[4] = $search_gameinfo->cero;
 
-        // $path[4] = $disk->url($image_id . '/000005.jpg');
-        // $response = @file_get_contents($path[4], NULL, NULL, 0, 1);
-        // if ($response !== false) {
-        //     $img_path[4] = "<img src='".$path[4]."' ".$this->calc_image($path[4]).">";
-        //     echo $img_path[4] . "<br>";
-        // }
+        if($type == 1) {
+            $gameinfo[5] = $search_gameinfo->online;
+            $gameinfo[6] = $search_gameinfo->ranking;
+            $gameinfo[7] = $search_gameinfo->joycon_sideways;
+        }
+        if($type == 2) {
+            $gameinfo[5] = $search_gameinfo->online;
+            $gameinfo[6] = $search_gameinfo->ranking;
+        }
 
-        // $path[5] = $disk->url($image_id . '/000006.jpg');
-        // $response = @file_get_contents($path[5], NULL, NULL, 0, 1);
-        // if ($response !== false) {
-        //     $img_path[5] = "<img src='".$path[5]."' ".$this->calc_image($path[5]).">";
-        //     echo $img_path[5] . "<br>";
-        // }
+        echo "<br>";
+        foreach($gameinfo as $info) {
+            echo $info . "<br>";
+        }
 
-        // $path[6] = $disk->url($image_id . '/000006.jpg');
-        // $response = @file_get_contents($path[6], NULL, NULL, 0, 1);
-        // if ($response !== false) {
-        //     $img_path[6] = "<img src='".$path[6]."' ".$this->calc_image($path[5]).">";
-        //     echo $img_path[6] . "<br>";
-        // }
-        // $img_path[0] = "<img src='".$path[0]."'>";
-        // $img_path[1] = "<img src='".$path[1]."'>";
-        // $img_path[2] = "<img src='".$path[2]."'>";
-        // $img_path[3] = "<img src='".$path[3]."'>";
-        // $img_path[4] = "<img src='".$path[4]."'>";
-        // $img_path[5] = "<img src='".$path[5]."'>";
-        // $img_path[6] = "<img src='".$path[5]."'>";
-
-        // return $img_path;
+        return $gameinfo;
     }
 }
