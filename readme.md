@@ -17,6 +17,7 @@ Web service that allows you to search for Nintendo switch software at random (on
 * Laravel
 * PHP7
 * Mysql
+* Vue.js
 * AWS S3
 
 # Author
