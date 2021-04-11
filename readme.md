@@ -7,7 +7,8 @@ Web service that allows you to search for Nintendo switch software at random (on
 
 未完成なので、現状の機能について
 - 販売メーカー、年齢制限、パッケージソフトかダウンロードソフト専用かラジオボタンで選択して、条件に合ったソフトをランダムで検索する
-- 移行先のページはゲームのタイトルやゲームのサムネイル画像を表示する( https://github.com/Dhikigame/SwitchGame-Thumbnail-Download　のプロジェクトで取得したサムネイルを使用 )
+- 移行先のページはゲームのタイトルやゲームのサムネイル画像を表示する( https://github.com/Dhikigame/SwitchGame-Thumbnail-Download　
+のプロジェクトで取得したサムネイルを使用 )
 <br>
 
 - Select from the seller, age limit, package software, download software only, or radio button, and randomly search for software that matches the conditions.
