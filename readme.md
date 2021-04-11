@@ -12,7 +12,8 @@ Web service that allows you to search for Nintendo switch software at random (on
 <br>
 
 - Select from the seller, age limit, package software, download software only, or radio button, and randomly search for software that matches the conditions.
-- The destination page displays the title of the game and the thumbnail image of the game (using the thumbnail obtained from the project of https://github.com/Dhikigame/SwitchGame-Thumbnail-Download).
+- The destination page displays the title of the game and the thumbnail image of the game (using the thumbnail obtained from the project of
+https://github.com/Dhikigame/SwitchGame-Thumbnail-Download).
 
 # Requirement
 * Laravel
