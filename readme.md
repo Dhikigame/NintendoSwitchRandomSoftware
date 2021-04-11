@@ -3,6 +3,10 @@ Nintendo Switchソフトウェアをランダムに検索できるWebサービ�
 
 Web service that allows you to search for Nintendo switch software at random (only for Japanese releases & unfinished)
 
+# DEMO
+<img width="842" alt="スクリーンショット 2021-04-11 午後3 49 05" src="https://user-images.githubusercontent.com/12876144/114295042-96008b00-9add-11eb-8231-70651c7b3e92.png">
+<img width="1341" alt="スクリーンショット 2021-04-11 午後3 49 20" src="https://user-images.githubusercontent.com/12876144/114295040-926d0400-9add-11eb-9cf7-1c64afafcccc.png">
+
 # Features
 
 未完成なので、現状の機能について
