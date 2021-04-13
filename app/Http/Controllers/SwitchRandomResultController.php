@@ -43,7 +43,8 @@ class SwitchRandomResultController extends Controller
 
         $gameinfo = $this->search_gameimg($search_gameinfo[0], $search_gameinfo[0]->type);
         $image = $this->image_search($search_gameinfo[0]);
-
+        echo $search_gameinfo[0]->title;
+        echo $search_gameinfo[0]->release_maker;
 
         return view('result')->with([
             'software_type' => $software_type,
@@ -185,8 +186,6 @@ class SwitchRandomResultController extends Controller
 
         $image_id = $search_gameinfo->id;
         $image_title = $search_gameinfo->title;
-        echo $image_id ."<br>";
-        echo $image_title ."<br>";
 
         $image_dir = "download/" . $image_id;
         $result = array();
@@ -204,20 +203,20 @@ class SwitchRandomResultController extends Controller
 
     private function search_gameimg($search_gameinfo, $type) {
 
-        $gameinfo[0] = $search_gameinfo->title;
+        $gameinfo[0] = $this->title_releasemaker_strpos($search_gameinfo->title);
         $gameinfo[1] = $search_gameinfo->release_date;
-        $gameinfo[2] = $search_gameinfo->release_maker;
-        $gameinfo[3] = $search_gameinfo->download;
+        $gameinfo[2] = $this->title_releasemaker_strpos($search_gameinfo->release_maker);
+        $gameinfo[3] = $this->download_check($search_gameinfo->download);
         $gameinfo[4] = $search_gameinfo->cero;
 
         if($type == 1) {
-            $gameinfo[5] = $search_gameinfo->online;
-            $gameinfo[6] = $search_gameinfo->ranking;
-            $gameinfo[7] = $search_gameinfo->joycon_sideways;
+            $gameinfo[5] = $this->online_check($search_gameinfo->online);
+            $gameinfo[6] = $this->ranking_check($search_gameinfo->ranking);
+            $gameinfo[7] = $this->joycon_check($search_gameinfo->joycon_sideways);
         }
         if($type == 2) {
-            $gameinfo[5] = $search_gameinfo->online;
-            $gameinfo[6] = $search_gameinfo->ranking;
+            $gameinfo[5] = $this->online_check($search_gameinfo->online);
+            $gameinfo[6] = $this->ranking_check($search_gameinfo->ranking);
         }
 
         echo "<br>";
@@ -226,5 +225,73 @@ class SwitchRandomResultController extends Controller
         }
 
         return $gameinfo;
+    }
+
+    private function title_releasemaker_strpos($title) {
+
+        if(strpos($title,'英語版') !== false) {
+            $title = mb_substr($title, 0, -5);
+        }
+        if(strpos($title,'イタリア語版') !== false) {
+            $title = mb_substr($title, 0, -8);
+        }
+        if(strpos($title,'フランス語版') !== false) {
+            $title = mb_substr($title, 0, -8);
+        }
+
+        return $title;
+    }
+
+    private function download_check($download) {
+
+        if($download === 1) {
+            $download = "あり";
+        } else {
+            $download = "なし";
+        }
+
+        return $download;
+    }
+
+    private function online_check($online) {
+
+        if(is_null($online) || $online === 0) {
+            $online = "非対応";
+        }
+        if($online === 1) {
+            $online = "対応";
+        }
+        if($online === 2) {
+            $online = "Nintendo Switch Onlineに加入なしでもオンライン可";
+        }
+
+        return $online;
+    }
+
+    private function ranking_check($ranking) {
+
+        if(is_null($ranking) || $ranking === 0) {
+            $ranking = "非対応";
+        }
+        if($ranking === 1) {
+            $ranking = "対応";
+        }
+
+        return $ranking;
+    }
+
+    private function joycon_check($joycon_sideways) {
+
+        if($joycon_sideways === 0) {
+            $joycon_sideways = "JOY CON横持ち非対応";
+        }
+        if($joycon_sideways === 1) {
+            $joycon_sideways = "JOY CON横持ち対応";
+        }
+        if($joycon_sideways === 2) {
+            $joycon_sideways = "JOY CON横持ち一部対応";
+        }
+
+        return $joycon_sideways;
     }
 }
