@@ -43,13 +43,14 @@ class SwitchRandomResultController extends Controller
 
         $gameinfo = $this->search_gameimg($search_gameinfo[0], $search_gameinfo[0]->type);
         $image = $this->image_search($search_gameinfo[0]);
-        echo $search_gameinfo[0]->title;
-        echo $search_gameinfo[0]->release_maker;
+        // echo $search_gameinfo[0]->title;
+        // echo $search_gameinfo[0]->release_maker;
 
         return view('result')->with([
             'software_type' => $software_type,
             'age_limit' => $age_limit,
             'publisher' => $publisher,
+            'gameinfo' => $gameinfo 
         ]);
     }
 
@@ -203,26 +204,31 @@ class SwitchRandomResultController extends Controller
 
     private function search_gameimg($search_gameinfo, $type) {
 
-        $gameinfo[0] = $this->title_releasemaker_strpos($search_gameinfo->title);
-        $gameinfo[1] = $search_gameinfo->release_date;
-        $gameinfo[2] = $this->title_releasemaker_strpos($search_gameinfo->release_maker);
-        $gameinfo[3] = $this->download_check($search_gameinfo->download);
-        $gameinfo[4] = $search_gameinfo->cero;
+        $gameinfo["title"] = $this->title_releasemaker_strpos($search_gameinfo->title);
+        $gameinfo["release_date"] = $search_gameinfo->release_date;
+        $gameinfo["release_maker"] = $this->title_releasemaker_strpos($search_gameinfo->release_maker);
+        $gameinfo["download"] = $this->download_check($search_gameinfo->download);
+        $gameinfo["cero"] = $search_gameinfo->cero;
 
         if($type == 1) {
-            $gameinfo[5] = $this->online_check($search_gameinfo->online);
-            $gameinfo[6] = $this->ranking_check($search_gameinfo->ranking);
-            $gameinfo[7] = $this->joycon_check($search_gameinfo->joycon_sideways);
+            $gameinfo["type"] = 1;
+            $gameinfo["online"] = $this->online_check($search_gameinfo->online);
+            $gameinfo["ranking"] = $this->ranking_check($search_gameinfo->ranking);
+            $gameinfo["joycon_sideways"] = $this->joycon_check($search_gameinfo->joycon_sideways);
         }
         if($type == 2) {
-            $gameinfo[5] = $this->online_check($search_gameinfo->online);
-            $gameinfo[6] = $this->ranking_check($search_gameinfo->ranking);
+            $gameinfo["type"] = 2;
+            $gameinfo["online"] = $this->online_check($search_gameinfo->online);
+            $gameinfo["ranking"] = $this->ranking_check($search_gameinfo->ranking);
+        }
+        if($type == 3) {
+            $gameinfo["type"] = 3;
         }
 
-        echo "<br>";
-        foreach($gameinfo as $info) {
-            echo $info . "<br>";
-        }
+        // echo "<br>";
+        // foreach($gameinfo as $info) {
+        //     echo $info . "<br>";
+        // }
 
         return $gameinfo;
     }

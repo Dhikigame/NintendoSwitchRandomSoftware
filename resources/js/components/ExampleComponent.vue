@@ -1,4 +1,4 @@
-<template>
+ <template>
     <div>
         <h3>ゲーム種別</h3>
         <input type="radio" name="software_type" value="ALL_software" v-on:click="all_click" checked>全て

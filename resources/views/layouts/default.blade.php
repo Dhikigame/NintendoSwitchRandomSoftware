@@ -5,6 +5,8 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Cache-Control" content="no-cache">
   <meta http-equiv="Expires" content="0">
+  <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+  <link href="{{ asset('/css/randomresult.css') }}" rel="stylesheet">
   <title>@yield('title')</title>
   <style>
   button {
