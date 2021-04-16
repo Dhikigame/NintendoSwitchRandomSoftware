@@ -50,7 +50,8 @@ class SwitchRandomResultController extends Controller
             'software_type' => $software_type,
             'age_limit' => $age_limit,
             'publisher' => $publisher,
-            'gameinfo' => $gameinfo 
+            'gameinfo' => $gameinfo,
+            'image' => $image
         ]);
     }
 
@@ -196,7 +197,6 @@ class SwitchRandomResultController extends Controller
 
         for($i = 1; $i < $image_count; $i++) {
             $image[$i] = "<img src='/download/" . $image_id . "/00000" . $i . ".jpg'>";
-            echo $image[$i];
         }
 
         return $image;
