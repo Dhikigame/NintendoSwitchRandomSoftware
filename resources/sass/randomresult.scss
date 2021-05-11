@@ -53,28 +53,50 @@ table td{
     margin-left: auto;
     margin-right: auto; 
 }
-.image-lists1 {
-    // background: lightblue;
-    display: flex;
-    // margin-left: auto;
-    // margin-right: auto;
-}
-.image-lists2 {
-    // background: lightblue;
-    display: flex;
-    // margin-left: auto;
-    // margin-right: auto;
-}
-.image-lists3 {
-    // background: lightblue;
-    display: flex;
-    // margin-left: auto;
-    // margin-right: auto;
-}
-.image-list {
-    // width: 200px;
+// .image-lists1 {
+//     // background: lightblue;
+//     display: flex;
+//     // margin-left: auto;
+//     // margin-right: auto;
+// }
+// .image-lists2 {
+//     // background: lightblue;
+//     display: flex;
+//     // margin-left: auto;
+//     // margin-right: auto;
+// }
+// .image-lists3 {
+//     // background: lightblue;
+//     display: flex;
+//     // margin-left: auto;
+//     // margin-right: auto;
+// }
+// .image-list {
+//     // width: 200px;
+//     margin: 0;
+//     margin-left: auto;
+//     margin-right: auto;
+// }
+  
+.image-lists {
     margin: 0;
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border: 5px solid red;
+    border-radius: 10px;
+    width: 1025px;
+    // width: 996px;
+  }
+
+.image-lists div {
+    display: flex;
+    padding: 10px;
 }
-  
+
+.image-padding {
+    padding: 10px;
+}

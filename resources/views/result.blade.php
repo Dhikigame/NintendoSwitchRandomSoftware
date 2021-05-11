@@ -8,25 +8,7 @@
 
 <?php
 echo "<div class='image-first'>" . $image[1] . "</div>";
-for($i = 2; $i <= count($image); $i++) {
-    if($i == 2) {
-        echo "<div class='image-lists1'>";
-    }
-    if($i == 4) {
-        echo "<div class='image-lists2'>";
-    }
-    if($i == 6) {
-        echo "<div class='image-lists3'>";
-    }
-    echo "<div class='image-list'>" . $image[$i] . "</div>";
-    if($i == 3 || $i == 5 || $i == 7) {
-        echo "</div>";
-    }
-}
-echo "</div>";
-?>
 
-<?php
 echo "<table>";
     echo "<tr>";
         echo "<th>タイトル</th>";
@@ -76,6 +58,32 @@ if($gameinfo['type'] === 2) {
     echo "</tr>";
 }
 echo "</table>";
+
+echo "<div class='image-padding'></div>";
+for($i = 2; $i <= count($image); $i++) {
+    if($i == 2) {
+        echo "<div class='image-lists'>";
+            echo "<div>";
+    }
+    if($i == 5) {
+        echo "<div class='image-lists'>";
+            echo "<div>";
+    }
+    echo $image[$i];
+    if($i == 4 || $i == 7) {
+            echo "</div>";
+        echo "</div>";
+        echo "<div class='image-padding'></div>";
+    }
+    if($i == count($image)) {
+        echo "</div>";
+    }
+}
+echo "</div>";
+?>
+
+<?php
+
 ?>
 
 

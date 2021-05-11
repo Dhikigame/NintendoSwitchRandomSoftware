@@ -46,20 +46,24 @@ table td {
   margin-right: auto;
 }
 
-.image-lists1 {
-  display: flex;
-}
-
-.image-lists2 {
-  display: flex;
-}
-
-.image-lists3 {
-  display: flex;
-}
-
-.image-list {
+.image-lists {
   margin: 0;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border: 5px solid red;
+  border-radius: 10px;
+  width: 1025px;
+}
+
+.image-lists div {
+  display: flex;
+  padding: 10px;
+}
+
+.image-padding {
+  padding: 10px;
 }
