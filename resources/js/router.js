@@ -5,14 +5,14 @@ import ResultComponent from './components/ResultComponent.vue'
 export default new Router({
   mode: 'history',
   routes: [
+    // {
+    //     path: '/',
+    //     name: 'home',
+    //     component: ExampleComponent
+    // },
     {
-        path: '/',
-        name: 'home',
-        component: ExampleComponent
-    },
-    {
-        path: '/result',
-        name: 'result',
+        path: '/result-test',
+        name: 'result-test',
         component: ResultComponent
     },
   ]

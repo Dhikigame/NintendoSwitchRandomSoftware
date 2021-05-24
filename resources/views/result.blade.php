@@ -6,7 +6,11 @@
 
 @section('content')
 
+<div class='random-result-explanation'>あなたにオススメするSwitchゲームは...</div>
 <?php
+echo "<div class='random-result-title'>" . $gameinfo["title"] . "</div>";
+
+
 echo "<div class='image-first'>" . $image[1] . "</div>";
 
 echo "<table>";
@@ -80,11 +84,14 @@ for($i = 2; $i <= count($image); $i++) {
     }
 }
 echo "</div>";
-?>
-
-<?php
 
 ?>
-
+<div id="app">
+        <div id="nav">
+          <router-link to="/result-test">Result</router-link>
+        </div>
+        <router-view/>
+        </div>
+    </div>
 
 @endsection
