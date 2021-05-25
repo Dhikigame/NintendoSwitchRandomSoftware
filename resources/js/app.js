@@ -9,12 +9,12 @@ require('./bootstrap');
 // window.Vue = require('vue');
 // window.VueRouter = require('vue-router');
 import Vue from 'vue';
-import VueRouter from 'vue-router';
+// import VueRouter from 'vue-router';
 
-import router from './router'
+// import router from './router'
 
-window.Vue = Vue;
-Vue.use(VueRouter);
+// window.Vue = Vue;
+// Vue.use(VueRouter);
 
 /**
  * The following block of code may be used to automatically register your
@@ -37,5 +37,5 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app',
-    router
+    // router
 });

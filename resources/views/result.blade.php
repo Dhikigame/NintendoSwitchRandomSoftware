@@ -62,8 +62,13 @@ if($gameinfo['type'] === 2) {
     echo "</tr>";
 }
 echo "</table>";
-
-echo "<div class='image-padding'></div>";
+?>
+<?php
+echo "<div class='hidden_box1'>";
+    echo "<label for='label1'>結果↓</label>";
+    echo '<input type="checkbox" id="label1"/>';
+    echo '<div class="hidden_show1">';
+        echo "<div class='image-padding'></div>";
 for($i = 2; $i <= count($image); $i++) {
     if($i == 2) {
         echo "<div class='image-lists'>";
@@ -75,9 +80,16 @@ for($i = 2; $i <= count($image); $i++) {
     }
     echo $image[$i];
     if($i == 4 || $i == 7) {
+                    echo "</div>";
+                echo "</div>";
             echo "</div>";
         echo "</div>";
-        echo "<div class='image-padding'></div>";
+
+        echo "<div class='hidden_box2'>";
+            echo "<label for='label2'>結果↓</label>";
+            echo '<input type="checkbox" id="label2"/>';
+            echo '<div class="hidden_show2">';
+                echo "<div class='image-padding'></div>";
     }
     if($i == count($image)) {
         echo "</div>";
@@ -85,13 +97,14 @@ for($i = 2; $i <= count($image); $i++) {
 }
 echo "</div>";
 
+
 ?>
-<div id="app">
-        <div id="nav">
-          <router-link to="/result-test">Result</router-link>
-        </div>
-        <router-view/>
-        </div>
+<!-- <div class='hidden_box1'>
+    <label for="label1">結果↓</label>
+    <input type="checkbox" id="label1"/>
+    <div class="hidden_show1">
+        <span>hidden</span>
     </div>
+</div> -->
 
 @endsection
