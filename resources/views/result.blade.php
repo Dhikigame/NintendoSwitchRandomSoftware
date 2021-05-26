@@ -65,7 +65,7 @@ echo "</table>";
 ?>
 <?php
 echo "<div class='hidden_box1'>";
-    echo "<label for='label1'>結果↓</label>";
+    echo "<label for='label1'>サムネイル1↓</label>";
     echo '<input type="checkbox" id="label1"/>';
     echo '<div class="hidden_show1">';
         echo "<div class='image-padding'></div>";
@@ -79,17 +79,23 @@ for($i = 2; $i <= count($image); $i++) {
             echo "<div>";
     }
     echo $image[$i];
-    if($i == 4 || $i == 7) {
+    if($i == 4) {
                     echo "</div>";
                 echo "</div>";
             echo "</div>";
         echo "</div>";
 
         echo "<div class='hidden_box2'>";
-            echo "<label for='label2'>結果↓</label>";
+            echo "<label for='label2'>サムネイル2↓</label>";
             echo '<input type="checkbox" id="label2"/>';
             echo '<div class="hidden_show2">';
                 echo "<div class='image-padding'></div>";
+    }
+    if($i == 7) {
+                    echo "</div>";
+                echo "</div>";
+            echo "</div>";
+        echo "</div>";
     }
     if($i == count($image)) {
         echo "</div>";
@@ -97,14 +103,8 @@ for($i = 2; $i <= count($image); $i++) {
 }
 echo "</div>";
 
-
 ?>
-<!-- <div class='hidden_box1'>
-    <label for="label1">結果↓</label>
-    <input type="checkbox" id="label1"/>
-    <div class="hidden_show1">
-        <span>hidden</span>
-    </div>
-</div> -->
+
+
 
 @endsection

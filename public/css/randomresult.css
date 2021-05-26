@@ -81,6 +81,9 @@ table td {
 
 /*全体*/
 .hidden_box1 {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
   margin: 1em 0;
   /*前後の余白*/
   padding: 0;
@@ -124,6 +127,9 @@ table td {
 
 /*全体*/
 .hidden_box2 {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
   margin: 1em 0;
   /*前後の余白*/
   padding: 0;
