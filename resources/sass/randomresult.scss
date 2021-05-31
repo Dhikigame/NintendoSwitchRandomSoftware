@@ -62,30 +62,6 @@ table td{
     margin-left: auto;
     margin-right: auto; 
 }
-// .image-lists1 {
-//     // background: lightblue;
-//     display: flex;
-//     // margin-left: auto;
-//     // margin-right: auto;
-// }
-// .image-lists2 {
-//     // background: lightblue;
-//     display: flex;
-//     // margin-left: auto;
-//     // margin-right: auto;
-// }
-// .image-lists3 {
-//     // background: lightblue;
-//     display: flex;
-//     // margin-left: auto;
-//     // margin-right: auto;
-// }
-// .image-list {
-//     // width: 200px;
-//     margin: 0;
-//     margin-left: auto;
-//     margin-right: auto;
-// }
 
 .image-lists {
     margin: 0;
@@ -188,4 +164,48 @@ table td{
     padding: 0px 0;
     height: auto;
     opacity: 1;
+}
+
+.game-search-product {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border: 5px solid rgb(0, 0, 255);
+    border-radius: 10px;
+    width: 1025px;
+    // width: 996px;
+  }
+
+.btn-google, a.btn-google {
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    background:linear-gradient(90deg,#4285f4 25%,#ea4335 25% 50%,#fbbc05 50% 75%,#34a853 75%);
+}
+.btn-google:hover, a.btn-google:hover {
+    color: rgb(0, 0, 0);
+    background:linear-gradient(90deg,rgb(77, 133, 255) 25%, rgb(255, 100, 100) 25% 50%, rgb(255, 252, 77) 50% 75%, rgb(107, 255, 77) 75%);
+}
+
+.btn-amazon, a.btn-amazon {
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    background: rgb(255, 166, 0);
+}
+.btn-amazon:hover, a.btn-amazon:hover {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 198, 93);
+}
+
+.btn-nintendostore, a.btn-nintendostore {
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    background: rgb(255, 0, 0);
+}
+.btn-nintendostore:hover, a.btn-nintendostore:hover {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 198, 93);
 }

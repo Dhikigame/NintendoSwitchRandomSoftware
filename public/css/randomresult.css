@@ -170,3 +170,49 @@ table td {
   height: auto;
   opacity: 1;
 }
+
+.game-search-product {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border: 5px solid blue;
+  border-radius: 10px;
+  width: 1025px;
+}
+
+.btn-google, a.btn-google {
+  padding: 10px;
+  color: black;
+  background: linear-gradient(90deg, #4285f4 25%, #ea4335 25% 50%, #fbbc05 50% 75%, #34a853 75%);
+}
+
+.btn-google:hover, a.btn-google:hover {
+  color: black;
+  background: linear-gradient(90deg, #4d85ff 25%, #ff6464 25% 50%, #fffc4d 50% 75%, #6bff4d 75%);
+}
+
+.btn-amazon, a.btn-amazon {
+  padding: 10px;
+  color: black;
+  background: #ffa600;
+}
+
+.btn-amazon:hover, a.btn-amazon:hover {
+  color: black;
+  background: #ffc65d;
+}
+
+.btn-nintendostore, a.btn-nintendostore {
+  padding: 10px;
+  color: black;
+  background: red;
+}
+
+.btn-nintendostore:hover, a.btn-nintendostore:hover {
+  color: black;
+  background: #ffc65d;
+}

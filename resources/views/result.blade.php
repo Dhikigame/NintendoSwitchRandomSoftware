@@ -103,6 +103,18 @@ for($i = 2; $i <= count($image); $i++) {
 }
 echo "</div>";
 
+
+echo "<div class='game-search-product'>";
+    echo "<div>";
+        echo '<a href="" class="btn btn-google">Google</a>';
+    echo "</div>";
+    echo "<div>";
+        echo '<a href="" class="btn btn-amazon">Amazon</a>';
+    echo "</div>";
+    echo "<div>";
+    echo '<a href="" class="btn btn-nintendostore">My Nintendo Store</a>';
+    echo "</div>";
+echo "</div>";
 ?>
 
 
