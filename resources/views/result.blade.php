@@ -103,17 +103,18 @@ for($i = 2; $i <= count($image); $i++) {
 }
 echo "</div>";
 
+echo "<div class='random-result-explanation'>このゲームを検索&購入</div>";
 
 echo "<div class='game-search-product'>";
-    echo "<div>";
-        echo '<a href="" class="btn btn-google">Google</a>';
-    echo "</div>";
-    echo "<div>";
-        echo '<a href="" class="btn btn-amazon">Amazon</a>';
-    echo "</div>";
-    echo "<div>";
-    echo '<a href="" class="btn btn-nintendostore">My Nintendo Store</a>';
-    echo "</div>";
+    echo "<span>";
+        echo '<a href="https://www.google.co.jp/search?q=' . $gameinfo["title"] . ' nintendo switch" class="btn btn-google" target="_blank" rel="noopener noreferrer">Google</a>';
+    echo "</span>";
+    echo "<span>";
+    echo '<a href="https://store-jp.nintendo.com/search/?q='. $gameinfo["title"] .'" class="btn btn-nintendostore" target="_blank" rel="noopener noreferrer">My Nintendo Store</a>';
+    echo "</span>";
+    echo "<span>";
+        echo '<a href="https://www.amazon.co.jp/s?k=' . $gameinfo["title"] . ' nintendo switch&i=videogames&rh=n%3A637394%2Cn%3A4731377051" class="btn btn-amazon" target="_blank" rel="noopener noreferrer">Amazon</a>';
+    echo "</span>";
 echo "</div>";
 ?>
 
