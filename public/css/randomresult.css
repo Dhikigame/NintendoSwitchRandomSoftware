@@ -1,4 +1,8 @@
 @charset "UTF-8";
+nav {
+  background-color: #00ffb3;
+}
+
 .random-result-explanation {
   text-align: center;
   font-size: 20px;
@@ -214,4 +218,11 @@ table td {
 .btn-nintendostore:hover, a.btn-nintendostore:hover {
   color: black;
   background: #ff4c4c;
+}
+
+footer {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background: #00d9ff;
 }

@@ -195,7 +195,7 @@ class SwitchRandomResultController extends Controller
         exec($command, $result);
         $image_count = $result[0];
 
-        echo $image_id;
+        // echo $image_id;
         for($i = 1; $i <= $image_count; $i++) {
             $image[$i] = "<img src='/download/" . $image_id . "/00000" . $i . ".jpg'>";
         }
