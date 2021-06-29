@@ -1,3 +1,19 @@
+@charset "UTF-8";
+nav {
+  background-color: #00ffb3;
+}
+
+.random-result-explanation {
+  text-align: center;
+  font-size: 20px;
+}
+
+.random-result-title {
+  text-align: center;
+  color: red;
+  font-size: 50px;
+}
+
 table {
   margin-left: auto;
   margin-right: auto;
@@ -18,7 +34,6 @@ table th {
   width: 300px;
   background-color: #52c2d0;
   color: white;
-  text-align: center;
   padding: 10px 0;
 }
 
@@ -66,4 +81,148 @@ table td {
 
 .image-padding {
   padding: 10px;
+}
+
+/*全体*/
+.hidden_box1 {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin: 1em 0;
+  /*前後の余白*/
+  padding: 0;
+}
+
+/*ボタン装飾*/
+.hidden_box1 label {
+  padding: 2px;
+  font-weight: bold;
+  border: solid 2px black;
+  cursor: pointer;
+  font-size: 30px;
+  border-radius: 10px 10px 10px 10px;
+}
+
+/*ボタンホバー時*/
+.hidden_box1 label:hover {
+  background: #efefef;
+}
+
+/*チェックは見えなくする*/
+.hidden_box1 input {
+  display: none;
+}
+
+/*中身を非表示にしておく*/
+.hidden_box1 .hidden_show1 {
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.8s;
+}
+
+/*クリックで中身表示*/
+.hidden_box1 input:checked ~ .hidden_show1 {
+  padding: 0px 0;
+  height: auto;
+  opacity: 1;
+}
+
+/*全体*/
+.hidden_box2 {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin: 1em 0;
+  /*前後の余白*/
+  padding: 0;
+}
+
+/*ボタン装飾*/
+.hidden_box2 label {
+  padding: 2px;
+  font-weight: bold;
+  border: solid 2px black;
+  cursor: pointer;
+  font-size: 30px;
+  border-radius: 10px 10px 10px 10px;
+}
+
+/*ボタンホバー時*/
+.hidden_box2 label:hover {
+  background: #efefef;
+}
+
+/*チェックは見えなくする*/
+.hidden_box2 input {
+  display: none;
+}
+
+/*中身を非表示にしておく*/
+.hidden_box2 .hidden_show2 {
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.8s;
+}
+
+/*クリックで中身表示*/
+.hidden_box2 input:checked ~ .hidden_show2 {
+  padding: 0px 0;
+  height: auto;
+  opacity: 1;
+}
+
+.game-search-product {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border: 5px solid blue;
+  border-radius: 10px;
+  width: 1025px;
+}
+
+.btn-google, a.btn-google {
+  margin: 10px;
+  color: black;
+  background: linear-gradient(90deg, #4285f4 25%, #ea4335 25% 50%, #fbbc05 50% 75%, #34a853 75% 100%);
+}
+
+.btn-google:hover, a.btn-google:hover {
+  color: black;
+  background: linear-gradient(90deg, #4d85ff 25%, #ff6464 25% 50%, #fffc4d 50% 75%, #6bff4d 75% 100%);
+}
+
+.btn-amazon, a.btn-amazon {
+  margin: 10px;
+  color: black;
+  background: #ffa600;
+}
+
+.btn-amazon:hover, a.btn-amazon:hover {
+  color: black;
+  background: #ffc65d;
+}
+
+.btn-nintendostore, a.btn-nintendostore {
+  margin: 10px;
+  color: black;
+  background: red;
+}
+
+.btn-nintendostore:hover, a.btn-nintendostore:hover {
+  color: black;
+  background: #ff4c4c;
+}
+
+footer {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background: #00d9ff;
 }

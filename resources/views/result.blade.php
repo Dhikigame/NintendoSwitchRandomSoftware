@@ -6,7 +6,11 @@
 
 @section('content')
 
+<div class='random-result-explanation'>あなたにオススメするSwitchゲームは...</div>
 <?php
+echo "<div class='random-result-title'>" . $gameinfo["title"] . "</div>";
+
+
 echo "<div class='image-first'>" . $image[1] . "</div>";
 
 echo "<table>";
@@ -58,8 +62,13 @@ if($gameinfo['type'] === 2) {
     echo "</tr>";
 }
 echo "</table>";
-
-echo "<div class='image-padding'></div>";
+?>
+<?php
+echo "<div class='hidden_box1'>";
+    echo "<label for='label1'>サムネイル1↓</label>";
+    echo '<input type="checkbox" id="label1"/>';
+    echo '<div class="hidden_show1">';
+        echo "<div class='image-padding'></div>";
 for($i = 2; $i <= count($image); $i++) {
     if($i == 2) {
         echo "<div class='image-lists'>";
@@ -70,21 +79,45 @@ for($i = 2; $i <= count($image); $i++) {
             echo "<div>";
     }
     echo $image[$i];
-    if($i == 4 || $i == 7) {
+    if($i == 4) {
+                    echo "</div>";
+                echo "</div>";
             echo "</div>";
         echo "</div>";
-        echo "<div class='image-padding'></div>";
+
+        echo "<div class='hidden_box2'>";
+            echo "<label for='label2'>サムネイル2↓</label>";
+            echo '<input type="checkbox" id="label2"/>';
+            echo '<div class="hidden_show2">';
+                echo "<div class='image-padding'></div>";
+    }
+    if($i == 7) {
+                    echo "</div>";
+                echo "</div>";
+            echo "</div>";
+        echo "</div>";
     }
     if($i == count($image)) {
         echo "</div>";
     }
 }
 echo "</div>";
+
+echo "<div class='random-result-explanation'>このゲームを検索&購入</div>";
+
+echo "<div class='game-search-product'>";
+    echo "<span>";
+        echo '<a href="https://www.google.co.jp/search?q=' . $gameinfo["title"] . ' nintendo switch" class="btn btn-google" target="_blank" rel="noopener noreferrer">Google</a>';
+    echo "</span>";
+    echo "<span>";
+    echo '<a href="https://store-jp.nintendo.com/search/?q='. $gameinfo["title"] .'" class="btn btn-nintendostore" target="_blank" rel="noopener noreferrer">My Nintendo Store</a>';
+    echo "</span>";
+    echo "<span>";
+        echo '<a href="https://www.amazon.co.jp/s?k=' . $gameinfo["title"] . ' nintendo switch&i=videogames&rh=n%3A637394%2Cn%3A4731377051" class="btn btn-amazon" target="_blank" rel="noopener noreferrer">Amazon</a>';
+    echo "</span>";
+echo "</div>";
 ?>
 
-<?php
-
-?>
 
 
 @endsection
