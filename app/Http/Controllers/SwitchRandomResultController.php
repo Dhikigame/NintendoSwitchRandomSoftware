@@ -27,6 +27,36 @@ class SwitchRandomResultController extends Controller
 
     //     return view('show', compact('img_path'));
     // }
+    public function gamelist() {
+
+        $year = 2021;
+
+        // SwitchRandomモデルのインスタンス化
+        $md = new SwitchRandomResult();
+
+        $search_year = $md->GameListYearSearch($year);
+
+        for($i = 0; $i <= count($search_year) - 1; $i++) {
+            $id[$i] = $search_year[$i]->id;
+        }
+        for($i = 0; $i <= count($search_year) - 1; $i++) {
+            $download_link[$i] = $search_year[$i]->download_link;
+        }
+        for($i = 0; $i <= count($search_year) - 1; $i++) {
+            $title[$i] = $search_year[$i]->title;
+        }
+        for($i = 0; $i <= count($search_year) - 1; $i++) {
+            $release_date[$i] = $search_year[$i]->release_date;
+        }
+
+        return view('gamelist')->with([
+            'download_link' => $download_link,
+            'id' => $id,
+            'title' => $title,
+            'release_date' => $release_date,
+        ]);
+
+    }
 
     public function result(Request $request) {
 

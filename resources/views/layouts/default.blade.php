@@ -46,7 +46,9 @@
       </div>
     </div> -->
     </nav>
+    <center>
     @yield('content')
+    </center>
 <!-- <script src="{{ mix('js/app.js') }}"></script>  -->
 <footer class="footer">
   <div class="container">

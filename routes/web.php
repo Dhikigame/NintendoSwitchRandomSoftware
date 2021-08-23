@@ -17,6 +17,8 @@ Route::get('/', 'SwitchRandomController@index');
 Route::get('/image/{image_id}', 'SwitchRandomController@show');
 
 Route::get('/result', 'SwitchRandomResultController@result');
+
+Route::get('/gamelist', 'SwitchRandomResultController@gamelist');
 // Route::get('/result',function (Request $request) {
 	
 // 	$release_maker_name = $request->release_maker_name;

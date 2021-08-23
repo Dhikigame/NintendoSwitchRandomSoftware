@@ -24,7 +24,7 @@
         <p><span>検索ソフトリリース数 / 全ソフトリリース数</span></p>
         <p><span>{{ animegamecount }} / {{ this.gamecount[0] }}</span></p>
         
-        <button v-bind:disabled="buttonvisibleflag==false">Post</button>
+        <button v-bind:disabled="buttonvisibleflag==false">あなたのオススメソフトは？</button>
     </div>
 </template>
 

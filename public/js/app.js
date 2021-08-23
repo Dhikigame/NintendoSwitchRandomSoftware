@@ -43082,7 +43082,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("button", { attrs: { disabled: _vm.buttonvisibleflag == false } }, [
-      _vm._v("Post")
+      _vm._v("あなたのオススメソフトは？")
     ])
   ])
 }
