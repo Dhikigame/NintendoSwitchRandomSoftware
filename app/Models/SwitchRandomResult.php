@@ -23,9 +23,9 @@ class SwitchRandomResult extends SwitchRandom
     }
 
     // 年ごとのゲームリストのIDとリンクを取得する
-    public function GameListYearSearch($year=0) {
+    public function GameListYearSearch($year=0, $type=1) {
         $query = $this->db_switch_software_data();
-        $year_link_list = $query->where('release_date', 'like', "%$year%")->select('id', 'download_link', 'title', 'release_date')->get();
+        $year_link_list = $query->where('release_date', 'like', "%$year%")->where('type', 'like', "%$type%")->select('id', 'download_link', 'title', 'release_date')->get();
         // var_dump($year_link_list);
 
         return $year_link_list;

@@ -9,27 +9,13 @@ use Storage;
 class SwitchRandomResultController extends Controller
 {
 
-    // public function show($image_id) {
-    //     $disk = Storage::disk('s3');
-
-    //     $path[0] = $disk->url($image_id . '/000001.jpg');
-    //     $img_path[0] = "<img src='".$path[0]."' ".$this->calc_image($path[0]).">";
-    //     $path[1] = $disk->url($image_id . '/000002.jpg');
-    //     $img_path[1] = "<img src='".$path[1]."' ".$this->calc_image($path[1]).">";
-    //     $path[2] = $disk->url($image_id . '/000003.jpg');
-    //     $img_path[2] = "<img src='".$path[2]."' ".$this->calc_image($path[2]).">";
-    //     $path[3] = $disk->url($image_id . '/000004.jpg');
-    //     $img_path[3] = "<img src='".$path[3]."' ".$this->calc_image($path[3]).">";
-    //     $path[4] = $disk->url($image_id . '/000005.jpg');
-    //     $img_path[4] = "<img src='".$path[4]."' ".$this->calc_image($path[4]).">";
-    //     $path[5] = $disk->url($image_id . '/000006.jpg');
-    //     $img_path[5] = "<img src='".$path[5]."' ".$this->calc_image($path[5]).">";
-
-    //     return view('show', compact('img_path'));
-    // }
+    // ダウンロードした画像がゲームにあっているか、
+    // もしくはダウンロードリンクが間違いないかデバッグ用コントローラ
     public function gamelist() {
 
-        $year = 2021;
+        // image出力確認用デバッグ
+        $year = 2020;
+        $type = 1;
 
         // SwitchRandomモデルのインスタンス化
         $md = new SwitchRandomResult();
